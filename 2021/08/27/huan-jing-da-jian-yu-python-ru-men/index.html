@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="环境搭建与Python入门, 咪咪和油油的小天地">
+    <meta name="keywords" content="环境搭建与Python入门, 咪咪和油油">
     <meta name="description" content="一起学习，一起玩耍，去经历，去感动">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,8 +16,8 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>环境搭建与Python入门 | 咪咪和油油的小天地</title>
-    <link rel="icon" type="image/png" href="/rose.png">
+    <title>环境搭建与Python入门 | 咪咪和油油</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -31,7 +31,7 @@
 
 <meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="咪咪和油油的小天地" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="咪咪和油油" type="application/atom+xml">
 </head>
 
 
@@ -44,9 +44,9 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/rose.png" class="logo-img" alt="LOGO">
+                    <img src="/medias/two-hearts.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">咪咪和油油的小天地</span>
+                    <span class="logo-span">咪咪和油油</span>
                 </a>
             </div>
             
@@ -100,11 +100,22 @@
   
   <li class="hide-on-med-and-down nav-item">
     
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
     <a href="/friends" class="waves-effect waves-light">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>友情链接</span>
+      <span>链接</span>
     </a>
     
   </li>
@@ -121,9 +132,9 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/rose.png" class="logo-img circle responsive-img">
+        <img src="/medias/two-hearts.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">咪咪和油油的小天地</div>
+        <div class="logo-name">咪咪和油油</div>
         <div class="logo-desc">
             
             一起学习，一起玩耍，去经历，去感动
@@ -181,11 +192,22 @@
         
         <li class="m-nav-item">
 	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
 		<a href="/friends" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			友情链接
+			链接
 		</a>
           
         </li>
@@ -378,7 +400,15 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
         
 
         <div class="card-content article-card-content">
@@ -392,56 +422,296 @@
 <h2 id="安装Anaconda"><a href="#安装Anaconda" class="headerlink" title="安装Anaconda"></a>安装Anaconda</h2><p>我们通过安装Anaconda来搭建Python环境。</p>
 <p>Anaconda是当前最流行的Python发行版本，其中包含了Python和许多常用工具包及其依赖，还提供了conda、pip等工具用于环境和包管理，十分方便。</p>
 <p>我们可以在<a target="_blank" rel="noopener" href="https://www.anaconda.com/products/individual#Downloads">这里</a>下载最新的安装包，建议下载Windows 64 bit版本安装包，如下图所示：</p>
-<p><img src="anaconda.png" alt="anaconda"></p>
+<p><img src="anaconda.png" alt="Anaconda下载"></p>
 <p>安装完成后来测试一下。按下Windows键，找到Anaconda3 (64-bit) 文件夹，然后打开**Anaconda Powershell Prompt (Anaconda3)**，输入Python：</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(base) PS C:\Users\15617&gt; python</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">(base) PS C:\Users\15617&gt; python<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>Anaconda Powershell Prompt (Anaconda3)就是我们后面经常要用到的PowerShell，这是Anaconda提供给我们的。</p>
 <p>然后按下回车，看到类似如下输出即可表明Anaconda安装成功：</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(base) PS C:\Users\15617&gt; python</span><br><span class="line">Python 3.8.3 (default, Jul  2 2020, 17:30:36) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32</span><br><span class="line">Type "help", "copyright", "credits" or "license" for more information.</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">(base) PS C:\Users\15617&gt; python
+Python 3.8.3 (default, Jul  2 2020, 17:30:36) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>现在可以关闭PowerShell了。</p>
-<h2 id="安装Sublime-Text-3"><a href="#安装Sublime-Text-3" class="headerlink" title="安装Sublime Text 3"></a>安装Sublime Text 3</h2><p>安装完了Python环境，我们现在需要一个编辑器来写Python代码，这里推荐的是Sublime Text 3，也是为师最喜欢的代码和文本编辑器。</p>
+<h2 id="安装Sublime-Text-3"><a href="#安装Sublime-Text-3" class="headerlink" title="安装Sublime Text 3"></a>安装Sublime Text 3</h2><p>安装完了Python环境，我们现在需要一个编辑器来写Python代码，这里推荐的是Sublime Text 3，也是油油最喜欢的代码和文本编辑器。</p>
 <p>Sublime Text3的特点是简洁轻便美观并且免费。唯一缺点是偶尔会弹出来购买提示框，按Esc忽略即可。</p>
 <p>如下图，可以在<a target="_blank" rel="noopener" href="https://www.sublimetext.com/3">这里</a>下载Windows 64 bit版本安装包。</p>
-<p><img src="sublime.png" alt="sublime"></p>
+<p><img src="sublime.png" alt="Sublime Text 3下载"></p>
 <p>安装还是建议安装在D盘，安装完成后在桌面上会出现Sublime Text 3的图标，打开即可使用。</p>
-<h2 id="小仙女的第一个Python代码"><a href="#小仙女的第一个Python代码" class="headerlink" title="小仙女的第一个Python代码"></a>小仙女的第一个Python代码</h2><p>现在我们来写第一个Python代码。 </p>
+<h2 id="咪咪的第一个Python代码"><a href="#咪咪的第一个Python代码" class="headerlink" title="咪咪的第一个Python代码"></a>咪咪的第一个Python代码</h2><p>现在我们来写第一个Python代码。 </p>
 <p>打开Sublime Text 3，在键盘上按<strong>Ctrl+N</strong>，这样就新建了一个文件。在文件中输入以下内容，只有一句话，调用print函数输出双引号引起来的字符串：</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">"Beautiful fairy, happy fairy!"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Beautiful fairy, happy fairy!"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>然后在键盘上按<strong>Ctrl+S</strong>，在<strong>另存为</strong>框中选择一个目录，这里作为示例选的是E盘100dataset文件夹。</p>
 <p>然后在文件名一栏输入<strong>test.py</strong>，点击保存。注意，目录应尽量避免中文名。</p>
 <p>代码写完了，现在我们来执行这份名为<strong>test.py</strong>的代码。首先需要打开<strong>PowerShell</strong>并切换目录。</p>
 <p>在文件管理器中打开你刚才选择的目录，在地址栏单击鼠标，然后<strong>Ctrl+C</strong>可以复制当前目录位置，如下图，我们复制了E盘100dataset文件夹的位置：</p>
-<p><img src="path.png" alt="path"></p>
+<p><img src="path.png" alt="执行目录"></p>
 <p>然后依照上部分讲的方式，打开PowerShell，在其中输入”cd “，然后<strong>Ctrl+V</strong>粘贴我们刚才复制的目录位置，再回车，即可将PowerShell的工作目录转移到我们代码的位置下，如这里我们转移到了”E:\100dataset”的位置：</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(base) PS C:\Users\15617&gt; cd E:\100dataset</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">(base) PS C:\Users\15617&gt; cd E:\100dataset<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>现在我们可以执行代码了。在PowerShell中输入**”python “+待执行的.py文件名**，这里应该是“python test.py”，如下：</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(base) PS E:\100dataset&gt; python test.py</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">(base) PS E:\100dataset&gt; python test.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>然后按下回车键，然后你就可以看到PowerShell窗口在空白行输出的字符串啦：</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(base) PS E:\100dataset&gt; Beautiful fairy, happy fairy!</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">(base) PS E:\100dataset&gt; Beautiful fairy, happy fairy!<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>怎么样，是不是很简单。当然，字符串可以是其他任何内容。</p>
 <h2 id="Python输出九九乘法口诀表"><a href="#Python输出九九乘法口诀表" class="headerlink" title="Python输出九九乘法口诀表"></a>Python输出九九乘法口诀表</h2><p>我们再来看一个例子。将test.py中的内容全部删掉，输入以下内容（可以复制粘贴）：</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">10</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, i+<span class="number">1</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'{}x{}={}\t'</span>.<span class="built_in">format</span>(j, i, i*j), end=<span class="string">''</span>)</span><br><span class="line">    <span class="built_in">print</span>()</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'{}x{}={}\t'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>j<span class="token punctuation">,</span> i<span class="token punctuation">,</span> i<span class="token operator">*</span>j<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>然后在PowerShell窗口再次输入：</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(base) PS E:\100dataset&gt; python test.py</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">(base) PS E:\100dataset&gt; python test.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>并按下回车，怎么样，是不是得到了一个九九乘法口诀表？试着读一下代码，能读懂它的逻辑吗？</p>
 <h2 id="Python输出心形"><a href="#Python输出心形" class="headerlink" title="Python输出心形"></a>Python输出心形</h2><p>将<strong>test.py</strong>中的内容全部删掉，输入以下内容：</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">words = <span class="string">"lovemi"</span></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> words.split():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'\n'</span>.join([<span class="string">''</span>.join([(item[(x-y) % <span class="built_in">len</span>(item)] <span class="keyword">if</span> ((x*<span class="number">0.05</span>)**<span class="number">2</span>+(y*<span class="number">0.1</span>)**<span class="number">2</span>-<span class="number">1</span>)**<span class="number">3</span>-(x*<span class="number">0.05</span>)**<span class="number">2</span>*(y*<span class="number">0.1</span>)**<span class="number">3</span> &lt;= <span class="number">0</span> <span class="keyword">else</span> <span class="string">' '</span>) <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(-<span class="number">30</span>, <span class="number">30</span>)]) <span class="keyword">for</span> y <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">12</span>, -<span class="number">12</span>, -<span class="number">1</span>)]))</span><br><span class="line">    time.sleep(<span class="number">1.5</span>)</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> time
+words <span class="token operator">=</span> <span class="token string">"lovemi"</span>
+<span class="token keyword">for</span> item <span class="token keyword">in</span> words<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">(</span>item<span class="token punctuation">[</span><span class="token punctuation">(</span>x<span class="token operator">-</span>y<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token builtin">len</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token operator">*</span><span class="token number">0.05</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token operator">+</span><span class="token punctuation">(</span>y<span class="token operator">*</span><span class="token number">0.1</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">3</span><span class="token operator">-</span><span class="token punctuation">(</span>x<span class="token operator">*</span><span class="token number">0.05</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token operator">*</span><span class="token punctuation">(</span>y<span class="token operator">*</span><span class="token number">0.1</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">3</span> <span class="token operator">&lt;=</span> <span class="token number">0</span> <span class="token keyword">else</span> <span class="token string">' '</span><span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">for</span> y <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1.5</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>以同样的方式运行，是不是得到了一个心形？这段代码比较复杂，不需要掌握，只是想展示一下Python语言的强大和精妙。</p>
 <p>给咪咪比个❤哦~</p>
 <h2 id="Python小游戏：贪吃蛇"><a href="#Python小游戏：贪吃蛇" class="headerlink" title="Python小游戏：贪吃蛇"></a>Python小游戏：贪吃蛇</h2><p>运行这个小游戏的代码需要先安装一个名为<strong>pygame</strong>的包，在PowerShell中输入以下内容并回车就可以使用pip安装新的工具包了：</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(base) PS C:\Users\15617&gt; pip install pygame</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">(base) PS C:\Users\15617&gt; pip install pygame<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>我们以后还会用pip安装和管理其他工具包。等待安装完成，然后在test.py中输入以下代码并以前述方式运行：</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> pygame</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> pygame.<span class="built_in">locals</span> <span class="keyword">import</span> *</span><br><span class="line"> </span><br><span class="line">Snakespeed = <span class="number">17</span></span><br><span class="line">Window_Width = <span class="number">1600</span></span><br><span class="line">Window_Height = <span class="number">1000</span></span><br><span class="line">Cell_Size = <span class="number">20</span>  <span class="comment"># Width and height of the cells</span></span><br><span class="line"><span class="comment"># Ensuring that the cells fit perfectly in the window. eg if cell size was</span></span><br><span class="line"><span class="comment"># 10     and window width or windowheight were 15 only 1.5 cells would</span></span><br><span class="line"><span class="comment"># fit.</span></span><br><span class="line"><span class="keyword">assert</span> Window_Width % Cell_Size == <span class="number">0</span>, <span class="string">"Window width must be a multiple of cell size."</span></span><br><span class="line"><span class="comment"># Ensuring that only whole integer number of cells fit perfectly in the window.</span></span><br><span class="line"><span class="keyword">assert</span> Window_Height % Cell_Size == <span class="number">0</span>, <span class="string">"Window height must be a multiple of cell size."</span></span><br><span class="line">Cell_W = <span class="built_in">int</span>(Window_Width / Cell_Size)  <span class="comment"># Cell Width</span></span><br><span class="line">Cell_H = <span class="built_in">int</span>(Window_Height / Cell_Size)  <span class="comment"># Cellc Height</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">White = (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>)</span><br><span class="line">Black = (<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">Red = (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>)  <span class="comment"># Defining element colors for the program.</span></span><br><span class="line">Green = (<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>)</span><br><span class="line">DARKGreen = (<span class="number">0</span>, <span class="number">155</span>, <span class="number">0</span>)</span><br><span class="line">DARKGRAY = (<span class="number">40</span>, <span class="number">40</span>, <span class="number">40</span>)</span><br><span class="line">YELLOW = (<span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>)</span><br><span class="line">Red_DARK = (<span class="number">150</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">BLUE = (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>)</span><br><span class="line">BLUE_DARK = (<span class="number">0</span>, <span class="number">0</span>, <span class="number">150</span>)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">BGCOLOR = Black  <span class="comment"># Background color</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">UP = <span class="string">'up'</span></span><br><span class="line">DOWN = <span class="string">'down'</span>      <span class="comment"># Defining keyboard keys.</span></span><br><span class="line">LEFT = <span class="string">'left'</span></span><br><span class="line">RIGHT = <span class="string">'right'</span></span><br><span class="line"> </span><br><span class="line">HEAD = <span class="number">0</span>  <span class="comment"># Syntactic sugar: index of the snake's head</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="keyword">global</span> SnakespeedCLOCK, DISPLAYSURF, BASICFONT</span><br><span class="line"> </span><br><span class="line">    pygame.init()</span><br><span class="line">    SnakespeedCLOCK = pygame.time.Clock()</span><br><span class="line">    DISPLAYSURF = pygame.display.set_mode((Window_Width, Window_Height))</span><br><span class="line">    BASICFONT = pygame.font.Font(<span class="string">'freesansbold.ttf'</span>, <span class="number">18</span>)</span><br><span class="line">    pygame.display.set_caption(<span class="string">'Snake'</span>)</span><br><span class="line"> </span><br><span class="line">    showStartScreen()</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        runGame()</span><br><span class="line">        showGameOverScreen()</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">runGame</span>():</span></span><br><span class="line">    <span class="comment"># Set a random start point.</span></span><br><span class="line">    startx = random.randint(<span class="number">5</span>, Cell_W - <span class="number">6</span>)</span><br><span class="line">    starty = random.randint(<span class="number">5</span>, Cell_H - <span class="number">6</span>)</span><br><span class="line">    wormCoords = [{<span class="string">'x'</span>: startx, <span class="string">'y'</span>: starty},</span><br><span class="line">                  {<span class="string">'x'</span>: startx - <span class="number">1</span>, <span class="string">'y'</span>: starty},</span><br><span class="line">                  {<span class="string">'x'</span>: startx - <span class="number">2</span>, <span class="string">'y'</span>: starty}]</span><br><span class="line">    direction = RIGHT</span><br><span class="line"> </span><br><span class="line">    <span class="comment"># Start the apple in a random place.</span></span><br><span class="line">    apple = getRandomLocation()</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:  <span class="comment"># main game loop</span></span><br><span class="line">        <span class="keyword">for</span> event <span class="keyword">in</span> pygame.event.get():  <span class="comment"># event handling loop</span></span><br><span class="line">            <span class="keyword">if</span> event.<span class="built_in">type</span> == QUIT:</span><br><span class="line">                terminate()</span><br><span class="line">            <span class="keyword">elif</span> event.<span class="built_in">type</span> == KEYDOWN:</span><br><span class="line">                <span class="keyword">if</span> (event.key == K_LEFT) <span class="keyword">and</span> direction != RIGHT:</span><br><span class="line">                    direction = LEFT</span><br><span class="line">                <span class="keyword">elif</span> (event.key == K_RIGHT) <span class="keyword">and</span> direction != LEFT:</span><br><span class="line">                    direction = RIGHT</span><br><span class="line">                <span class="keyword">elif</span> (event.key == K_UP) <span class="keyword">and</span> direction != DOWN:</span><br><span class="line">                    direction = UP</span><br><span class="line">                <span class="keyword">elif</span> (event.key == K_DOWN) <span class="keyword">and</span> direction != UP:</span><br><span class="line">                    direction = DOWN</span><br><span class="line">                <span class="keyword">elif</span> event.key == K_ESCAPE:</span><br><span class="line">                    terminate()</span><br><span class="line"> </span><br><span class="line">        <span class="comment"># check if the Snake has hit itself or the edge</span></span><br><span class="line">        <span class="keyword">if</span> wormCoords[HEAD][<span class="string">'x'</span>] == -<span class="number">1</span> <span class="keyword">or</span> wormCoords[HEAD][<span class="string">'x'</span>] == Cell_W <span class="keyword">or</span> wormCoords[HEAD][<span class="string">'y'</span>] == -<span class="number">1</span> <span class="keyword">or</span> wormCoords[HEAD][<span class="string">'y'</span>] == Cell_H:</span><br><span class="line">            <span class="keyword">return</span>  <span class="comment"># game over</span></span><br><span class="line">        <span class="keyword">for</span> wormBody <span class="keyword">in</span> wormCoords[<span class="number">1</span>:]:</span><br><span class="line">            <span class="keyword">if</span> wormBody[<span class="string">'x'</span>] == wormCoords[HEAD][<span class="string">'x'</span>] <span class="keyword">and</span> wormBody[<span class="string">'y'</span>] == wormCoords[HEAD][<span class="string">'y'</span>]:</span><br><span class="line">                <span class="keyword">return</span>  <span class="comment"># game over</span></span><br><span class="line"> </span><br><span class="line">        <span class="comment"># check if Snake has eaten an apply</span></span><br><span class="line">        <span class="keyword">if</span> wormCoords[HEAD][<span class="string">'x'</span>] == apple[<span class="string">'x'</span>] <span class="keyword">and</span> wormCoords[HEAD][<span class="string">'y'</span>] == apple[<span class="string">'y'</span>]:</span><br><span class="line">            <span class="comment"># don't remove worm's tail segment</span></span><br><span class="line">            apple = getRandomLocation()  <span class="comment"># set a new apple somewhere</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">del</span> wormCoords[-<span class="number">1</span>]  <span class="comment"># remove worm's tail segment</span></span><br><span class="line"> </span><br><span class="line">        <span class="comment"># move the worm by adding a segment in the direction it is moving</span></span><br><span class="line">        <span class="keyword">if</span> direction == UP:</span><br><span class="line">            newHead = {<span class="string">'x'</span>: wormCoords[HEAD][<span class="string">'x'</span>],</span><br><span class="line">                       <span class="string">'y'</span>: wormCoords[HEAD][<span class="string">'y'</span>] - <span class="number">1</span>}</span><br><span class="line">        <span class="keyword">elif</span> direction == DOWN:</span><br><span class="line">            newHead = {<span class="string">'x'</span>: wormCoords[HEAD][<span class="string">'x'</span>],</span><br><span class="line">                       <span class="string">'y'</span>: wormCoords[HEAD][<span class="string">'y'</span>] + <span class="number">1</span>}</span><br><span class="line">        <span class="keyword">elif</span> direction == LEFT:</span><br><span class="line">            newHead = {<span class="string">'x'</span>: wormCoords[HEAD][</span><br><span class="line">                <span class="string">'x'</span>] - <span class="number">1</span>, <span class="string">'y'</span>: wormCoords[HEAD][<span class="string">'y'</span>]}</span><br><span class="line">        <span class="keyword">elif</span> direction == RIGHT:</span><br><span class="line">            newHead = {<span class="string">'x'</span>: wormCoords[HEAD][</span><br><span class="line">                <span class="string">'x'</span>] + <span class="number">1</span>, <span class="string">'y'</span>: wormCoords[HEAD][<span class="string">'y'</span>]}</span><br><span class="line">        wormCoords.insert(<span class="number">0</span>, newHead)</span><br><span class="line">        DISPLAYSURF.fill(BGCOLOR)</span><br><span class="line">        drawGrid()</span><br><span class="line">        drawWorm(wormCoords)</span><br><span class="line">        drawApple(apple)</span><br><span class="line">        drawScore(<span class="built_in">len</span>(wormCoords) - <span class="number">3</span>)</span><br><span class="line">        pygame.display.update()</span><br><span class="line">        SnakespeedCLOCK.tick(Snakespeed)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">drawPressKeyMsg</span>():</span></span><br><span class="line">    pressKeySurf = BASICFONT.render(<span class="string">'Press a key to play.'</span>, <span class="literal">True</span>, White)</span><br><span class="line">    pressKeyRect = pressKeySurf.get_rect()</span><br><span class="line">    pressKeyRect.topleft = (Window_Width - <span class="number">200</span>, Window_Height - <span class="number">30</span>)</span><br><span class="line">    DISPLAYSURF.blit(pressKeySurf, pressKeyRect)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">checkForKeyPress</span>():</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(pygame.event.get(QUIT)) &gt; <span class="number">0</span>:</span><br><span class="line">        terminate()</span><br><span class="line">    keyUpEvents = pygame.event.get(KEYUP)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(keyUpEvents) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    <span class="keyword">if</span> keyUpEvents[<span class="number">0</span>].key == K_ESCAPE:</span><br><span class="line">        terminate()</span><br><span class="line">    <span class="keyword">return</span> keyUpEvents[<span class="number">0</span>].key</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">showStartScreen</span>():</span></span><br><span class="line">    titleFont = pygame.font.Font(<span class="string">'freesansbold.ttf'</span>, <span class="number">100</span>)</span><br><span class="line">    titleSurf1 = titleFont.render(<span class="string">'Snake!'</span>, <span class="literal">True</span>, White, DARKGreen)</span><br><span class="line">    degrees1 = <span class="number">0</span></span><br><span class="line">    degrees2 = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        DISPLAYSURF.fill(BGCOLOR)</span><br><span class="line">        rotatedSurf1 = pygame.transform.rotate(titleSurf1, degrees1)</span><br><span class="line">        rotatedRect1 = rotatedSurf1.get_rect()</span><br><span class="line">        rotatedRect1.center = (Window_Width / <span class="number">2</span>, Window_Height / <span class="number">2</span>)</span><br><span class="line">        DISPLAYSURF.blit(rotatedSurf1, rotatedRect1)</span><br><span class="line"> </span><br><span class="line">        drawPressKeyMsg()</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span> checkForKeyPress():</span><br><span class="line">            pygame.event.get()  <span class="comment"># clear event queue</span></span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        pygame.display.update()</span><br><span class="line">        SnakespeedCLOCK.tick(Snakespeed)</span><br><span class="line">        degrees1 += <span class="number">3</span>  <span class="comment"># rotate by 3 degrees each frame</span></span><br><span class="line">        degrees2 += <span class="number">7</span>  <span class="comment"># rotate by 7 degrees each frame</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">terminate</span>():</span></span><br><span class="line">    pygame.quit()</span><br><span class="line">    sys.exit()</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getRandomLocation</span>():</span></span><br><span class="line">    <span class="keyword">return</span> {<span class="string">'x'</span>: random.randint(<span class="number">0</span>, Cell_W - <span class="number">1</span>), <span class="string">'y'</span>: random.randint(<span class="number">0</span>, Cell_H - <span class="number">1</span>)}</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">showGameOverScreen</span>():</span></span><br><span class="line">    gameOverFont = pygame.font.Font(<span class="string">'freesansbold.ttf'</span>, <span class="number">100</span>)</span><br><span class="line">    gameSurf = gameOverFont.render(<span class="string">'Game'</span>, <span class="literal">True</span>, White)</span><br><span class="line">    overSurf = gameOverFont.render(<span class="string">'Over'</span>, <span class="literal">True</span>, White)</span><br><span class="line">    gameRect = gameSurf.get_rect()</span><br><span class="line">    overRect = overSurf.get_rect()</span><br><span class="line">    gameRect.midtop = (Window_Width / <span class="number">2</span>, <span class="number">10</span>)</span><br><span class="line">    overRect.midtop = (Window_Width / <span class="number">2</span>, gameRect.height + <span class="number">10</span> + <span class="number">25</span>)</span><br><span class="line"> </span><br><span class="line">    DISPLAYSURF.blit(gameSurf, gameRect)</span><br><span class="line">    DISPLAYSURF.blit(overSurf, overRect)</span><br><span class="line">    drawPressKeyMsg()</span><br><span class="line">    pygame.display.update()</span><br><span class="line">    pygame.time.wait(<span class="number">500</span>)</span><br><span class="line">    checkForKeyPress()  <span class="comment"># clear out any key presses in the event queue</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">if</span> checkForKeyPress():</span><br><span class="line">            pygame.event.get()  <span class="comment"># clear event queue</span></span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">drawScore</span>(<span class="params">score</span>):</span></span><br><span class="line">    scoreSurf = BASICFONT.render(<span class="string">'Score: %s'</span> % (score), <span class="literal">True</span>, White)</span><br><span class="line">    scoreRect = scoreSurf.get_rect()</span><br><span class="line">    scoreRect.topleft = (Window_Width - <span class="number">120</span>, <span class="number">10</span>)</span><br><span class="line">    DISPLAYSURF.blit(scoreSurf, scoreRect)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">drawWorm</span>(<span class="params">wormCoords</span>):</span></span><br><span class="line">    <span class="keyword">for</span> coord <span class="keyword">in</span> wormCoords:</span><br><span class="line">        x = coord[<span class="string">'x'</span>] * Cell_Size</span><br><span class="line">        y = coord[<span class="string">'y'</span>] * Cell_Size</span><br><span class="line">        wormSegmentRect = pygame.Rect(x, y, Cell_Size, Cell_Size)</span><br><span class="line">        pygame.draw.rect(DISPLAYSURF, DARKGreen, wormSegmentRect)</span><br><span class="line">        wormInnerSegmentRect = pygame.Rect(</span><br><span class="line">            x + <span class="number">4</span>, y + <span class="number">4</span>, Cell_Size - <span class="number">8</span>, Cell_Size - <span class="number">8</span>)</span><br><span class="line">        pygame.draw.rect(DISPLAYSURF, Green, wormInnerSegmentRect)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">drawApple</span>(<span class="params">coord</span>):</span></span><br><span class="line">    x = coord[<span class="string">'x'</span>] * Cell_Size</span><br><span class="line">    y = coord[<span class="string">'y'</span>] * Cell_Size</span><br><span class="line">    appleRect = pygame.Rect(x, y, Cell_Size, Cell_Size)</span><br><span class="line">    pygame.draw.rect(DISPLAYSURF, Red, appleRect)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">drawGrid</span>():</span></span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, Window_Width, Cell_Size):  <span class="comment"># draw vertical lines</span></span><br><span class="line">        pygame.draw.line(DISPLAYSURF, DARKGRAY, (x, <span class="number">0</span>), (x, Window_Height))</span><br><span class="line">    <span class="keyword">for</span> y <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, Window_Height, Cell_Size):  <span class="comment"># draw horizontal lines</span></span><br><span class="line">        pygame.draw.line(DISPLAYSURF, DARKGRAY, (<span class="number">0</span>, y), (Window_Width, y))</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        main()</span><br><span class="line">    <span class="keyword">except</span> SystemExit:</span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> random
+<span class="token keyword">import</span> pygame
+<span class="token keyword">import</span> sys
+<span class="token keyword">from</span> pygame<span class="token punctuation">.</span><span class="token builtin">locals</span> <span class="token keyword">import</span> <span class="token operator">*</span>
+ 
+Snakespeed <span class="token operator">=</span> <span class="token number">17</span>
+Window_Width <span class="token operator">=</span> <span class="token number">1600</span>
+Window_Height <span class="token operator">=</span> <span class="token number">1000</span>
+Cell_Size <span class="token operator">=</span> <span class="token number">20</span>  <span class="token comment"># Width and height of the cells</span>
+<span class="token comment"># Ensuring that the cells fit perfectly in the window. eg if cell size was</span>
+<span class="token comment"># 10     and window width or windowheight were 15 only 1.5 cells would</span>
+<span class="token comment"># fit.</span>
+<span class="token keyword">assert</span> Window_Width <span class="token operator">%</span> Cell_Size <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"Window width must be a multiple of cell size."</span>
+<span class="token comment"># Ensuring that only whole integer number of cells fit perfectly in the window.</span>
+<span class="token keyword">assert</span> Window_Height <span class="token operator">%</span> Cell_Size <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"Window height must be a multiple of cell size."</span>
+Cell_W <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>Window_Width <span class="token operator">/</span> Cell_Size<span class="token punctuation">)</span>  <span class="token comment"># Cell Width</span>
+Cell_H <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>Window_Height <span class="token operator">/</span> Cell_Size<span class="token punctuation">)</span>  <span class="token comment"># Cellc Height</span>
+ 
+ 
+White <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">)</span>
+Black <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+Red <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>  <span class="token comment"># Defining element colors for the program.</span>
+Green <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+DARKGreen <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">155</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+DARKGRAY <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">)</span>
+YELLOW <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+Red_DARK <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">150</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+BLUE <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">)</span>
+BLUE_DARK <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">150</span><span class="token punctuation">)</span>
+ 
+ 
+BGCOLOR <span class="token operator">=</span> Black  <span class="token comment"># Background color</span>
+ 
+ 
+UP <span class="token operator">=</span> <span class="token string">'up'</span>
+DOWN <span class="token operator">=</span> <span class="token string">'down'</span>      <span class="token comment"># Defining keyboard keys.</span>
+LEFT <span class="token operator">=</span> <span class="token string">'left'</span>
+RIGHT <span class="token operator">=</span> <span class="token string">'right'</span>
+ 
+HEAD <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment"># Syntactic sugar: index of the snake's head</span>
+ 
+ 
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> SnakespeedCLOCK<span class="token punctuation">,</span> DISPLAYSURF<span class="token punctuation">,</span> BASICFONT
+ 
+    pygame<span class="token punctuation">.</span>init<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    SnakespeedCLOCK <span class="token operator">=</span> pygame<span class="token punctuation">.</span>time<span class="token punctuation">.</span>Clock<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    DISPLAYSURF <span class="token operator">=</span> pygame<span class="token punctuation">.</span>display<span class="token punctuation">.</span>set_mode<span class="token punctuation">(</span><span class="token punctuation">(</span>Window_Width<span class="token punctuation">,</span> Window_Height<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    BASICFONT <span class="token operator">=</span> pygame<span class="token punctuation">.</span>font<span class="token punctuation">.</span>Font<span class="token punctuation">(</span><span class="token string">'freesansbold.ttf'</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span>
+    pygame<span class="token punctuation">.</span>display<span class="token punctuation">.</span>set_caption<span class="token punctuation">(</span><span class="token string">'Snake'</span><span class="token punctuation">)</span>
+ 
+    showStartScreen<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        runGame<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        showGameOverScreen<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ 
+ 
+<span class="token keyword">def</span> <span class="token function">runGame</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># Set a random start point.</span>
+    startx <span class="token operator">=</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> Cell_W <span class="token operator">-</span> <span class="token number">6</span><span class="token punctuation">)</span>
+    starty <span class="token operator">=</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> Cell_H <span class="token operator">-</span> <span class="token number">6</span><span class="token punctuation">)</span>
+    wormCoords <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">'x'</span><span class="token punctuation">:</span> startx<span class="token punctuation">,</span> <span class="token string">'y'</span><span class="token punctuation">:</span> starty<span class="token punctuation">}</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">{</span><span class="token string">'x'</span><span class="token punctuation">:</span> startx <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'y'</span><span class="token punctuation">:</span> starty<span class="token punctuation">}</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">{</span><span class="token string">'x'</span><span class="token punctuation">:</span> startx <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'y'</span><span class="token punctuation">:</span> starty<span class="token punctuation">}</span><span class="token punctuation">]</span>
+    direction <span class="token operator">=</span> RIGHT
+ 
+    <span class="token comment"># Start the apple in a random place.</span>
+    apple <span class="token operator">=</span> getRandomLocation<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ 
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>  <span class="token comment"># main game loop</span>
+        <span class="token keyword">for</span> event <span class="token keyword">in</span> pygame<span class="token punctuation">.</span>event<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># event handling loop</span>
+            <span class="token keyword">if</span> event<span class="token punctuation">.</span><span class="token builtin">type</span> <span class="token operator">==</span> QUIT<span class="token punctuation">:</span>
+                terminate<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> event<span class="token punctuation">.</span><span class="token builtin">type</span> <span class="token operator">==</span> KEYDOWN<span class="token punctuation">:</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>event<span class="token punctuation">.</span>key <span class="token operator">==</span> K_LEFT<span class="token punctuation">)</span> <span class="token keyword">and</span> direction <span class="token operator">!=</span> RIGHT<span class="token punctuation">:</span>
+                    direction <span class="token operator">=</span> LEFT
+                <span class="token keyword">elif</span> <span class="token punctuation">(</span>event<span class="token punctuation">.</span>key <span class="token operator">==</span> K_RIGHT<span class="token punctuation">)</span> <span class="token keyword">and</span> direction <span class="token operator">!=</span> LEFT<span class="token punctuation">:</span>
+                    direction <span class="token operator">=</span> RIGHT
+                <span class="token keyword">elif</span> <span class="token punctuation">(</span>event<span class="token punctuation">.</span>key <span class="token operator">==</span> K_UP<span class="token punctuation">)</span> <span class="token keyword">and</span> direction <span class="token operator">!=</span> DOWN<span class="token punctuation">:</span>
+                    direction <span class="token operator">=</span> UP
+                <span class="token keyword">elif</span> <span class="token punctuation">(</span>event<span class="token punctuation">.</span>key <span class="token operator">==</span> K_DOWN<span class="token punctuation">)</span> <span class="token keyword">and</span> direction <span class="token operator">!=</span> UP<span class="token punctuation">:</span>
+                    direction <span class="token operator">=</span> DOWN
+                <span class="token keyword">elif</span> event<span class="token punctuation">.</span>key <span class="token operator">==</span> K_ESCAPE<span class="token punctuation">:</span>
+                    terminate<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ 
+        <span class="token comment"># check if the Snake has hit itself or the edge</span>
+        <span class="token keyword">if</span> wormCoords<span class="token punctuation">[</span>HEAD<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'x'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">or</span> wormCoords<span class="token punctuation">[</span>HEAD<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'x'</span><span class="token punctuation">]</span> <span class="token operator">==</span> Cell_W <span class="token keyword">or</span> wormCoords<span class="token punctuation">[</span>HEAD<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'y'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">or</span> wormCoords<span class="token punctuation">[</span>HEAD<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'y'</span><span class="token punctuation">]</span> <span class="token operator">==</span> Cell_H<span class="token punctuation">:</span>
+            <span class="token keyword">return</span>  <span class="token comment"># game over</span>
+        <span class="token keyword">for</span> wormBody <span class="token keyword">in</span> wormCoords<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> wormBody<span class="token punctuation">[</span><span class="token string">'x'</span><span class="token punctuation">]</span> <span class="token operator">==</span> wormCoords<span class="token punctuation">[</span>HEAD<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'x'</span><span class="token punctuation">]</span> <span class="token keyword">and</span> wormBody<span class="token punctuation">[</span><span class="token string">'y'</span><span class="token punctuation">]</span> <span class="token operator">==</span> wormCoords<span class="token punctuation">[</span>HEAD<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'y'</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span>  <span class="token comment"># game over</span>
+ 
+        <span class="token comment"># check if Snake has eaten an apply</span>
+        <span class="token keyword">if</span> wormCoords<span class="token punctuation">[</span>HEAD<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'x'</span><span class="token punctuation">]</span> <span class="token operator">==</span> apple<span class="token punctuation">[</span><span class="token string">'x'</span><span class="token punctuation">]</span> <span class="token keyword">and</span> wormCoords<span class="token punctuation">[</span>HEAD<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'y'</span><span class="token punctuation">]</span> <span class="token operator">==</span> apple<span class="token punctuation">[</span><span class="token string">'y'</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token comment"># don't remove worm's tail segment</span>
+            apple <span class="token operator">=</span> getRandomLocation<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># set a new apple somewhere</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">del</span> wormCoords<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token comment"># remove worm's tail segment</span>
+ 
+        <span class="token comment"># move the worm by adding a segment in the direction it is moving</span>
+        <span class="token keyword">if</span> direction <span class="token operator">==</span> UP<span class="token punctuation">:</span>
+            newHead <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'x'</span><span class="token punctuation">:</span> wormCoords<span class="token punctuation">[</span>HEAD<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'x'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                       <span class="token string">'y'</span><span class="token punctuation">:</span> wormCoords<span class="token punctuation">[</span>HEAD<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'y'</span><span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">}</span>
+        <span class="token keyword">elif</span> direction <span class="token operator">==</span> DOWN<span class="token punctuation">:</span>
+            newHead <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'x'</span><span class="token punctuation">:</span> wormCoords<span class="token punctuation">[</span>HEAD<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'x'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                       <span class="token string">'y'</span><span class="token punctuation">:</span> wormCoords<span class="token punctuation">[</span>HEAD<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'y'</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">}</span>
+        <span class="token keyword">elif</span> direction <span class="token operator">==</span> LEFT<span class="token punctuation">:</span>
+            newHead <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'x'</span><span class="token punctuation">:</span> wormCoords<span class="token punctuation">[</span>HEAD<span class="token punctuation">]</span><span class="token punctuation">[</span>
+                <span class="token string">'x'</span><span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'y'</span><span class="token punctuation">:</span> wormCoords<span class="token punctuation">[</span>HEAD<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'y'</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+        <span class="token keyword">elif</span> direction <span class="token operator">==</span> RIGHT<span class="token punctuation">:</span>
+            newHead <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'x'</span><span class="token punctuation">:</span> wormCoords<span class="token punctuation">[</span>HEAD<span class="token punctuation">]</span><span class="token punctuation">[</span>
+                <span class="token string">'x'</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'y'</span><span class="token punctuation">:</span> wormCoords<span class="token punctuation">[</span>HEAD<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'y'</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+        wormCoords<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> newHead<span class="token punctuation">)</span>
+        DISPLAYSURF<span class="token punctuation">.</span>fill<span class="token punctuation">(</span>BGCOLOR<span class="token punctuation">)</span>
+        drawGrid<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        drawWorm<span class="token punctuation">(</span>wormCoords<span class="token punctuation">)</span>
+        drawApple<span class="token punctuation">(</span>apple<span class="token punctuation">)</span>
+        drawScore<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>wormCoords<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">3</span><span class="token punctuation">)</span>
+        pygame<span class="token punctuation">.</span>display<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        SnakespeedCLOCK<span class="token punctuation">.</span>tick<span class="token punctuation">(</span>Snakespeed<span class="token punctuation">)</span>
+ 
+ 
+<span class="token keyword">def</span> <span class="token function">drawPressKeyMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    pressKeySurf <span class="token operator">=</span> BASICFONT<span class="token punctuation">.</span>render<span class="token punctuation">(</span><span class="token string">'Press a key to play.'</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> White<span class="token punctuation">)</span>
+    pressKeyRect <span class="token operator">=</span> pressKeySurf<span class="token punctuation">.</span>get_rect<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    pressKeyRect<span class="token punctuation">.</span>topleft <span class="token operator">=</span> <span class="token punctuation">(</span>Window_Width <span class="token operator">-</span> <span class="token number">200</span><span class="token punctuation">,</span> Window_Height <span class="token operator">-</span> <span class="token number">30</span><span class="token punctuation">)</span>
+    DISPLAYSURF<span class="token punctuation">.</span>blit<span class="token punctuation">(</span>pressKeySurf<span class="token punctuation">,</span> pressKeyRect<span class="token punctuation">)</span>
+ 
+ 
+<span class="token keyword">def</span> <span class="token function">checkForKeyPress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>pygame<span class="token punctuation">.</span>event<span class="token punctuation">.</span>get<span class="token punctuation">(</span>QUIT<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        terminate<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    keyUpEvents <span class="token operator">=</span> pygame<span class="token punctuation">.</span>event<span class="token punctuation">.</span>get<span class="token punctuation">(</span>KEYUP<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>keyUpEvents<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token boolean">None</span>
+    <span class="token keyword">if</span> keyUpEvents<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>key <span class="token operator">==</span> K_ESCAPE<span class="token punctuation">:</span>
+        terminate<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> keyUpEvents<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>key
+ 
+ 
+<span class="token keyword">def</span> <span class="token function">showStartScreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    titleFont <span class="token operator">=</span> pygame<span class="token punctuation">.</span>font<span class="token punctuation">.</span>Font<span class="token punctuation">(</span><span class="token string">'freesansbold.ttf'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+    titleSurf1 <span class="token operator">=</span> titleFont<span class="token punctuation">.</span>render<span class="token punctuation">(</span><span class="token string">'Snake!'</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> White<span class="token punctuation">,</span> DARKGreen<span class="token punctuation">)</span>
+    degrees1 <span class="token operator">=</span> <span class="token number">0</span>
+    degrees2 <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        DISPLAYSURF<span class="token punctuation">.</span>fill<span class="token punctuation">(</span>BGCOLOR<span class="token punctuation">)</span>
+        rotatedSurf1 <span class="token operator">=</span> pygame<span class="token punctuation">.</span>transform<span class="token punctuation">.</span>rotate<span class="token punctuation">(</span>titleSurf1<span class="token punctuation">,</span> degrees1<span class="token punctuation">)</span>
+        rotatedRect1 <span class="token operator">=</span> rotatedSurf1<span class="token punctuation">.</span>get_rect<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        rotatedRect1<span class="token punctuation">.</span>center <span class="token operator">=</span> <span class="token punctuation">(</span>Window_Width <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span> Window_Height <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span>
+        DISPLAYSURF<span class="token punctuation">.</span>blit<span class="token punctuation">(</span>rotatedSurf1<span class="token punctuation">,</span> rotatedRect1<span class="token punctuation">)</span>
+ 
+        drawPressKeyMsg<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ 
+        <span class="token keyword">if</span> checkForKeyPress<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            pygame<span class="token punctuation">.</span>event<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># clear event queue</span>
+            <span class="token keyword">return</span>
+        pygame<span class="token punctuation">.</span>display<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        SnakespeedCLOCK<span class="token punctuation">.</span>tick<span class="token punctuation">(</span>Snakespeed<span class="token punctuation">)</span>
+        degrees1 <span class="token operator">+=</span> <span class="token number">3</span>  <span class="token comment"># rotate by 3 degrees each frame</span>
+        degrees2 <span class="token operator">+=</span> <span class="token number">7</span>  <span class="token comment"># rotate by 7 degrees each frame</span>
+ 
+ 
+<span class="token keyword">def</span> <span class="token function">terminate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    pygame<span class="token punctuation">.</span>quit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    sys<span class="token punctuation">.</span>exit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ 
+ 
+<span class="token keyword">def</span> <span class="token function">getRandomLocation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'x'</span><span class="token punctuation">:</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> Cell_W <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'y'</span><span class="token punctuation">:</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> Cell_H <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+ 
+ 
+<span class="token keyword">def</span> <span class="token function">showGameOverScreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    gameOverFont <span class="token operator">=</span> pygame<span class="token punctuation">.</span>font<span class="token punctuation">.</span>Font<span class="token punctuation">(</span><span class="token string">'freesansbold.ttf'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+    gameSurf <span class="token operator">=</span> gameOverFont<span class="token punctuation">.</span>render<span class="token punctuation">(</span><span class="token string">'Game'</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> White<span class="token punctuation">)</span>
+    overSurf <span class="token operator">=</span> gameOverFont<span class="token punctuation">.</span>render<span class="token punctuation">(</span><span class="token string">'Over'</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> White<span class="token punctuation">)</span>
+    gameRect <span class="token operator">=</span> gameSurf<span class="token punctuation">.</span>get_rect<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    overRect <span class="token operator">=</span> overSurf<span class="token punctuation">.</span>get_rect<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    gameRect<span class="token punctuation">.</span>midtop <span class="token operator">=</span> <span class="token punctuation">(</span>Window_Width <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+    overRect<span class="token punctuation">.</span>midtop <span class="token operator">=</span> <span class="token punctuation">(</span>Window_Width <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span> gameRect<span class="token punctuation">.</span>height <span class="token operator">+</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token number">25</span><span class="token punctuation">)</span>
+ 
+    DISPLAYSURF<span class="token punctuation">.</span>blit<span class="token punctuation">(</span>gameSurf<span class="token punctuation">,</span> gameRect<span class="token punctuation">)</span>
+    DISPLAYSURF<span class="token punctuation">.</span>blit<span class="token punctuation">(</span>overSurf<span class="token punctuation">,</span> overRect<span class="token punctuation">)</span>
+    drawPressKeyMsg<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    pygame<span class="token punctuation">.</span>display<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    pygame<span class="token punctuation">.</span>time<span class="token punctuation">.</span>wait<span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span>
+    checkForKeyPress<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># clear out any key presses in the event queue</span>
+ 
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> checkForKeyPress<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            pygame<span class="token punctuation">.</span>event<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># clear event queue</span>
+            <span class="token keyword">return</span>
+ 
+ 
+<span class="token keyword">def</span> <span class="token function">drawScore</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    scoreSurf <span class="token operator">=</span> BASICFONT<span class="token punctuation">.</span>render<span class="token punctuation">(</span><span class="token string">'Score: %s'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>score<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> White<span class="token punctuation">)</span>
+    scoreRect <span class="token operator">=</span> scoreSurf<span class="token punctuation">.</span>get_rect<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    scoreRect<span class="token punctuation">.</span>topleft <span class="token operator">=</span> <span class="token punctuation">(</span>Window_Width <span class="token operator">-</span> <span class="token number">120</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+    DISPLAYSURF<span class="token punctuation">.</span>blit<span class="token punctuation">(</span>scoreSurf<span class="token punctuation">,</span> scoreRect<span class="token punctuation">)</span>
+ 
+ 
+<span class="token keyword">def</span> <span class="token function">drawWorm</span><span class="token punctuation">(</span>wormCoords<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> coord <span class="token keyword">in</span> wormCoords<span class="token punctuation">:</span>
+        x <span class="token operator">=</span> coord<span class="token punctuation">[</span><span class="token string">'x'</span><span class="token punctuation">]</span> <span class="token operator">*</span> Cell_Size
+        y <span class="token operator">=</span> coord<span class="token punctuation">[</span><span class="token string">'y'</span><span class="token punctuation">]</span> <span class="token operator">*</span> Cell_Size
+        wormSegmentRect <span class="token operator">=</span> pygame<span class="token punctuation">.</span>Rect<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> Cell_Size<span class="token punctuation">,</span> Cell_Size<span class="token punctuation">)</span>
+        pygame<span class="token punctuation">.</span>draw<span class="token punctuation">.</span>rect<span class="token punctuation">(</span>DISPLAYSURF<span class="token punctuation">,</span> DARKGreen<span class="token punctuation">,</span> wormSegmentRect<span class="token punctuation">)</span>
+        wormInnerSegmentRect <span class="token operator">=</span> pygame<span class="token punctuation">.</span>Rect<span class="token punctuation">(</span>
+            x <span class="token operator">+</span> <span class="token number">4</span><span class="token punctuation">,</span> y <span class="token operator">+</span> <span class="token number">4</span><span class="token punctuation">,</span> Cell_Size <span class="token operator">-</span> <span class="token number">8</span><span class="token punctuation">,</span> Cell_Size <span class="token operator">-</span> <span class="token number">8</span><span class="token punctuation">)</span>
+        pygame<span class="token punctuation">.</span>draw<span class="token punctuation">.</span>rect<span class="token punctuation">(</span>DISPLAYSURF<span class="token punctuation">,</span> Green<span class="token punctuation">,</span> wormInnerSegmentRect<span class="token punctuation">)</span>
+ 
+ 
+<span class="token keyword">def</span> <span class="token function">drawApple</span><span class="token punctuation">(</span>coord<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    x <span class="token operator">=</span> coord<span class="token punctuation">[</span><span class="token string">'x'</span><span class="token punctuation">]</span> <span class="token operator">*</span> Cell_Size
+    y <span class="token operator">=</span> coord<span class="token punctuation">[</span><span class="token string">'y'</span><span class="token punctuation">]</span> <span class="token operator">*</span> Cell_Size
+    appleRect <span class="token operator">=</span> pygame<span class="token punctuation">.</span>Rect<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> Cell_Size<span class="token punctuation">,</span> Cell_Size<span class="token punctuation">)</span>
+    pygame<span class="token punctuation">.</span>draw<span class="token punctuation">.</span>rect<span class="token punctuation">(</span>DISPLAYSURF<span class="token punctuation">,</span> Red<span class="token punctuation">,</span> appleRect<span class="token punctuation">)</span>
+ 
+ 
+<span class="token keyword">def</span> <span class="token function">drawGrid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> Window_Width<span class="token punctuation">,</span> Cell_Size<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># draw vertical lines</span>
+        pygame<span class="token punctuation">.</span>draw<span class="token punctuation">.</span>line<span class="token punctuation">(</span>DISPLAYSURF<span class="token punctuation">,</span> DARKGRAY<span class="token punctuation">,</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> Window_Height<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> y <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> Window_Height<span class="token punctuation">,</span> Cell_Size<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># draw horizontal lines</span>
+        pygame<span class="token punctuation">.</span>draw<span class="token punctuation">.</span>line<span class="token punctuation">(</span>DISPLAYSURF<span class="token punctuation">,</span> DARKGRAY<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>Window_Width<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">)</span>
+ 
+ 
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        main<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span> SystemExit<span class="token punctuation">:</span>
+        <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>注意，代码中”#”后面的部分为<strong>注释</strong>，是为了方便读者阅读代码而存在的，不具备语法意义。</p>
 <p>在操作界面按下键盘上的方向键上下左右，就可以控制贪吃蛇的移动方向。怎么样，是不是很有趣~</p>
@@ -451,56 +721,6 @@
             <hr/>
 
             
-
-    <div class="reprint" id="reprint-statement">
-        
-            <div class="reprint__author">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-user">
-                        文章作者:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">小油油</a>
-                </span>
-            </div>
-            <div class="reprint__type">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-link">
-                        文章链接:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="https://shuaiguo95.github.io/2021/08/27/huan-jing-da-jian-yu-python-ru-men/">https://shuaiguo95.github.io/2021/08/27/huan-jing-da-jian-yu-python-ru-men/</a>
-                </span>
-            </div>
-            <div class="reprint__notice">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-copyright">
-                        版权声明:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
-                    <a href="/about" target="_blank">小油油</a>
-                    !
-                </span>
-            </div>
-        
-    </div>
-
-    <script async defer>
-      document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
-      });
-
-      function navToReprintStatement() {
-        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }
-    </script>
 
 
 
@@ -556,18 +776,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/08/27/huan-jing-da-jian-yu-python-ru-men/">
+                <a href="/2021/08/27/python-ji-ben-yu-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="环境搭建与Python入门">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Python基本语法">
                         
-                        <span class="card-title">环境搭建与Python入门</span>
+                        <span class="card-title">Python基本语法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -577,9 +796,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-27
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-27
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -592,7 +811,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -847,8 +1065,8 @@
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">小油油</a>
-            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            |&nbsp;Powered by&nbsp;<a href="https://github.com/ShuaiGuo95/ShuaiGuo95.github.io" target="_blank">ShuaiGuo95</a>
+            
             <br>
             
             
@@ -863,7 +1081,7 @@
             
             
                 <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人次数:&nbsp;
                     <span id="busuanzi_value_site_uv" class="white-color"></span>
             </span>
             
@@ -1036,6 +1254,8 @@ $(function () {
 
     
 
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
     
 
     

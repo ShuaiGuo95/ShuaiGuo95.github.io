@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>咪咪和油油的小天地</title>
+  <title>咪咪和油油</title>
   
-  <subtitle>咪咪和油油的小天地</subtitle>
+  <subtitle>我们的小天地</subtitle>
   <link href="https://shuaiguo95.github.io/atom.xml" rel="self"/>
   
   <link href="https://shuaiguo95.github.io/"/>
-  <updated>2021-08-27T07:22:08.813Z</updated>
+  <updated>2021-08-27T12:21:34.901Z</updated>
   <id>https://shuaiguo95.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Python基本语法</title>
+    <link href="https://shuaiguo95.github.io/2021/08/27/python-ji-ben-yu-fa/"/>
+    <id>https://shuaiguo95.github.io/2021/08/27/python-ji-ben-yu-fa/</id>
+    <published>2021-08-27T12:02:56.000Z</published>
+    <updated>2021-08-27T12:21:34.901Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Python基本语法&quot;&gt;&lt;a href=&quot;#Python基本语法&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习" scheme="https://shuaiguo95.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学Python" scheme="https://shuaiguo95.github.io/tags/%E5%AD%A6Python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>环境搭建与Python入门</title>
     <link href="https://shuaiguo95.github.io/2021/08/27/huan-jing-da-jian-yu-python-ru-men/"/>
     <id>https://shuaiguo95.github.io/2021/08/27/huan-jing-da-jian-yu-python-ru-men/</id>
     <published>2021-08-27T02:53:39.000Z</published>
-    <updated>2021-08-27T07:22:08.813Z</updated>
+    <updated>2021-08-27T12:21:37.831Z</updated>
     
     
       
