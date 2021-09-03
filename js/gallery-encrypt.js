@@ -186,7 +186,8 @@ $(document).ready(
 
         document.getElementById('encrypt-blog').removeAttribute('style');
 
-        $("#encrypt-blog").justifiedGallery({margins: 5, rowHeight: 150});
+        $(".waterfall").lazyload();
+        // $("#encrypt-blog").justifiedGallery({margins: 5, rowHeight: 150});
       }
     }
     document.getElementById('pass').onkeypress = function (keyPressEvent) {
@@ -199,7 +200,8 @@ $(document).ready(
         if (result) {
           document.getElementById('encrypt-blog').removeAttribute('style');
 
-          $("#encrypt-blog").justifiedGallery({margins: 5, rowHeight: 150});
+          $(".waterfall").lazyload();
+          // $("#encrypt-blog").justifiedGallery({margins: 5, rowHeight: 150});
 
           setCookie(GenerateCookieName(), password, 30);
         }
