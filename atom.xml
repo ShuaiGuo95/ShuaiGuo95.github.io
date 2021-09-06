@@ -6,7 +6,7 @@
   <link href="https://shuaiguo95.github.io/atom.xml" rel="self"/>
   
   <link href="https://shuaiguo95.github.io/"/>
-  <updated>2021-09-03T17:18:19.968Z</updated>
+  <updated>2021-09-06T13:47:14.343Z</updated>
   <id>https://shuaiguo95.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python总结与练习</title>
+    <link href="https://shuaiguo95.github.io/2021/09/06/python-zong-jie-yu-lian-xi/"/>
+    <id>https://shuaiguo95.github.io/2021/09/06/python-zong-jie-yu-lian-xi/</id>
+    <published>2021-09-05T16:34:44.000Z</published>
+    <updated>2021-09-06T13:47:14.343Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Python总结与练习&quot;&gt;&lt;a href=&quot;#Python总结与练习&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习" scheme="https://shuaiguo95.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学Python" scheme="https://shuaiguo95.github.io/tags/%E5%AD%A6Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python面向对象</title>
+    <link href="https://shuaiguo95.github.io/2021/09/04/python-mian-xiang-dui-xiang/"/>
+    <id>https://shuaiguo95.github.io/2021/09/04/python-mian-xiang-dui-xiang/</id>
+    <published>2021-09-04T10:24:36.000Z</published>
+    <updated>2021-09-05T16:34:49.916Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Python面向对象&quot;&gt;&lt;a href=&quot;#Python面向对象&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习" scheme="https://shuaiguo95.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学Python" scheme="https://shuaiguo95.github.io/tags/%E5%AD%A6Python/"/>
+    
+  </entry>
   
   <entry>
     <title>Python中的函数</title>

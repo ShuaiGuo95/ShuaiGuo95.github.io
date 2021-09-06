@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python中的函数, 咪咪和油油">
+    <meta name="keywords" content="Python面向对象, 咪咪和油油">
     <meta name="description" content="一起学习，一起玩耍，去经历，去感动">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Python中的函数 | 咪咪和油油</title>
+    <title>Python面向对象 | 咪咪和油油</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -295,12 +295,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/39.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Python中的函数</h1>
+                    <h1 class="description center-align post-title">Python面向对象</h1>
                 </div>
             </div>
         </div>
@@ -441,21 +441,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-02
+                    2021-09-04
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-04
+                    2021-09-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    993
+                    1.8k
                 </div>
                 
 
@@ -480,97 +480,160 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Python中的函数"><a href="#Python中的函数" class="headerlink" title="Python中的函数"></a>Python中的函数</h1><p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。函数能提高应用的模块性，和代码的重复利用率。</p>
-<p>Python提供了许多内建函数，比如print()。我们可以自己创建函数，这就是自定义函数。学习自定义函数可以帮助我们更好地理解Python中的函数。</p>
-<h2 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h2><p>我们可以这样定义一个函数：</p>
+                <h1 id="Python面向对象"><a href="#Python面向对象" class="headerlink" title="Python面向对象"></a>Python面向对象</h1><p>我们前面介绍的数据结构和运算都是<strong>面向过程</strong>的，而Python本身设计之初就是面向对象的编程语言，本节我们学习Python中的面向对象编程。</p>
+<h2 id="面向过程VS面向对象"><a href="#面向过程VS面向对象" class="headerlink" title="面向过程VS面向对象"></a>面向过程VS面向对象</h2><p>面向过程是以事件为中心的编程思想，按照完成这件事需要的所有步骤，强调按部就班，一个函数一个函数、一个语句一个语句的顺序执行。</p>
+<p>以下五子棋为例，一个下五子棋的面向过程程序大约需要以下步骤：</p>
+<ol>
+<li>开始游戏；</li>
+<li>黑子先行，绘制黑子落子后的画面；</li>
+<li>判断输赢情况，如果黑子赢了就跳到最后一步；</li>
+<li>白子再行，绘制白子落子后的画面；</li>
+<li>判断输赢情况，如果白子赢了就跳到最后一步；</li>
+<li>返回第二步；</li>
+<li>输出最后结果。</li>
+</ol>
+<p>而面向对象的五子棋程序会首先设计三种互相独立的对象：</p>
+<ol>
+<li>棋手，包括黑子和白子，负责接收用户的输入，并告知棋盘系统棋子布局的变化；</li>
+<li>棋盘系统，负责接收棋手传递的用户落子情况，然后绘制画面，在屏幕显示；</li>
+<li>游戏规则，负责根据棋盘情况判定输赢。</li>
+</ol>
+<p>看起来没有太大区别，只是对面向过程的内容做了一些封装，然而如果我们要写的代码是运行一个公司呢？每个行为方的行为规则和和属性可能都复杂到面向过程难以描述，描述了别人也难以快速看懂、快速修改和扩展。</p>
+<p>面向对象的编程极大提高了代码的可扩展性和复用性，降低了维护难度，在写一些大型的工程时具有很明显的优势，二者对比如下表。</p>
+<table>
+<thead>
+<tr>
+<th align="center">面向过程</th>
+<th align="center">面向对象</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">高耦合</td>
+<td align="center">低耦合</td>
+</tr>
+<tr>
+<td align="center">高效率，低开销，低可读性</td>
+<td align="center">低效率，高开销，高可读性</td>
+</tr>
+<tr>
+<td align="center">难维护，难扩展</td>
+<td align="center">易维护，易扩展</td>
+</tr>
+</tbody></table>
+<h2 id="面向对象简介"><a href="#面向对象简介" class="headerlink" title="面向对象简介"></a>面向对象简介</h2><p>面向对象技术中主要有以下几个概念：</p>
 <ul>
-<li>以 <strong>def</strong> 关键词开头，后接函数标识符名称和圆括号 **()**；</li>
-<li>圆括号里面写上此自定义参数执行所需要的参数，圆括号结束后要跟冒号“**:**”；</li>
-<li><strong>return [表达式]</strong> 结束函数，可以选择性地返回一个值给函数调用方，不带表达式的 return 相当于返回 None。</li>
+<li><strong>类（Class）：</strong> 用来描述具有相同的属性和方法的对象的集合。它定义了该集合中每个对象所共有的属性和方法；</li>
+<li><strong>对象（Object）：</strong>是类的实例；</li>
+<li><strong>方法：</strong>类中定义的函数；</li>
+<li><strong>实例变量：</strong>实例变量指的是在任意类方法内部，以“self.变量名”的方式定义的变量，其特点是只作用于调用方法的对象。另外，实例变量只能通过对象名访问，无法通过类名访问；</li>
+<li><strong>类变量：</strong>类变量指的是在类中，但在各个类方法外定义的变量，所有类的实例化对象都同时共享类变量，可以通过类名或者对象名进行访问；</li>
+<li><strong>保护：</strong>包括保护变量和保护方法。以单下划线开头，表示被保护的变量和方法只允许类及其子类使用，在使用中与普通变量没什么区别；</li>
+<li><strong>私有：</strong>包括私有变量和私有方法。私有变量和私有方法只有类中定义的方法可以访问，子类不可以访问；</li>
+<li><strong>实例化：</strong>创建一个类的实例，类的具体对象；</li>
+<li><strong>继承：</strong>即一个派生类（derived class）继承基类（base class）的字段和方法。</li>
 </ul>
-<p><img src="%E5%87%BD%E6%95%B0.png" alt="自定义函数"></p>
-<h2 id="举一个栗子"><a href="#举一个栗子" class="headerlink" title="举一个栗子"></a>举一个栗子</h2><p>我们来建立一个自定义函数输出”Beautiful fairy, happy fairy!”</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">fairy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Beautiful fairy, happy fairy!"</span><span class="token punctuation">)</span>
+<p>我们来定义一个简单的类：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">People</span><span class="token punctuation">:</span>
 
-fairy<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token comment"># id 是一个普通的类变量</span>
+    <span class="token builtin">id</span> <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token comment"># 单下划线开头的是保护变量，_protected1是受保护的类变量</span>
+    <span class="token comment"># 保护变量表示只允许类及其子类使用，然而在使用中与普通变量没什么区别</span>
+    _protected1 <span class="token operator">=</span> <span class="token number">2</span>
+    <span class="token comment"># 双下划线开头的是私有变量，__private1是私有的类变量</span>
+    <span class="token comment"># 私有变量只有类中定义的方法可以访问，子类不可以访问</span>
+    __private1 <span class="token operator">=</span> <span class="token number">3</span>
 
-<p>怎么样，是不是很简单呀，小仙女<span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
-<h2 id="再举一个栗子"><a href="#再举一个栗子" class="headerlink" title="再举一个栗子"></a>再举一个栗子</h2><p>我们来自定义一个具有参数的函数</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">max</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">if</span> a <span class="token operator">&gt;</span> b<span class="token punctuation">:</span>
-        <span class="token keyword">return</span> a
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> b
- 
-a <span class="token operator">=</span> <span class="token number">4</span>
-b <span class="token operator">=</span> <span class="token number">5</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">max</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token comment"># __init__()是类的构造函数，实在一个类进行实例化的时候自动调用的函数，可以传入参数</span>
+    <span class="token comment"># 以双下划线开头且以双下划线结尾的函数在Python中表示特殊功能的函数，我们在写代码时尽量不要写这种形式的函数名</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> para1<span class="token punctuation">,</span> para2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># name gender 是实例变量</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> para1
+        self<span class="token punctuation">.</span>gender <span class="token operator">=</span> para2
+        <span class="token comment"># _protected2是受保护的实例变量</span>
+        self<span class="token punctuation">.</span>_protected2 <span class="token operator">=</span> <span class="token boolean">True</span>
+        <span class="token comment"># __private2是私有的类变量</span>
+        self<span class="token punctuation">.</span>__private2 <span class="token operator">=</span> <span class="token boolean">True</span>
 
-<p>相当于我们自定义的一个比较大小的函数啦。</p>
-<h2 id="可变对象与不可变对象"><a href="#可变对象与不可变对象" class="headerlink" title="可变对象与不可变对象"></a>可变对象与不可变对象</h2><p>在Python中，字符串，数字，元组等是不可变对象，而列表，字典等是可变对象：</p>
-<ul>
-<li>不可变对象在重新赋值时，如变量赋值 <strong>a=5</strong> 后再赋值 <strong>a=10</strong>，实际是新生成一个 int 类型的对象 10，再让 a 指向它，而 5 被丢弃，而非改变 a 的值；</li>
-<li>可变对象在重新赋值时，如变量赋值 <strong>la=[1,2,3,4]</strong> 后再赋值 <strong>la[2]=5</strong> 则是将la的第三个元素值更改，本身la没有动，只是其内部的一部分值被修改了。</li>
-</ul>
-<p>因此在函数调用中传递参数时：</p>
-<ul>
-<li>如果传递了不可变对象，则函数中对该对象做的修改，不会影响原对象；</li>
-<li>如果传递了可变对象，则函数中对该对象的修改，会影响原对象。</li>
-</ul>
-<p>看下面这个例子就明白啦：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">changenum</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    a <span class="token operator">=</span> <span class="token number">10</span>
-    <span class="token keyword">return</span>
+    <span class="token comment"># 类中的一个方法，类中定义的方法的参数都必须包含self且以self开头</span>
+    <span class="token comment"># self表示的是实例化的对象</span>
+    <span class="token keyword">def</span> <span class="token function">prtname</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
 
-<span class="token keyword">def</span> <span class="token function">changelist</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    x<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span>
+    <span class="token comment"># 类中的一个方法</span>
+    <span class="token keyword">def</span> <span class="token function">prtgender</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>gender<span class="token punctuation">)</span>
 
-a <span class="token operator">=</span> <span class="token number">1</span>
-changenum<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+    <span class="token comment"># 私有变量只有类中定义的方法可以访问1</span>
+    <span class="token keyword">def</span> <span class="token function">prtprivate</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>__private1<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>__private2<span class="token punctuation">)</span>
 
-x <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span>
-changelist<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 实例化People类，得到一个对象x</span>
+x <span class="token operator">=</span> People<span class="token punctuation">(</span><span class="token string">"gs"</span><span class="token punctuation">,</span> <span class="token string">"1"</span><span class="token punctuation">)</span>
 
-<h2 id="指定关键字的函数调用"><a href="#指定关键字的函数调用" class="headerlink" title="指定关键字的函数调用"></a>指定关键字的函数调用</h2><p>上文中我们写的函数都没有指定关键字，对参数的调用也是按顺序输入并调用的。现在我们来看这样的一个例子：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">printinfo</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">:</span>
-   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"姓名: "</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span>
-   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"年龄: "</span><span class="token punctuation">,</span> age<span class="token punctuation">)</span>
-   <span class="token keyword">return</span>
- 
-printinfo<span class="token punctuation">(</span>age<span class="token operator">=</span><span class="token number">18</span><span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">"little fairy"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 调用类变量可以通过对象和类</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>People<span class="token punctuation">.</span><span class="token builtin">id</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>People<span class="token punctuation">.</span>_protected1<span class="token punctuation">)</span>
+<span class="token comment"># 下面注释掉的几句是错误的</span>
+<span class="token comment"># print(People.__private1)</span>
+<span class="token comment"># print(People.name)</span>
+<span class="token comment"># print(People.gender)</span>
+<span class="token comment"># print(People._protected2)</span>
+<span class="token comment"># print(People.__private2)</span>
 
-<p>以上代码的输出结果应该为：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">姓名:  little fairy
-年龄:  18<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span><span class="token builtin">id</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span>_protected1<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span>gender<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span>_protected2<span class="token punctuation">)</span>
+<span class="token comment"># 下面注释掉的是错误的</span>
+<span class="token comment"># print(x.__private1)</span>
+<span class="token comment"># print(x.__private2)</span>
 
-<p>这个例子告诉我们，可以借用函数中的关键字，确定把调用时的参数传递给函数里的哪个变量，制定了关键字就不用严格按照调用顺序。</p>
-<h2 id="缺省参数"><a href="#缺省参数" class="headerlink" title="缺省参数"></a>缺省参数</h2><p>缺省参数指的是函数定义时所设置的默认参数值，如果调用时不传入对应值，就会使用默认参数。来看例子：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">printinfo</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"姓名: "</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span>
-   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"年龄: "</span><span class="token punctuation">,</span> age<span class="token punctuation">)</span>
-   <span class="token keyword">return</span>
- 
-printinfo<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"little fairy"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># Python并没有从语法上严格保证私有属性或方法的私密性</span>
+<span class="token comment"># Python还提供了一种作弊的方法用于访问私有变量，Python寄希望于使用者自觉遵守规则并为自己的行为负责。</span>
+<span class="token comment">#“We are all consenting adults here”</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span>_People__private1<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span>_People__private2<span class="token punctuation">)</span>
 
-<p>这里我们定义的printinfo()函数中的age参数就设置了缺省值18，即使调用时不输入age参数，也可以使用缺省值。</p>
-<h2 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h2><p>Python中有一种特殊的函数即匿名函数，它的定义形式非常简单：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">lambda</span> <span class="token punctuation">[</span>arg1 <span class="token punctuation">[</span><span class="token punctuation">,</span>arg2<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>argn<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>expression<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<span class="token comment"># 调用类中的方法</span>
+x<span class="token punctuation">.</span>prtname<span class="token punctuation">(</span><span class="token punctuation">)</span>
+x<span class="token punctuation">.</span>prtgender<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-<p>冒号前面是函数参数，后面是函数返回值。我们来看一个例子：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">mysum <span class="token operator">=</span> <span class="token keyword">lambda</span> arg1<span class="token punctuation">,</span> arg2<span class="token punctuation">:</span> arg1 <span class="token operator">+</span> arg2
+<span class="token comment"># private变量只有类中定义的方法可以调用</span>
+x<span class="token punctuation">.</span>prtprivate<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"相加后的值为: "</span><span class="token punctuation">,</span> mysum<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"相加后的值为: "</span><span class="token punctuation">,</span> mysum<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这段代码的注释中基本写明了各种变量和函数的用法。下面我们学习继承的概念，帮助我们更好地理解类的用法。</p>
+<h2 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h2><p>一个类可以继承另一个类，如类Student可以继承类People，此时Student称为子类，People称为父类。子类可以继承父类的普通变量与方法，以及保护变量与方法。</p>
+<p>现在我们基于上一小节的代码继续往下写一个People类的子类Student，看看下面这段代码中，为什么有的调用正确，有的调用错误。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Student</span><span class="token punctuation">(</span>People<span class="token punctuation">)</span><span class="token punctuation">:</span>
 
-<p>这是一种匿名函数使用方式，还有另一种更常见的使用方式：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x <span class="token operator">*</span> x<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> para1<span class="token punctuation">,</span> para2<span class="token punctuation">,</span> para3<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        People<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">,</span> para1<span class="token punctuation">,</span> para2<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>school <span class="token operator">=</span> para3
 
-<p>关于函数我们就介绍这么多啦，后面我们看情况再学习吧。</p>
+s <span class="token operator">=</span> Student<span class="token punctuation">(</span><span class="token string">"gs"</span><span class="token punctuation">,</span> <span class="token string">"1"</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>school<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token builtin">id</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>_protected1<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>gender<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>_protected2<span class="token punctuation">)</span>
+s<span class="token punctuation">.</span>prtname
+s<span class="token punctuation">.</span>_prtgender<span class="token punctuation">(</span><span class="token punctuation">)</span>
+s<span class="token punctuation">.</span>prtprivate<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># 下面注释掉的几句是错误的</span>
+<span class="token comment"># print(s.__private1)</span>
+<span class="token comment"># print(s.__private2)</span>
+<span class="token comment"># s.__privatefunc()</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>当然，一个类可以有很多个子类，子类还可以有子类，可以无限继承下去。</p>
+<p>一个子类也可以有多个父类，在初始化时需要对各个父类都做初始化。</p>
+<p>另外如果子类中定义了与父类相同名称的函数，在子类的一个实例对象调用该函数时，就会优先调用子类中的该函数，这就是“多态”。即，对于父类的方法，一个子类可以做无限修改，而不影响其他子类，也不影响依赖于该父类和该方法的其他函数。</p>
+<p>以一张图结束本节课程吧，不知道小仙女有没有懂那么一丢丢呀<span class="github-emoji"><span>😄</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😄</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😄</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<p><img src="oopxxx.png" alt="面向对象"></p>
 
                 
             </div>
@@ -902,13 +965,13 @@ printinfo<span class="token punctuation">(</span>name<span class="token operator
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/09/04/python-mian-xiang-dui-xiang/">
+                <a href="/2021/09/06/python-zong-jie-yu-lian-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/39.jpg" class="responsive-img" alt="Python面向对象">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Python总结与练习">
                         
-                        <span class="card-title">Python面向对象</span>
+                        <span class="card-title">Python总结与练习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -919,7 +982,7 @@ printinfo<span class="token punctuation">(</span>name<span class="token operator
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-04
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-06
                         </span>
                         <span class="publish-author">
                             
@@ -951,13 +1014,13 @@ printinfo<span class="token punctuation">(</span>name<span class="token operator
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/01/ai-luo-yi-ke-li-fu-te/">
+                <a href="/2021/09/02/python-zhong-de-han-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/32.jpg" class="responsive-img" alt="爱（罗伊·克里夫特）">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Python中的函数">
                         
-                        <span class="card-title">爱（罗伊·克里夫特）</span>
+                        <span class="card-title">Python中的函数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -968,14 +1031,14 @@ printinfo<span class="token punctuation">(</span>name<span class="token operator
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%82%A6%E8%AF%BB/" class="post-category">
-                                    悦读
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
                                 </a>
                             
                             
@@ -985,8 +1048,8 @@ printinfo<span class="token punctuation">(</span>name<span class="token operator
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AF%97/">
-                        <span class="chip bg-color">诗</span>
+                    <a href="/tags/%E5%AD%A6Python/">
+                        <span class="chip bg-color">学Python</span>
                     </a>
                     
                 </div>

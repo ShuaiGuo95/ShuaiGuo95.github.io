@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python中的函数, 咪咪和油油">
+    <meta name="keywords" content="Python总结与练习, 咪咪和油油">
     <meta name="description" content="一起学习，一起玩耍，去经历，去感动">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Python中的函数 | 咪咪和油油</title>
+    <title>Python总结与练习 | 咪咪和油油</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -295,12 +295,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Python中的函数</h1>
+                    <h1 class="description center-align post-title">Python总结与练习</h1>
                 </div>
             </div>
         </div>
@@ -441,21 +441,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-02
+                    2021-09-06
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-04
+                    2021-09-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    993
+                    1.1k
                 </div>
                 
 
@@ -480,97 +480,40 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Python中的函数"><a href="#Python中的函数" class="headerlink" title="Python中的函数"></a>Python中的函数</h1><p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。函数能提高应用的模块性，和代码的重复利用率。</p>
-<p>Python提供了许多内建函数，比如print()。我们可以自己创建函数，这就是自定义函数。学习自定义函数可以帮助我们更好地理解Python中的函数。</p>
-<h2 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h2><p>我们可以这样定义一个函数：</p>
+                <h1 id="Python总结与练习"><a href="#Python总结与练习" class="headerlink" title="Python总结与练习"></a>Python总结与练习</h1><p>至此我们基本把Python中最重要的语法和概念介绍了一遍，包括变量的定义与基本运算，循环与条件语句，函数的定义和使用，面向对象编程等等。基于这些内容我们已经能写很多很多程序，实现很多很多功能了。</p>
+<p>除此之外，Python中还有一些概念，如迭代器与生成器、错误与异常处理、命名空间、多线程等等，由于不是最常用的，所以没介绍。</p>
+<h2 id="简单练习"><a href="#简单练习" class="headerlink" title="简单练习"></a>简单练习</h2><p>我们先来做一些只涉及到基本语法的练习题，锻炼一下对基础知识和编程思维。</p>
+<p>请小仙女写一段Python代码，分别实现以下功能：</p>
 <ul>
-<li>以 <strong>def</strong> 关键词开头，后接函数标识符名称和圆括号 **()**；</li>
-<li>圆括号里面写上此自定义参数执行所需要的参数，圆括号结束后要跟冒号“**:**”；</li>
-<li><strong>return [表达式]</strong> 结束函数，可以选择性地返回一个值给函数调用方，不带表达式的 return 相当于返回 None。</li>
+<li>输入一个年份，该代码可以判断并输出该年是否为闰年；</li>
+<li>输出一个10行的杨辉三角；</li>
+<li>给定三条边长，判断是否可以构成三角形；</li>
+<li>找到一个全为数字的list中的最大值、最小值、均值、中值；</li>
+<li>给定一个日期的年月日值，输出这个时期是当年的第几天；</li>
 </ul>
-<p><img src="%E5%87%BD%E6%95%B0.png" alt="自定义函数"></p>
-<h2 id="举一个栗子"><a href="#举一个栗子" class="headerlink" title="举一个栗子"></a>举一个栗子</h2><p>我们来建立一个自定义函数输出”Beautiful fairy, happy fairy!”</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">fairy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Beautiful fairy, happy fairy!"</span><span class="token punctuation">)</span>
-
-fairy<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>怎么样，是不是很简单呀，小仙女<span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
-<h2 id="再举一个栗子"><a href="#再举一个栗子" class="headerlink" title="再举一个栗子"></a>再举一个栗子</h2><p>我们来自定义一个具有参数的函数</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">max</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">if</span> a <span class="token operator">&gt;</span> b<span class="token punctuation">:</span>
-        <span class="token keyword">return</span> a
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> b
- 
-a <span class="token operator">=</span> <span class="token number">4</span>
-b <span class="token operator">=</span> <span class="token number">5</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">max</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>相当于我们自定义的一个比较大小的函数啦。</p>
-<h2 id="可变对象与不可变对象"><a href="#可变对象与不可变对象" class="headerlink" title="可变对象与不可变对象"></a>可变对象与不可变对象</h2><p>在Python中，字符串，数字，元组等是不可变对象，而列表，字典等是可变对象：</p>
+<h2 id="进阶练习"><a href="#进阶练习" class="headerlink" title="进阶练习"></a>进阶练习</h2><p>在我们平时写程序的过程中，大部分时候都是配置一些环境，安装一些包，导入包中的一些模块，查一下这个包的文档，看看某个类和接口怎么用，做一些简单的处理，写一些逻辑，然后就可以了。</p>
+<p>更常见的情况是我们想要实现某个简单的功能，比如图片读取，或者文件读取，然后就去百度或者谷歌搜索“Python 图片读取”，“Python 文件读取”，看看别人都是怎么做的，然后得到一些启发，读懂并且跑通别人的代码，看看别人都用了什么包什么接口，然后有针对性地去安装和使用。</p>
+<p>更前沿的内容比如最新的研究动态，科研成果，最新算法，可能就需要去谷歌学术搜索相关论文，然后找找作者公布的源代码去跑一下试试了。</p>
+<p>对于一些工程性的问题，比如用Python搭建网站，写软件，爬虫，我们需要学的是对应框架，比如Django，Qt之类的，这些东西就不仅要求我们跑通别人的代码，还需要对别人的代码或者工程有比较深入的理解，会套用到我们自己的使用场景中，也要掌握一些其他相关的语言和技术，有分析和探索能力。</p>
+<p>所以其实油油认为，最重要的是<strong>百度的能力，读代码的能力，学习的能力</strong>，再加上一点<strong>创造性思维</strong>。</p>
+<p>从广义角度讲，我们需要明确地知道Python几乎可以做任何你能在电脑和手机上做的事，以及在电脑和手机上用到的东西；</p>
+<p>从狭义角度讲，我们需要熟悉自己最关注的应用和功能，了解自己需要用的那几个包，保证可以用Python实现自己想要的功能，让Python为我所用。</p>
+<p><img src="python.jpg" alt="Python可以做什么？"></p>
+<p>为了简单锻炼这方面的能力，我们来做几个小练习吧。请小仙女分别从网上找Python代码实现以下功能：</p>
 <ul>
-<li>不可变对象在重新赋值时，如变量赋值 <strong>a=5</strong> 后再赋值 <strong>a=10</strong>，实际是新生成一个 int 类型的对象 10，再让 a 指向它，而 5 被丢弃，而非改变 a 的值；</li>
-<li>可变对象在重新赋值时，如变量赋值 <strong>la=[1,2,3,4]</strong> 后再赋值 <strong>la[2]=5</strong> 则是将la的第三个元素值更改，本身la没有动，只是其内部的一部分值被修改了。</li>
+<li>冒泡排序；</li>
+<li>在一个excel表格中写一行数字，然后用Python读入这行数字，并且输出出来；</li>
+<li>将Python读入的这行excel数字使用冒泡排序进行排序，然后输出结果；</li>
+<li>读入一张图片，然后将这张图片转变为灰度图像，并且分辨率调整为原来的一半，再保存到本地。</li>
 </ul>
-<p>因此在函数调用中传递参数时：</p>
+<p>在找代码、实现这些功能时候，请小仙女注意思考以下的问题：</p>
 <ul>
-<li>如果传递了不可变对象，则函数中对该对象做的修改，不会影响原对象；</li>
-<li>如果传递了可变对象，则函数中对该对象的修改，会影响原对象。</li>
+<li>找到的代码能跑通吗？能读懂吗？出bug了怎么办？</li>
+<li>代码用到了哪些包，哪些函数？这些函数的文档或使用说明在哪里可以找到，有哪些参数，分别做什么用？</li>
 </ul>
-<p>看下面这个例子就明白啦：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">changenum</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    a <span class="token operator">=</span> <span class="token number">10</span>
-    <span class="token keyword">return</span>
-
-<span class="token keyword">def</span> <span class="token function">changelist</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    x<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span>
-
-a <span class="token operator">=</span> <span class="token number">1</span>
-changenum<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-
-x <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span>
-changelist<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="指定关键字的函数调用"><a href="#指定关键字的函数调用" class="headerlink" title="指定关键字的函数调用"></a>指定关键字的函数调用</h2><p>上文中我们写的函数都没有指定关键字，对参数的调用也是按顺序输入并调用的。现在我们来看这样的一个例子：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">printinfo</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">:</span>
-   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"姓名: "</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span>
-   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"年龄: "</span><span class="token punctuation">,</span> age<span class="token punctuation">)</span>
-   <span class="token keyword">return</span>
- 
-printinfo<span class="token punctuation">(</span>age<span class="token operator">=</span><span class="token number">18</span><span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">"little fairy"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>以上代码的输出结果应该为：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">姓名:  little fairy
-年龄:  18<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>这个例子告诉我们，可以借用函数中的关键字，确定把调用时的参数传递给函数里的哪个变量，制定了关键字就不用严格按照调用顺序。</p>
-<h2 id="缺省参数"><a href="#缺省参数" class="headerlink" title="缺省参数"></a>缺省参数</h2><p>缺省参数指的是函数定义时所设置的默认参数值，如果调用时不传入对应值，就会使用默认参数。来看例子：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">printinfo</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"姓名: "</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span>
-   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"年龄: "</span><span class="token punctuation">,</span> age<span class="token punctuation">)</span>
-   <span class="token keyword">return</span>
- 
-printinfo<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"little fairy"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>这里我们定义的printinfo()函数中的age参数就设置了缺省值18，即使调用时不输入age参数，也可以使用缺省值。</p>
-<h2 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h2><p>Python中有一种特殊的函数即匿名函数，它的定义形式非常简单：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">lambda</span> <span class="token punctuation">[</span>arg1 <span class="token punctuation">[</span><span class="token punctuation">,</span>arg2<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>argn<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>expression<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>冒号前面是函数参数，后面是函数返回值。我们来看一个例子：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">mysum <span class="token operator">=</span> <span class="token keyword">lambda</span> arg1<span class="token punctuation">,</span> arg2<span class="token punctuation">:</span> arg1 <span class="token operator">+</span> arg2
-
-<span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"相加后的值为: "</span><span class="token punctuation">,</span> mysum<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"相加后的值为: "</span><span class="token punctuation">,</span> mysum<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>这是一种匿名函数使用方式，还有另一种更常见的使用方式：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x <span class="token operator">*</span> x<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>关于函数我们就介绍这么多啦，后面我们看情况再学习吧。</p>
+<p><strong>简单的Python入门教学就完成啦，以后有别的内容我们在做补充。</strong></p>
+<p><strong>最后希望小仙女能在学中用，在用中学，多动手，学的开心，用的开心，快乐科研，快乐生活，没有bug，没有烦恼！</strong></p>
+<p><img src="python_logo.png"></p>
 
                 
             </div>
@@ -898,17 +841,18 @@ printinfo<span class="token punctuation">(</span>name<span class="token operator
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/09/04/python-mian-xiang-dui-xiang/">
+                <a href="/2021/09/06/python-zong-jie-yu-lian-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/39.jpg" class="responsive-img" alt="Python面向对象">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Python总结与练习">
                         
-                        <span class="card-title">Python面向对象</span>
+                        <span class="card-title">Python总结与练习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -918,9 +862,9 @@ printinfo<span class="token punctuation">(</span>name<span class="token operator
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -933,6 +877,7 @@ printinfo<span class="token punctuation">(</span>name<span class="token operator
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -951,13 +896,13 @@ printinfo<span class="token punctuation">(</span>name<span class="token operator
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/01/ai-luo-yi-ke-li-fu-te/">
+                <a href="/2021/09/04/python-mian-xiang-dui-xiang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/32.jpg" class="responsive-img" alt="爱（罗伊·克里夫特）">
+                        <img src="/medias/featureimages/39.jpg" class="responsive-img" alt="Python面向对象">
                         
-                        <span class="card-title">爱（罗伊·克里夫特）</span>
+                        <span class="card-title">Python面向对象</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -968,14 +913,14 @@ printinfo<span class="token punctuation">(</span>name<span class="token operator
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-04
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%82%A6%E8%AF%BB/" class="post-category">
-                                    悦读
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
                                 </a>
                             
                             
@@ -985,8 +930,8 @@ printinfo<span class="token punctuation">(</span>name<span class="token operator
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AF%97/">
-                        <span class="chip bg-color">诗</span>
+                    <a href="/tags/%E5%AD%A6Python/">
+                        <span class="chip bg-color">学Python</span>
                     </a>
                     
                 </div>
