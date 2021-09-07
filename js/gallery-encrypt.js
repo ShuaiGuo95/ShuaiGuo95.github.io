@@ -217,7 +217,7 @@ $(document).ready(
 
         document.getElementById('encrypt-blog').removeAttribute('style');
 
-        $("#encrypt-blog").justifiedGallery({margins: 5, rowHeight: 150});
+        // $("#encrypt-blog").justifiedGallery({margins: 5, rowHeight: 150});
 
         setCookie(GenerateCookieName(), password, 30);
       }
