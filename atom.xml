@@ -6,7 +6,7 @@
   <link href="https://shuaiguo95.github.io/atom.xml" rel="self"/>
   
   <link href="https://shuaiguo95.github.io/"/>
-  <updated>2021-09-08T16:09:40.859Z</updated>
+  <updated>2021-09-15T03:10:23.597Z</updated>
   <id>https://shuaiguo95.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从中商产业研究院爬取2021年A股上市企业基本信息表</title>
+    <link href="https://shuaiguo95.github.io/2021/09/15/cong-zhong-shang-chan-ye-yan-jiu-yuan-pa-qu-2021-nian-a-gu-shang-shi-qi-ye-ji-ben-xin-xi-biao/"/>
+    <id>https://shuaiguo95.github.io/2021/09/15/cong-zhong-shang-chan-ye-yan-jiu-yuan-pa-qu-2021-nian-a-gu-shang-shi-qi-ye-ji-ben-xin-xi-biao/</id>
+    <published>2021-09-14T16:53:27.000Z</published>
+    <updated>2021-09-15T03:10:23.597Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;从中商产业研究院爬取2021年A股上市企业基本信息表&quot;&gt;&lt;a href=&quot;#从中商产业研究院爬取2021年A股上市企业基本信息表&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习" scheme="https://shuaiguo95.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学爬虫" scheme="https://shuaiguo95.github.io/tags/%E5%AD%A6%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>辛丑教师节拟赠咪导</title>
@@ -46,7 +71,7 @@
     <link href="https://shuaiguo95.github.io/2021/09/06/python-zong-jie-yu-lian-xi/"/>
     <id>https://shuaiguo95.github.io/2021/09/06/python-zong-jie-yu-lian-xi/</id>
     <published>2021-09-05T16:34:44.000Z</published>
-    <updated>2021-09-06T16:07:23.728Z</updated>
+    <updated>2021-09-15T03:05:56.829Z</updated>
     
     
       
@@ -96,7 +121,7 @@
     <link href="https://shuaiguo95.github.io/2021/09/02/python-zhong-de-han-shu/"/>
     <id>https://shuaiguo95.github.io/2021/09/02/python-zhong-de-han-shu/</id>
     <published>2021-09-02T10:46:10.000Z</published>
-    <updated>2021-09-03T17:18:19.968Z</updated>
+    <updated>2021-09-14T14:52:41.701Z</updated>
     
     
       
@@ -221,7 +246,7 @@
     <link href="https://shuaiguo95.github.io/2021/08/27/python-ji-ben-yu-fa/"/>
     <id>https://shuaiguo95.github.io/2021/08/27/python-ji-ben-yu-fa/</id>
     <published>2021-08-27T12:02:56.000Z</published>
-    <updated>2021-09-07T13:17:36.057Z</updated>
+    <updated>2021-09-12T08:42:48.823Z</updated>
     
     
       
