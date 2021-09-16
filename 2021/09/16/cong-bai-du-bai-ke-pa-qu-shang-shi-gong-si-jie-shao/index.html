@@ -654,8 +654,8 @@ fh<span class="token punctuation">.</span>close<span class="token punctuation">(
 wb <span class="token operator">=</span> xlrd<span class="token punctuation">.</span>open_workbook<span class="token punctuation">(</span>filename<span class="token operator">=</span><span class="token builtin">file</span><span class="token punctuation">)</span><span class="token comment"># 打开表格文件</span>
 
 <span class="token builtin">dir</span> <span class="token operator">=</span> <span class="token string">'D:\\爬取百度百科\\'</span> <span class="token comment"># 这个目录需要自行创建并指定</span>
-errors <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'C:\\Users\\15617\\Desktop\\'</span><span class="token operator">+</span><span class="token string">'异常信息.txt'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
-empty <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'C:\\Users\\15617\\Desktop\\'</span><span class="token operator">+</span><span class="token string">'空信息.txt'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+errors <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'C:\\Users\\15617\\Desktop\\'</span><span class="token operator">+</span><span class="token string">'异常信息_百度百科.txt'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+empty <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'C:\\Users\\15617\\Desktop\\'</span><span class="token operator">+</span><span class="token string">'空信息_百度百科.txt'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
 
 sheet1 <span class="token operator">=</span> wb<span class="token punctuation">.</span>sheet_by_index<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token comment"># 通过索引获取表格</span>
 <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> sheet1<span class="token punctuation">.</span>nrows<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -679,10 +679,10 @@ empty<span class="token punctuation">.</span>close<span class="token punctuation
 <ul>
 <li>使用了try except作为异常检测，如果发现有未成功爬取的公司，就把公司名输出到异常信息.txt中，方便我们后面回溯；</li>
 <li>还输出i作为进度提示；</li>
-<li>将爬取结果为空的公司输出到空信息.txt中，方便后续回溯；</li>
+<li>将爬取结果为空的公司输出到空信息.txt中，方便后续回溯，当然我们可以保存为别的格式，完全取决于小仙女的需求和操作便利性；</li>
 <li>使用.replace()替换掉爬取结果中的特殊字段。</li>
 </ul>
-<p>最终我们发现还有100多个公司是百度百科里面没有的，没法去爬啦。</p>
+<p>最终我们发现还有100多个公司是百度百科里面没有的，没法去爬啦。我这里跑下来一共得到了4354个有效文件。</p>
 <p>这一节就到这里啦，怎么样，是不是很简单呀<span class="github-emoji"><span>❤</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>❤</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>❤</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=&gt;start: 开始
 op=&gt;operation: 定义query()函数，打开《2021年上市公司基本信息表》
@@ -1020,18 +1020,17 @@ cond(no)-&gt;opx</textarea><textarea id="flowchart-0-options" style="display: no
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/09/16/cong-bai-du-bai-ke-pa-qu-shang-shi-gong-si-jie-shao/">
+                <a href="/2021/09/16/cong-tushare-huo-qu-shang-shi-gong-si-jian-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/35.jpg" class="responsive-img" alt="从百度百科爬取上市公司介绍">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="从Tushare获取上市公司简介">
                         
-                        <span class="card-title">从百度百科爬取上市公司介绍</span>
+                        <span class="card-title">从Tushare获取上市公司简介</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1041,9 +1040,9 @@ cond(no)-&gt;opx</textarea><textarea id="flowchart-0-options" style="display: no
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-16
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-16
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1056,7 +1055,6 @@ cond(no)-&gt;opx</textarea><textarea id="flowchart-0-options" style="display: no
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
