@@ -455,7 +455,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    2.5k
                 </div>
                 
 
@@ -548,7 +548,8 @@ sen_list_after_filter <span class="token operator">=</span> <span class="token p
 <span class="token comment"># 将字符串列表连成字符串并返回</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>sen_list_after_filter<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>跑一下，是可以跑通的。这段代码定义了函数query()用于获得爬取结果，核心是发送请求，获得响应的这句：</p>
+<p>跑一下，是可以跑通的。如果把”仙女“字段换为”平安银行股份有限公司“，是不是也能正确得到结果呢？请小仙女试一下啦。</p>
+<p>这段代码定义了函数query()用于获得爬取结果，核心是发送请求，获得响应的这句：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 发送请求，获得响应</span>
 response <span class="token operator">=</span> urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>urlopen<span class="token punctuation">(</span>req<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -597,8 +598,102 @@ result <span class="token operator">=</span> query<span class="token punctuation
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"查询结果：%s"</span> <span class="token operator">%</span> result<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>这里注意一下，如果小仙女认为我们只需要爬取第一段即可，那就不用改那一句啦。</p>
-<h2 id="Python读取表格"><a href="#Python读取表格" class="headerlink" title="Python读取表格"></a>Python读取表格</h2><p>那么接下来我们怎么做呢？上一节我们已经获得了上市公司的基本信息，我们只需要按照公司名称作为关键字，去分别爬取就好了。这里首先涉及到一个问题：读取excel并获取一系列字符串类型的公司名。因为我们需要字符串类型的公司名去做拼接和检索。</p>
+<h2 id="Python读取表格与文件保存"><a href="#Python读取表格与文件保存" class="headerlink" title="Python读取表格与文件保存"></a>Python读取表格与文件保存</h2><p>那么接下来我们怎么做呢？上一节我们已经获得了上市公司的基本信息，我们只需要按照公司名称作为关键字，去分别爬取就好了。这里首先涉及到一个问题：读取excel并获取一系列字符串类型的公司名。因为我们需要字符串类型的公司名去做拼接和检索。</p>
+<p>因为前面<a target="_blank" rel="noopener" href="https://mimiyouyou.com/2021/09/06/python-zong-jie-yu-lian-xi/">Python总结与练习</a>一节已经做过excel读取的练习，所以这里直接给出读取《2021年上市公司基本信息表》中的公司名称的代码，主要参考了<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/38492442">这篇文章</a>。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">file</span> <span class="token operator">=</span> <span class="token string">'2021年上市公司基本信息表.xlsx'</span>
+wb <span class="token operator">=</span> xlrd<span class="token punctuation">.</span>open_workbook<span class="token punctuation">(</span>filename<span class="token operator">=</span><span class="token builtin">file</span><span class="token punctuation">)</span><span class="token comment">#打开文件</span>
+sheet1 <span class="token operator">=</span> wb<span class="token punctuation">.</span>sheet_by_index<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token comment">#通过索引获取表格</span>
+<span class="token comment"># print(sheet1.name,sheet1.nrows,sheet1.ncols)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> sheet1<span class="token punctuation">.</span>nrows<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	content <span class="token operator">=</span> sheet1<span class="token punctuation">.</span>row<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value
+	<span class="token comment"># print(content)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p>现在我们已经得到了content，在循环中对content分别进行query()调用即可得到result，将result保存为我们想要的格式即可。</p>
+<p>现在还有一个问题就是保存文本的问题，我们以txt为例子，简要说明一下怎样把字符串result保存为txt文本，主要参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_22521211/article/details/80052085">这篇文章</a>。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">result <span class="token operator">=</span> <span class="token string">'我是平安银行'</span>
+fh <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'平安银行.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+fh<span class="token punctuation">.</span>write<span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+fh<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>试一下，是不是可以成功保存为txt啦。</p>
+<p>至此我们已经打通了从我们的《2021年上市公司基本信息表》到爬取百度百科，再到保存到本地的所有环节，把这些环节拼起来就好啦。</p>
+<h2 id="按照公司名爬取百度百科"><a href="#按照公司名爬取百度百科" class="headerlink" title="按照公司名爬取百度百科"></a>按照公司名爬取百度百科</h2><p>我们现在来把所有环节拼起来，总体思路如下：</p>
+<div id="flowchart-0" class="flow-chart"></div>
+
+<p>当然还有一些细枝末节的问题，比如txt的名称需要字符串拼接，txt的位置需要自己确定然后拼接，异常监测等等，看下面的这段汇总代码即可：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> urllib<span class="token punctuation">.</span>request
+<span class="token keyword">import</span> urllib<span class="token punctuation">.</span>parse
+<span class="token keyword">from</span> lxml <span class="token keyword">import</span> etree
+<span class="token keyword">import</span> xlrd
+<span class="token keyword">from</span> datetime <span class="token keyword">import</span> date<span class="token punctuation">,</span>datetime
+
+<span class="token keyword">def</span> <span class="token function">query</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 请求地址</span>
+    url <span class="token operator">=</span> <span class="token string">'https://baike.baidu.com/item/'</span> <span class="token operator">+</span> urllib<span class="token punctuation">.</span>parse<span class="token punctuation">.</span>quote<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+    <span class="token comment"># 请求头部</span>
+    headers <span class="token operator">=</span> <span class="token punctuation">{</span> 
+        <span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'</span> 
+    <span class="token punctuation">}</span>
+    <span class="token comment"># 利用请求地址和请求头部构造请求对象</span>
+    req <span class="token operator">=</span> urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>Request<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> method<span class="token operator">=</span><span class="token string">'GET'</span><span class="token punctuation">)</span>
+    <span class="token comment"># 发送请求，获得响应</span>
+    response <span class="token operator">=</span> urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>urlopen<span class="token punctuation">(</span>req<span class="token punctuation">)</span>
+    <span class="token comment"># 读取响应，获得文本</span>
+    text <span class="token operator">=</span> response<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    <span class="token comment"># 构造 _Element 对象</span>
+    html <span class="token operator">=</span> etree<span class="token punctuation">.</span>HTML<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+    <span class="token comment"># 使用 xpath 匹配数据，得到匹配字符串列表</span>
+    sen_list <span class="token operator">=</span> html<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//div[contains(@class,"lemma-summary") or contains(@class,"lemmaWgt-lemmaSummary") or contains(@class,"para")]//text()'</span><span class="token punctuation">)</span>
+    <span class="token comment"># 过滤数据，去掉空白</span>
+    sen_list_after_filter <span class="token operator">=</span> <span class="token punctuation">[</span>item<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span> <span class="token keyword">for</span> item <span class="token keyword">in</span> sen_list<span class="token punctuation">]</span>
+    <span class="token comment"># 将字符串列表连成字符串并返回</span>
+    <span class="token keyword">return</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>sen_list_after_filter<span class="token punctuation">)</span>
+
+
+<span class="token builtin">file</span> <span class="token operator">=</span> <span class="token string">'2021年上市公司基本信息表.xlsx'</span>
+wb <span class="token operator">=</span> xlrd<span class="token punctuation">.</span>open_workbook<span class="token punctuation">(</span>filename<span class="token operator">=</span><span class="token builtin">file</span><span class="token punctuation">)</span><span class="token comment"># 打开表格文件</span>
+
+<span class="token builtin">dir</span> <span class="token operator">=</span> <span class="token string">'D:\\爬取百度百科\\'</span> <span class="token comment"># 这个目录需要自行创建并指定</span>
+errors <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'C:\\Users\\15617\\Desktop\\'</span><span class="token operator">+</span><span class="token string">'异常信息.txt'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+empty <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'C:\\Users\\15617\\Desktop\\'</span><span class="token operator">+</span><span class="token string">'空信息.txt'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+
+sheet1 <span class="token operator">=</span> wb<span class="token punctuation">.</span>sheet_by_index<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token comment"># 通过索引获取表格</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> sheet1<span class="token punctuation">.</span>nrows<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+	content <span class="token operator">=</span> sheet1<span class="token punctuation">.</span>row<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value
+	<span class="token keyword">try</span><span class="token punctuation">:</span>
+		result <span class="token operator">=</span> query<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">:</span>
+			fh <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token builtin">dir</span><span class="token operator">+</span>content<span class="token operator">+</span><span class="token string">'.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+			fh<span class="token punctuation">.</span>write<span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+			fh<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token keyword">else</span><span class="token punctuation">:</span>
+			empty<span class="token punctuation">.</span>write<span class="token punctuation">(</span>content<span class="token operator">+</span><span class="token string">'\n'</span><span class="token punctuation">)</span>
+	<span class="token keyword">except</span><span class="token punctuation">:</span>
+		errors<span class="token punctuation">.</span>write<span class="token punctuation">(</span>content<span class="token operator">+</span><span class="token string">'\n'</span><span class="token punctuation">)</span>
+
+errors<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+empty<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这段汇总代码里面我们还：</p>
+<ul>
+<li>使用了try except作为异常检测，如果发现有未成功爬取的公司，就把公司名输出到异常信息.txt中，方便我们后面回溯；</li>
+<li>还输出i作为进度提示；</li>
+<li>将爬取结果为空的公司输出到空信息.txt中，方便后续回溯；</li>
+<li>使用.replace()替换掉爬取结果中的特殊字段。</li>
+</ul>
+<p>最终我们发现还有100多个公司是百度百科里面没有的，没法去爬啦。</p>
+<p>这一节就到这里啦，怎么样，是不是很简单呀<span class="github-emoji"><span>❤</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>❤</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>❤</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=&gt;start: 开始
+op=&gt;operation: 定义query()函数，打开《2021年上市公司基本信息表》
+opx=&gt;operation: 读取一个公司名content
+op2=&gt;operation: 爬取内容result=query(content)
+op3=&gt;operation: 保存result为txt
+cond=&gt;condition: 读完所有公司了吗？
+e=&gt;end: 结束
+st-&gt;op-&gt;opx-&gt;op2-&gt;op3-&gt;cond
+cond(yes)-&gt;e
+cond(no)-&gt;opx</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script>
                 
             </div>
             <hr/>
