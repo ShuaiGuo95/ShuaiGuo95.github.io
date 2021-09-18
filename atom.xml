@@ -6,7 +6,7 @@
   <link href="https://shuaiguo95.github.io/atom.xml" rel="self"/>
   
   <link href="https://shuaiguo95.github.io/"/>
-  <updated>2021-09-16T09:37:53.518Z</updated>
+  <updated>2021-09-18T15:10:46.123Z</updated>
   <id>https://shuaiguo95.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从巨潮资讯网爬取2020年上市公司财报</title>
+    <link href="https://shuaiguo95.github.io/2021/09/17/cong-ju-chao-zi-xun-wang-pa-qu-2020-nian-shang-shi-gong-si-cai-bao/"/>
+    <id>https://shuaiguo95.github.io/2021/09/17/cong-ju-chao-zi-xun-wang-pa-qu-2020-nian-shang-shi-gong-si-cai-bao/</id>
+    <published>2021-09-16T16:33:49.000Z</published>
+    <updated>2021-09-18T15:10:46.123Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;从巨潮资讯网爬取2020年上市公司财报&quot;&gt;&lt;a href=&quot;#从巨潮资讯网爬取2020年上市公司财报&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习" scheme="https://shuaiguo95.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学爬虫" scheme="https://shuaiguo95.github.io/tags/%E5%AD%A6%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从WinGo下载上市公司2001-20019年财务报告</title>
+    <link href="https://shuaiguo95.github.io/2021/09/16/cong-wingo-xia-zai-shang-shi-gong-si-2001-20019-nian-cai-wu-bao-gao/"/>
+    <id>https://shuaiguo95.github.io/2021/09/16/cong-wingo-xia-zai-shang-shi-gong-si-2001-20019-nian-cai-wu-bao-gao/</id>
+    <published>2021-09-16T11:06:34.000Z</published>
+    <updated>2021-09-18T08:39:59.505Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;从WinGo下载上市公司2001-20019年财务报告&quot;&gt;&lt;a href=&quot;#从WinGo下载上市公司2001-20019年财务报告&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习" scheme="https://shuaiguo95.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学爬虫" scheme="https://shuaiguo95.github.io/tags/%E5%AD%A6%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>从Tushare获取上市公司简介</title>

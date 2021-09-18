@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="从Tushare获取上市公司简介, 咪咪和油油">
+    <meta name="keywords" content="从WinGo下载上市公司2001-20019年财务报告, 咪咪和油油">
     <meta name="description" content="一起学习，一起玩耍，去经历，去感动">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>从Tushare获取上市公司简介 | 咪咪和油油</title>
+    <title>从WinGo下载上市公司2001-20019年财务报告 | 咪咪和油油</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -282,7 +282,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '7ddb283acd3ee836edc539d2fee151cebcff16c45548c08ae504d16b3f790624';
+        let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -295,12 +295,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">从Tushare获取上市公司简介</h1>
+                    <h1 class="description center-align post-title">从WinGo下载上市公司2001-20019年财务报告</h1>
                 </div>
             </div>
         </div>
@@ -448,14 +448,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-16
+                    2021-09-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    794
                 </div>
                 
 
@@ -480,110 +480,89 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="从Tushare获取上市公司简介"><a href="#从Tushare获取上市公司简介" class="headerlink" title="从Tushare获取上市公司简介"></a>从Tushare获取上市公司简介</h1><p>经过一些简单的百度和谷歌就可以知道，Python常用的金融数据包包括Tushare、BaoStock等等，我们用谷歌搜一下“tushare 上市公司信息”：</p>
-<p><img src="google.jpg" alt="谷歌搜索“tushare 上市公司信息”"></p>
-<p>打开第一个网页，这是Tushare社区的一个文档页面，很欣慰，Tushare提供了一个公司简介参数：</p>
-<p><img src="tushare.jpg" alt="Tusahre上市公司基本信息"></p>
-<p>很好，我们来试一下看看这里的公司简介是什么样的。</p>
-<h2 id="原代码"><a href="#原代码" class="headerlink" title="原代码"></a>原代码</h2><p>文档提供了一段样例代码：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">pro <span class="token operator">=</span> ts<span class="token punctuation">.</span>pro_api<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-<span class="token comment">#或者</span>
-<span class="token comment">#pro = ts.pro_api('your token')</span>
-
-df <span class="token operator">=</span> pro<span class="token punctuation">.</span>stock_company<span class="token punctuation">(</span>exchange<span class="token operator">=</span><span class="token string">'SZSE'</span><span class="token punctuation">,</span> fields<span class="token operator">=</span><span class="token string">'ts_code,chairman,manager,secretary,reg_capital,setup_date,province'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>运行这段代码之前需要安装tushare：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pip install tushare<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>安装完毕后，直接运行这段代码会提示：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">请设置tushare pro的token凭证码，如果没有请访问https://waditu.com注册申请<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>我们需要注册一个社区账号，然后进行个人信息设置，得到token和积分，才能调用这个接口。比如我操作之后执行这段代码就成功了：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> tushare <span class="token keyword">as</span> ts
-pro <span class="token operator">=</span> ts<span class="token punctuation">.</span>pro_api<span class="token punctuation">(</span><span class="token string">'c9c184bef0644923bc05e6e096d71fbf929c731163be9db98d858a69'</span><span class="token punctuation">)</span>
-
-df <span class="token operator">=</span> pro<span class="token punctuation">.</span>stock_company<span class="token punctuation">(</span>exchange<span class="token operator">=</span><span class="token string">'SZSE'</span><span class="token punctuation">,</span> fields<span class="token operator">=</span><span class="token string">'ts_code,chairman,manager,secretary,reg_capital,setup_date,province'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>简单易懂，稍微看看文档就明白，SSE上交所，SZSE深交所，fields参数是筛选我们想要的参数。</p>
-<h2 id="修改代码"><a href="#修改代码" class="headerlink" title="修改代码"></a>修改代码</h2><p>我们稍微改一下代码：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> tushare <span class="token keyword">as</span> ts
-pro <span class="token operator">=</span> ts<span class="token punctuation">.</span>pro_api<span class="token punctuation">(</span><span class="token string">'c9c184bef0644923bc05e6e096d71fbf929c731163be9db98d858a69'</span><span class="token punctuation">)</span>
-
-ssedf <span class="token operator">=</span> pro<span class="token punctuation">.</span>stock_company<span class="token punctuation">(</span>exchange<span class="token operator">=</span><span class="token string">'SSE'</span><span class="token punctuation">,</span> fields<span class="token operator">=</span><span class="token string">'ts_code,introduction'</span><span class="token punctuation">)</span>
-szsedf <span class="token operator">=</span> pro<span class="token punctuation">.</span>stock_company<span class="token punctuation">(</span>exchange<span class="token operator">=</span><span class="token string">'SZSE'</span><span class="token punctuation">,</span> fields<span class="token operator">=</span><span class="token string">'ts_code,introduction'</span><span class="token punctuation">)</span>
-
-<span class="token keyword">print</span><span class="token punctuation">(</span>ssedf<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>szsedf<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>这样就得到了我们最在意的introduction参数的内容。</p>
-<p>接下来该怎么办呢？股票代号是唯一的，可以用于跟我们以前的爬取结果整合；为了提取introduction的内容，我们首先需要知道ssedf和szsedf分别是什么类的对象，才好对症下药。谷歌一下“Python 获取数据类型”就可以知道，可以借助type()函数：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>ssedf<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>szsedf<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>然后我们就知道二者都是padas包里面的Dataframe类型。</p>
-<p>对于这个类型小油油是比较熟悉的，因为比较经典。参见我的这篇早期的博文：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_30565883/article/details/79443069?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522163177968216780274117002%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&amp;request_id=163177968216780274117002&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_v2~rank_v29-1-79443069.pc_v2_rank_blog_default&amp;utm_term=dataframe&amp;spm=1018.2226.3001.4450">pandas.Dataframe增删改查详细操作</a>。这里简单介绍几个使用方式：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>ssedf<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 行数</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>ssedf<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'ts_code'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 第0行的ts_code列的内容</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>ssedf<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'introduction'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 第0行的introduction列的内容</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>有这两种用法就可以满足我们的基本需求了。</p>
-<h2 id="保存为文本"><a href="#保存为文本" class="headerlink" title="保存为文本"></a>保存为文本</h2><p>接下来就是我们熟悉的操作了，把introduction保存出来，便于后续操作。比较遗憾的是Tushare没有提供公司名，我们就去掉ts_code点号后面的内容，作为文件名吧：</p>
+                <h1 id="从WinGo下载上市公司2001-20019年财务报告"><a href="#从WinGo下载上市公司2001-20019年财务报告" class="headerlink" title="从WinGo下载上市公司2001-20019年财务报告"></a>从WinGo下载上市公司2001-20019年财务报告</h1><p>上市公司基本信息我们爬了不少了，用谷歌搜索“Python 爬取上市公司年报”：</p>
+<p><img src="google.jpg" alt="谷歌搜索“Python 爬取上市公司年报”"></p>
+<p>第一篇文章号称30行代码就可以完成，我们不妨看一下它是怎么做的。</p>
+<h2 id="原码"><a href="#原码" class="headerlink" title="原码"></a>原码</h2><p>这篇文章说，A股上市公司财报分别在上交所、深交所、巨潮资讯网披露，网上有许多爬这三个网站的代码，不同网站url不同，爬取方式也不相同。</p>
+<p>WinGo文构平台为我们提供了快捷可用的数据集，包含了2001年-2019年A股上市公司财报的下载链接。我们看一下，<a target="_blank" rel="noopener" href="http://www.wingodata.com/#/dash/public-paper">这里</a>提供了表格和下载链接。</p>
+<p>下载到表格之后，只需要对表格做读取，然后访问指定url，下载pdf就可以了。</p>
+<p>原文代码如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
-<span class="token keyword">import</span> tushare <span class="token keyword">as</span> ts
-pro <span class="token operator">=</span> ts<span class="token punctuation">.</span>pro_api<span class="token punctuation">(</span><span class="token string">'c9c184bef0644923bc05e6e096d71fbf929c731163be9db98d858a69'</span><span class="token punctuation">)</span>
+<span class="token keyword">import</span> requests
+<span class="token keyword">import</span> random
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> os
 
-ssedf <span class="token operator">=</span> pro<span class="token punctuation">.</span>stock_company<span class="token punctuation">(</span>exchange<span class="token operator">=</span><span class="token string">'SSE'</span><span class="token punctuation">,</span> fields<span class="token operator">=</span><span class="token string">'ts_code,introduction'</span><span class="token punctuation">)</span>
-szsedf <span class="token operator">=</span> pro<span class="token punctuation">.</span>stock_company<span class="token punctuation">(</span>exchange<span class="token operator">=</span><span class="token string">'SZSE'</span><span class="token punctuation">,</span> fields<span class="token operator">=</span><span class="token string">'ts_code,introduction'</span><span class="token punctuation">)</span>
-df <span class="token operator">=</span> pd<span class="token punctuation">.</span>concat<span class="token punctuation">(</span><span class="token punctuation">[</span>ssedf<span class="token punctuation">,</span> szsedf<span class="token punctuation">]</span><span class="token punctuation">,</span> ignore_index<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token comment"># 这是一个Dataframe按列合并的操作，ignore_index=True表示重新排序</span>
+rawdata<span class="token operator">=</span>pd<span class="token punctuation">.</span>read_excel<span class="token punctuation">(</span><span class="token string">'公司竞争战略指标_2001_2019.xlsx'</span><span class="token punctuation">,</span> sheet_name <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span>
 
-<span class="token builtin">dir</span> <span class="token operator">=</span> <span class="token string">'D:\\Tushare导出\\'</span> <span class="token comment"># 这个目录需要自行创建并指定</span>
+<span class="token keyword">def</span> <span class="token function">get_data</span><span class="token punctuation">(</span>iloc<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    rawdata<span class="token punctuation">[</span><span class="token string">'year'</span><span class="token punctuation">]</span> <span class="token operator">=</span> rawdata<span class="token punctuation">[</span><span class="token string">'rep_period'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>dt<span class="token punctuation">.</span>year
+    firm <span class="token operator">=</span> rawdata<span class="token punctuation">.</span>at<span class="token punctuation">[</span>iloc<span class="token punctuation">,</span><span class="token string">'security_name'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"*"</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span> <span class="token comment"># 去掉*ST的*号，文件命名不含特殊符号</span>
+    code <span class="token operator">=</span> rawdata<span class="token punctuation">.</span>at<span class="token punctuation">[</span>iloc<span class="token punctuation">,</span><span class="token string">'security_code'</span><span class="token punctuation">]</span>
+    year <span class="token operator">=</span> rawdata<span class="token punctuation">.</span>at<span class="token punctuation">[</span>iloc<span class="token punctuation">,</span><span class="token string">'year'</span><span class="token punctuation">]</span>
+    pdf_url <span class="token operator">=</span> rawdata<span class="token punctuation">.</span>at<span class="token punctuation">[</span>iloc<span class="token punctuation">,</span><span class="token string">'rep_link'</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> firm<span class="token punctuation">,</span>code<span class="token punctuation">,</span>year<span class="token punctuation">,</span>pdf_url
 
-<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-	<span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
-	name <span class="token operator">=</span> df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token string">'ts_code'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">]</span>
-	text <span class="token operator">=</span> df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token string">'introduction'</span><span class="token punctuation">]</span>
-	fh <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token builtin">dir</span><span class="token operator">+</span>name<span class="token operator">+</span><span class="token string">'.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
-	fh<span class="token punctuation">.</span>write<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
-	fh<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">def</span> <span class="token function">get_filepath</span><span class="token punctuation">(</span>firm<span class="token punctuation">,</span>year<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    file_path <span class="token operator">=</span> <span class="token string">'F:\\财务报告\\'</span>
+    file_name <span class="token operator">=</span> <span class="token string">"{}-{}-{}年年度报告.pdf"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>code<span class="token punctuation">,</span>firm<span class="token punctuation">,</span>year<span class="token punctuation">)</span>
+    file_full_name <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>file_path<span class="token punctuation">,</span>file_name<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> file_full_name
 
-<p>这里我们把ssedf和szsedf合并，然后对每一行获取ts_code和introduction，ts_code取前6位的股票编号作为我们的文件名，保存到dir目录下。</p>
-<p>然而执行这段代码到第427行会报错：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token number">427</span>
-Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
-  File <span class="token string">"test.py"</span><span class="token punctuation">,</span> line <span class="token number">18</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">&gt;</span>
-    fh<span class="token punctuation">.</span>write<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
-TypeError<span class="token punctuation">:</span> write<span class="token punctuation">(</span><span class="token punctuation">)</span> argument must be <span class="token builtin">str</span><span class="token punctuation">,</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">def</span> <span class="token function">download_pdf</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span>file_full_name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    headers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'User-Agent'</span><span class="token punctuation">:</span><span class="token string">''</span>Mozilla<span class="token operator">/</span><span class="token number">5.0</span> <span class="token punctuation">(</span>Windows NT <span class="token number">6.1</span><span class="token punctuation">;</span> WOW64<span class="token punctuation">)</span> AppleWebKit<span class="token operator">/</span><span class="token number">537.36</span> <span class="token punctuation">(</span>KHTML<span class="token punctuation">,</span> like Gecko<span class="token punctuation">)</span> Chrome<span class="token operator">/</span><span class="token number">39.0</span><span class="token number">.2171</span><span class="token number">.95</span> Safari<span class="token operator">/</span><span class="token number">537.36</span> OPR<span class="token operator">/</span><span class="token number">26.0</span><span class="token number">.1656</span><span class="token number">.60</span><span class="token string">''</span><span class="token punctuation">}</span>
+    res <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>file_full_name<span class="token punctuation">,</span><span class="token string">"wb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> fp<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> chunk <span class="token keyword">in</span> res<span class="token punctuation">.</span>iter_content<span class="token punctuation">(</span>chunk_size<span class="token operator">=</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># 这种下载方式可以边下载边存硬盘</span>
+            <span class="token keyword">if</span> chunk<span class="token punctuation">:</span>
+                fp<span class="token punctuation">.</span>write<span class="token punctuation">(</span>chunk<span class="token punctuation">)</span>
+                
+<span class="token keyword">for</span> iloc <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>rawdata<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    firm<span class="token punctuation">,</span> code<span class="token punctuation">,</span> year<span class="token punctuation">,</span> pdf_url <span class="token operator">=</span> get_data<span class="token punctuation">(</span>iloc<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"开始下载{}，股票代码{}的{}年报"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>firm<span class="token punctuation">,</span>code<span class="token punctuation">,</span>year<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    file_full_name <span class="token operator">=</span> get_filepath<span class="token punctuation">(</span>firm<span class="token punctuation">,</span>year<span class="token punctuation">)</span>
+    download_pdf<span class="token punctuation">(</span>pdf_url<span class="token punctuation">,</span>file_full_name<span class="token punctuation">)</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>random<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"===========下载完成=========="</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>意思是说df中有的行的introduction为None，即啥也没有，那么我们就判断一下了，当introduction值为None或者为’’空字符串时，就不保存，并且输出股票代码到一个指定文件中。我认为股票代码是不会为空的，如果能为空就算它狠，我就该换工具包了，我这里就不判断了。</p>
-<p>重新写一下代码：</p>
+<h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><p>直接跑上面这份代码会报一些错误，主要是作者用的是xlsx的表格，而最新的文件已经是csv格式了；而且原码里面获取年份的方式不太正确；原码获取股票编号的方式也不准确。我还把下载所有年份财报，改为下载2019年财报。最终代码如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
-<span class="token keyword">import</span> tushare <span class="token keyword">as</span> ts
-pro <span class="token operator">=</span> ts<span class="token punctuation">.</span>pro_api<span class="token punctuation">(</span><span class="token string">'c9c184bef0644923bc05e6e096d71fbf929c731163be9db98d858a69'</span><span class="token punctuation">)</span>
+<span class="token keyword">import</span> requests
+<span class="token keyword">import</span> random
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> os
 
-ssedf <span class="token operator">=</span> pro<span class="token punctuation">.</span>stock_company<span class="token punctuation">(</span>exchange<span class="token operator">=</span><span class="token string">'SSE'</span><span class="token punctuation">,</span> fields<span class="token operator">=</span><span class="token string">'ts_code,introduction'</span><span class="token punctuation">)</span>
-szsedf <span class="token operator">=</span> pro<span class="token punctuation">.</span>stock_company<span class="token punctuation">(</span>exchange<span class="token operator">=</span><span class="token string">'SZSE'</span><span class="token punctuation">,</span> fields<span class="token operator">=</span><span class="token string">'ts_code,introduction'</span><span class="token punctuation">)</span>
-df <span class="token operator">=</span> pd<span class="token punctuation">.</span>concat<span class="token punctuation">(</span><span class="token punctuation">[</span>ssedf<span class="token punctuation">,</span> szsedf<span class="token punctuation">]</span><span class="token punctuation">,</span> ignore_index<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token comment"># 这是一个Dataframe按列合并的操作，ignore_index=True表示重新排序</span>
+rawdata<span class="token operator">=</span>pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'公司竞争战略指标_2001_2019.csv'</span><span class="token punctuation">)</span>
 
-<span class="token builtin">dir</span> <span class="token operator">=</span> <span class="token string">'D:\\Tushare导出\\'</span> <span class="token comment"># 这个目录需要自行创建并指定</span>
-empty <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'C:\\Users\\15617\\Desktop\\'</span><span class="token operator">+</span><span class="token string">'空信息_Tushare.txt'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">get_data</span><span class="token punctuation">(</span>iloc<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    firm <span class="token operator">=</span> rawdata<span class="token punctuation">.</span>at<span class="token punctuation">[</span>iloc<span class="token punctuation">,</span><span class="token string">'security_name'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"*"</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span> <span class="token comment"># 去掉*ST的*号，文件命名不含特殊符号</span>
+    code <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>rawdata<span class="token punctuation">.</span>at<span class="token punctuation">[</span>iloc<span class="token punctuation">,</span><span class="token string">'security_code'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>item<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>zfill<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
+    year <span class="token operator">=</span> rawdata<span class="token punctuation">.</span>at<span class="token punctuation">[</span>iloc<span class="token punctuation">,</span><span class="token string">'rep_period'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">]</span>
+    pdf_url <span class="token operator">=</span> rawdata<span class="token punctuation">.</span>at<span class="token punctuation">[</span>iloc<span class="token punctuation">,</span><span class="token string">'rep_link'</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> firm<span class="token punctuation">,</span>code<span class="token punctuation">,</span>year<span class="token punctuation">,</span>pdf_url
 
-<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-	<span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
-	name <span class="token operator">=</span> df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token string">'ts_code'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">]</span>
-	text <span class="token operator">=</span> df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token string">'introduction'</span><span class="token punctuation">]</span>
-	<span class="token keyword">if</span> text <span class="token keyword">is</span> <span class="token boolean">None</span> <span class="token keyword">or</span> text<span class="token operator">==</span><span class="token string">''</span><span class="token punctuation">:</span>
-		empty<span class="token punctuation">.</span>write<span class="token punctuation">(</span>name<span class="token operator">+</span><span class="token string">'\n'</span><span class="token punctuation">)</span>
-		<span class="token keyword">continue</span>
-	fh <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token builtin">dir</span><span class="token operator">+</span>name<span class="token operator">+</span><span class="token string">'.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
-	fh<span class="token punctuation">.</span>write<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
-	fh<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">get_filepath</span><span class="token punctuation">(</span>firm<span class="token punctuation">,</span>year<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    file_path <span class="token operator">=</span> <span class="token string">'D:\\WinGo财务报告\\'</span>
+    file_name <span class="token operator">=</span> <span class="token string">"{}-{}-{}年年度报告.pdf"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>code<span class="token punctuation">,</span>firm<span class="token punctuation">,</span>year<span class="token punctuation">)</span>
+    file_full_name <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>file_path<span class="token punctuation">,</span>file_name<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> file_full_name
 
-empty<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">def</span> <span class="token function">download_pdf</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span>file_full_name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    headers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'User-Agent'</span><span class="token punctuation">:</span><span class="token string">'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36 OPR/26.0.1656.60'</span><span class="token punctuation">}</span>
+    res <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>file_full_name<span class="token punctuation">,</span><span class="token string">"wb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> fp<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> chunk <span class="token keyword">in</span> res<span class="token punctuation">.</span>iter_content<span class="token punctuation">(</span>chunk_size<span class="token operator">=</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> chunk<span class="token punctuation">:</span>
+                fp<span class="token punctuation">.</span>write<span class="token punctuation">(</span>chunk<span class="token punctuation">)</span>
+                
+<span class="token keyword">for</span> iloc <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>rawdata<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    firm<span class="token punctuation">,</span> code<span class="token punctuation">,</span> year<span class="token punctuation">,</span> pdf_url <span class="token operator">=</span> get_data<span class="token punctuation">(</span>iloc<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> year <span class="token operator">==</span> <span class="token string">'2019'</span><span class="token punctuation">:</span>
+	    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"正在下载{}，股票代码{}的{}年报"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>firm<span class="token punctuation">,</span>code<span class="token punctuation">,</span>year<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	    file_full_name <span class="token operator">=</span> get_filepath<span class="token punctuation">(</span>firm<span class="token punctuation">,</span>year<span class="token punctuation">)</span>
+	    download_pdf<span class="token punctuation">(</span>pdf_url<span class="token punctuation">,</span>file_full_name<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>运行一下即可。跑的速度非常快，比百度百科快很多，我这里跑下来一共获得了4637个有效文件。</p>
-<p>后续如果有必要的话可以根据股票编号，结合我们的《2021年上市公司基本信息表》，用Python查询股票编号对应的公司名称，然后把百度百科爬取的结果和Tushare导出的结果整合起来。</p>
-<p>确实很简单，easy！小仙女要加油喔😆😆😆</p>
+<p>非常的简单粗暴，我总共下载到了3680个2019年的上市公司财报。如果需要最新的2020年的财报，就需要找别的办法啦<span class="github-emoji"><span>😎</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60e.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😎</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60e.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😎</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60e.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
 
                 
             </div>
@@ -915,13 +894,13 @@ empty<span class="token punctuation">.</span>close<span class="token punctuation
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/09/16/cong-wingo-xia-zai-shang-shi-gong-si-2001-20019-nian-cai-wu-bao-gao/">
+                <a href="/2021/09/17/cong-ju-chao-zi-xun-wang-pa-qu-2020-nian-shang-shi-gong-si-cai-bao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="从WinGo下载上市公司2001-20019年财务报告">
+                        <img src="/medias/featureimages/8.png" class="responsive-img" alt="从巨潮资讯网爬取2020年上市公司财报">
                         
-                        <span class="card-title">从WinGo下载上市公司2001-20019年财务报告</span>
+                        <span class="card-title">从巨潮资讯网爬取2020年上市公司财报</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -932,7 +911,7 @@ empty<span class="token punctuation">.</span>close<span class="token punctuation
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-17
                         </span>
                         <span class="publish-author">
                             
@@ -964,13 +943,13 @@ empty<span class="token punctuation">.</span>close<span class="token punctuation
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/16/cong-bai-du-bai-ke-pa-qu-shang-shi-gong-si-jie-shao/">
+                <a href="/2021/09/16/cong-tushare-huo-qu-shang-shi-gong-si-jian-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/35.jpg" class="responsive-img" alt="从百度百科爬取上市公司介绍">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="从Tushare获取上市公司简介">
                         
-                        <span class="card-title">从百度百科爬取上市公司介绍</span>
+                        <span class="card-title">从Tushare获取上市公司简介</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
