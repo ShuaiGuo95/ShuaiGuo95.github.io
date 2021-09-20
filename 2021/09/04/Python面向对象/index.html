@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python面向对象, 咪咪和油油">
+    <meta name="keywords" content="Python面向对象, You and Me">
     <meta name="description" content="一起学习，一起玩耍，去经历，去感动">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Python面向对象 | 咪咪和油油</title>
+    <title>Python面向对象 | You and Me</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -31,7 +31,7 @@
 
 <meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="咪咪和油油" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="You and Me" type="application/atom+xml">
 </head>
 
 
@@ -56,7 +56,7 @@
                     
                     <img src="/medias/two-hearts.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">咪咪和油油</span>
+                    <span class="logo-span">You and Me</span>
                 </a>
             </div>
             
@@ -166,7 +166,7 @@
         
         <img src="/medias/two-hearts.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">咪咪和油油</div>
+        <div class="logo-name">You and Me</div>
         <div class="logo-desc">
             
             一起学习，一起玩耍，去经历，去感动
@@ -448,7 +448,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-19
+                    2021-09-20
                 </div>
                 
 
@@ -569,6 +569,13 @@
         <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>__private1<span class="token punctuation">)</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>__private2<span class="token punctuation">)</span>
 
+    <span class="token keyword">def</span> <span class="token function">_prtgender</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>gender<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">__privatefunc</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>__private1<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>__private2<span class="token punctuation">)</span>
+
 <span class="token comment"># 实例化People类，得到一个对象x</span>
 x <span class="token operator">=</span> People<span class="token punctuation">(</span><span class="token string">"gs"</span><span class="token punctuation">,</span> <span class="token string">"1"</span><span class="token punctuation">)</span>
 
@@ -602,7 +609,7 @@ x<span class="token punctuation">.</span>prtname<span class="token punctuation">
 x<span class="token punctuation">.</span>prtgender<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 <span class="token comment"># private变量只有类中定义的方法可以调用</span>
-x<span class="token punctuation">.</span>prtprivate<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+x<span class="token punctuation">.</span>prtprivate<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>这段代码的注释中基本写明了各种变量和函数的用法。下面我们学习继承的概念，帮助我们更好地理解类的用法。</p>
 <h2 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h2><p>一个类可以继承另一个类，如类Student可以继承类People，此时Student称为子类，People称为父类。子类可以继承父类的普通变量与方法，以及保护变量与方法。</p>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python基本语法, 咪咪和油油">
+    <meta name="keywords" content="Python基本语法, You and Me">
     <meta name="description" content="一起学习，一起玩耍，去经历，去感动">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Python基本语法 | 咪咪和油油</title>
+    <title>Python基本语法 | You and Me</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -31,7 +31,7 @@
 
 <meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="咪咪和油油" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="You and Me" type="application/atom+xml">
 </head>
 
 
@@ -56,7 +56,7 @@
                     
                     <img src="/medias/two-hearts.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">咪咪和油油</span>
+                    <span class="logo-span">You and Me</span>
                 </a>
             </div>
             
@@ -166,7 +166,7 @@
         
         <img src="/medias/two-hearts.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">咪咪和油油</div>
+        <div class="logo-name">You and Me</div>
         <div class="logo-desc">
             
             一起学习，一起玩耍，去经历，去感动
@@ -448,14 +448,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-19
+                    2021-09-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.7k
+                    3.1k
                 </div>
                 
 
@@ -532,6 +532,66 @@ c <span class="token operator">=</span> a <span class="token keyword">in</span> 
 <li>已知三角形的三边长a=5, b=6, c=7，怎样在Python中计算三角形的面积？（提示，可以采用海伦公式）</li>
 <li>假设现在变量x=10，y=20，怎样在Python中把x和y的值交换？</li>
 </ul>
+<h2 id="Python逻辑运算"><a href="#Python逻辑运算" class="headerlink" title="Python逻辑运算"></a>Python逻辑运算</h2><p>假设x为10，y为20，Python中常见的逻辑运算符有以下几种：</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>逻辑表达式</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>and</td>
+<td>x and y</td>
+<td>布尔”与” - 如果 x 为 False，x and y 返回 x 的值，否则返回 y 的计算值。</td>
+<td>(x and y) 返回 20</td>
+</tr>
+<tr>
+<td>or</td>
+<td>x or y</td>
+<td>布尔”或” - 如果 x 是 True，它返回 x 的值，否则它返回 y 的计算值。</td>
+<td>(x or y) 返回 10</td>
+</tr>
+<tr>
+<td>not</td>
+<td>not x</td>
+<td>布尔”非” - 如果 x 为 True，返回 False 。如果 x 为 False，它返回 True。</td>
+<td>not(x and y) 返回 False</td>
+</tr>
+</tbody></table>
+<p>下面这段代码说明一切啦：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">10</span>
+b <span class="token operator">=</span> <span class="token number">20</span>
+ 
+<span class="token keyword">if</span> <span class="token punctuation">(</span> a <span class="token keyword">and</span> b <span class="token punctuation">)</span><span class="token punctuation">:</span>
+   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"1 - 变量 a 和 b 都为 true"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"1 - 变量 a 和 b 有一个不为 true"</span><span class="token punctuation">)</span>
+ 
+<span class="token keyword">if</span> <span class="token punctuation">(</span> a <span class="token keyword">or</span> b <span class="token punctuation">)</span><span class="token punctuation">:</span>
+   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"2 - 变量 a 和 b 都为 true，或其中一个变量为 true"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"2 - 变量 a 和 b 都不为 true"</span><span class="token punctuation">)</span>
+ 
+<span class="token comment"># 修改变量 a 的值</span>
+a <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span> a <span class="token keyword">and</span> b <span class="token punctuation">)</span><span class="token punctuation">:</span>
+   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"3 - 变量 a 和 b 都为 true"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"3 - 变量 a 和 b 有一个不为 true"</span><span class="token punctuation">)</span>
+ 
+<span class="token keyword">if</span> <span class="token punctuation">(</span> a <span class="token keyword">or</span> b <span class="token punctuation">)</span><span class="token punctuation">:</span>
+   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"4 - 变量 a 和 b 都为 true，或其中一个变量为 true"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"4 - 变量 a 和 b 都不为 true"</span><span class="token punctuation">)</span>
+ 
+<span class="token keyword">if</span> <span class="token keyword">not</span><span class="token punctuation">(</span> a <span class="token keyword">and</span> b <span class="token punctuation">)</span><span class="token punctuation">:</span>
+   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"5 - 变量 a 和 b 都为 false，或其中一个变量为 false"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"5 - 变量 a 和 b 都为 true"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="Python-数据类型转换"><a href="#Python-数据类型转换" class="headerlink" title="Python 数据类型转换"></a>Python 数据类型转换</h2><p>Python中的数据可以进行数据类型转换，需要分别采用int float str bool这样的关键字。如以下代码：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">520</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
