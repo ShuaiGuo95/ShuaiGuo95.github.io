@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Sublime破解及汉化, You and Me">
+    <meta name="keywords" content="NLP常见Python包简介, You and Me">
     <meta name="description" content="一起学习，一起玩耍，去经历，去感动">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Sublime破解及汉化 | You and Me</title>
+    <title>NLP常见Python包简介 | You and Me</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -295,12 +295,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Sublime破解及汉化</h1>
+                    <h1 class="description center-align post-title">NLP常见Python包简介</h1>
                 </div>
             </div>
         </div>
@@ -416,8 +416,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AD%A6Sublime/">
-                                <span class="chip bg-color">学Sublime</span>
+                            <a href="/tags/%E5%AD%A6NLP/">
+                                <span class="chip bg-color">学NLP</span>
                             </a>
                         
                     </div>
@@ -441,21 +441,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-30
+                    2021-10-11
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-30
+                    2021-10-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    234
+                    717
                 </div>
                 
 
@@ -480,24 +480,66 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Sublime破解及汉化"><a href="#Sublime破解及汉化" class="headerlink" title="Sublime破解及汉化"></a>Sublime破解及汉化</h1><p>终于找到了可用的Sublime破解方式，主要参考<a target="_blank" rel="noopener" href="https://www.cvps.top/10296.html">这篇文章</a>，这里我们做一下破解，避免烦人的购买提示。如有必要再做一下汉化。</p>
-<h2 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h2><ol>
-<li>在软件的安装目录找到 <code>sublime_text.exe</code> 文件，进行备份；</li>
-<li>使用<a target="_blank" rel="noopener" href="https://hexed.it/">hexed</a> 在线十六进制编辑器，打开 <code>sublime_text.exe</code> 文件；</li>
-<li>软件版本4113替换以下2组字符，如果不是最新的4113版就先更新到最新版：</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">C3 C6 01 00 C3 替换为 C3 C6 01 01 C3
-51 31 C0 88 05 替换为 51 b0 01 88 05<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+                <h1 id="NLP常见Python包简介"><a href="#NLP常见Python包简介" class="headerlink" title="NLP常见Python包简介"></a>NLP常见Python包简介</h1><p>Python依然是做NLP研究的主力，本文我们主要介绍NLP常用的Python包。</p>
+<h2 id="pypinyin"><a href="#pypinyin" class="headerlink" title="pypinyin"></a>pypinyin</h2><p><a target="_blank" rel="noopener" href="https://github.com/mozillazg/python-pinyin">pypinyin</a>是将汉字转为拼音的常用包，可以用于汉字注音、排序、检索等，有时候需要把汉字先变为拼音再做处理。主要特点如下：</p>
+<ul>
+<li>根据词组智能匹配最正确的拼音；</li>
+<li>支持多音字；</li>
+<li>简单的繁体支持，注音支持，威妥玛拼音支持；</li>
+<li>支持多种不同拼音/注音风格。</li>
+</ul>
+<p>使用<code>pip</code>安装了pypinyin之后，以下代码很好地说明了pypinyin的基本使用方法：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> pypinyin <span class="token keyword">import</span> pinyin<span class="token punctuation">,</span> lazy_pinyin<span class="token punctuation">,</span> Style
+pinyin<span class="token punctuation">(</span><span class="token string">'中心'</span><span class="token punctuation">)</span>  <span class="token comment"># or pinyin(['中心'])，参数值为列表时表示输入的是已分词后的数据</span>
+pinyin<span class="token punctuation">(</span><span class="token string">'中心'</span><span class="token punctuation">,</span> heteronym<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>  <span class="token comment"># 启用多音字模式</span>
+pinyin<span class="token punctuation">(</span><span class="token string">'中心'</span><span class="token punctuation">,</span> style<span class="token operator">=</span>Style<span class="token punctuation">.</span>FIRST_LETTER<span class="token punctuation">)</span>  <span class="token comment"># 设置拼音风格</span>
+pinyin<span class="token punctuation">(</span><span class="token string">'中心'</span><span class="token punctuation">,</span> style<span class="token operator">=</span>Style<span class="token punctuation">.</span>TONE2<span class="token punctuation">,</span> heteronym<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+pinyin<span class="token punctuation">(</span><span class="token string">'中心'</span><span class="token punctuation">,</span> style<span class="token operator">=</span>Style<span class="token punctuation">.</span>TONE3<span class="token punctuation">,</span> heteronym<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+pinyin<span class="token punctuation">(</span><span class="token string">'中心'</span><span class="token punctuation">,</span> style<span class="token operator">=</span>Style<span class="token punctuation">.</span>BOPOMOFO<span class="token punctuation">)</span>  <span class="token comment"># 注音风格</span>
+lazy_pinyin<span class="token punctuation">(</span><span class="token string">'威妥玛拼音'</span><span class="token punctuation">,</span> style<span class="token operator">=</span>Style<span class="token punctuation">.</span>WADEGILES<span class="token punctuation">)</span>
+lazy_pinyin<span class="token punctuation">(</span><span class="token string">'中心'</span><span class="token punctuation">)</span>  <span class="token comment"># 不考虑多音字的情况</span>
+lazy_pinyin<span class="token punctuation">(</span><span class="token string">'战略'</span><span class="token punctuation">,</span> v_to_u<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>  <span class="token comment"># 不使用 v 表示 ü</span>
+<span class="token comment"># 使用 5 标识轻声</span>
+lazy_pinyin<span class="token punctuation">(</span><span class="token string">'衣裳'</span><span class="token punctuation">,</span> style<span class="token operator">=</span>Style<span class="token punctuation">.</span>TONE3<span class="token punctuation">,</span> neutral_tone_with_five<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token comment"># 变调  nǐ hǎo -&gt; ní hǎo</span>
+lazy_pinyin<span class="token punctuation">(</span><span class="token string">'你好'</span><span class="token punctuation">,</span> style<span class="token operator">=</span>Style<span class="token punctuation">.</span>TONE2<span class="token punctuation">,</span> tone_sandhi<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<ol start="4">
-<li>将替换结果保存到我们的安装目录下，替换原来的<code>sublime_text.exe</code>即可。</li>
-</ol>
-<h2 id="汉化"><a href="#汉化" class="headerlink" title="汉化"></a>汉化</h2><ol>
-<li>点击 <strong>Tools</strong>—<strong>Install Package Control</strong>，等待安装插件控件；</li>
-<li>菜单点击P<strong>references – Package Control，选择 Install Package</strong>；</li>
-<li>输入 ChineseLocalzations 可见中文包，选中即可安装。</li>
-</ol>
-<p>这篇是真的简单<span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>从此可以避免购买和激活提示啦。</p>
+<p>输出声母：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">pinyin<span class="token punctuation">(</span><span class="token string">'下雨天'</span><span class="token punctuation">,</span> style<span class="token operator">=</span>Style<span class="token punctuation">.</span>INITIALS<span class="token punctuation">,</span> strict<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="NLTK"><a href="#NLTK" class="headerlink" title="NLTK"></a>NLTK</h2><p><a target="_blank" rel="noopener" href="http://www.nltk.org/">NLTK</a>（<a target="_blank" rel="noopener" href="https://yiyibooks.cn/yiyi/nltk_python/index.html">中文文档</a>）是一个巨大的工具包，是最知名的NLP处理工具。从将段落拆分为句子，拆分词语，识别这些词语的词性，高亮主题，甚至帮助我们解文本内容。另外<a target="_blank" rel="noopener" href="https://www.cnblogs.com/chen8023miss/p/11458571.html">这篇文章</a>介绍的也比较好。</p>
+<p>NLTK可以但不限于做以下事情：</p>
+<ul>
+<li>语料库：<ul>
+<li>获取和处理语料库，NLTK中包含古腾堡语料库、网络聊天语料库等几个语料库；</li>
+</ul>
+</li>
+<li>预料预处理：<ul>
+<li>去除停止词，即筛去不属于自然语言的词汇或者符号；</li>
+<li>分词，即把句子分解为以单词为单位的结构；</li>
+<li>词性标注，是在给定句子中判定每个词的语法范畴，确定其词性并加以标注的过程；</li>
+<li>词干提取，是英文语料预处理的一个步骤（中文并不需要），即抽取词的词干或词根形式；</li>
+<li>词性还原，基于字典的映射来抽取词干，nltk中要求手动注明词性，否则可能会有问题；</li>
+<li>分块和添加缝隙，即把词汇分成有意义的块；</li>
+<li>命名实体识别，即识别出来<code>White House</code>这样的固定搭配实体，而不将其分开；</li>
+</ul>
+</li>
+<li>分类任务：<ul>
+<li>朴素贝叶斯分类器，最大熵分类器，决策树，组合算法（多个分类器投票）；</li>
+</ul>
+</li>
+</ul>
+<h2 id="jieba"><a href="#jieba" class="headerlink" title="jieba"></a>jieba</h2><p><a target="_blank" rel="noopener" href="https://github.com/fxsjy/jieba">jieba</a>是中文的分词工具，主要功能为：</p>
+<ul>
+<li>分词；</li>
+<li>自定义词典；</li>
+<li>关键词提取；</li>
+<li>词性标注；</li>
+<li>并行分词；</li>
+<li>Tokenize：返回词语在原文的起止位置；</li>
+<li>ChineseAnalyzer for Whoosh 搜索引擎；</li>
+<li>命令行分词。</li>
+</ul>
 
                 
             </div>
@@ -512,8 +554,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AD%A6Sublime/">
-                                    <span class="chip bg-color">学Sublime</span>
+                                <a href="/tags/%E5%AD%A6NLP/">
+                                    <span class="chip bg-color">学NLP</span>
                                 </a>
                             
                         </div>
@@ -825,16 +867,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/10/10/NLP%E5%9F%BA%E6%9C%AC%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E7%AE%80%E4%BB%8B/">
+                <a href="/2021/10/11/NLP%E5%B8%B8%E8%A7%81Python%E5%8C%85%E7%AE%80%E4%BB%8B/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="NLP基本研究方向简介">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="NLP常见Python包简介">
                         
-                        <span class="card-title">NLP基本研究方向简介</span>
+                        <span class="card-title">NLP常见Python包简介</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -844,9 +887,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -859,6 +902,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -877,12 +921,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/26/%E5%B0%8F%E4%BB%99%E5%A5%B3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <a href="/2021/10/10/NLP%E5%9F%BA%E6%9C%AC%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E7%AE%80%E4%BB%8B/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="小仙女的学习笔记">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="NLP基本研究方向简介">
                         
-                        <span class="card-title">小仙女的学习笔记</span>
+                        <span class="card-title">NLP基本研究方向简介</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -893,7 +937,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-10
                             </span>
                         <span class="publish-author">
                             
@@ -910,8 +954,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">笔记</span>
+                    <a href="/tags/%E5%AD%A6NLP/">
+                        <span class="chip bg-color">学NLP</span>
                     </a>
                     
                 </div>

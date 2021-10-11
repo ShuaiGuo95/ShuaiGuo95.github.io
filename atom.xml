@@ -6,7 +6,7 @@
   <link href="https://shuaiguo95.github.io/atom.xml" rel="self"/>
   
   <link href="https://shuaiguo95.github.io/"/>
-  <updated>2021-10-10T05:21:36.500Z</updated>
+  <updated>2021-10-11T15:53:00.107Z</updated>
   <id>https://shuaiguo95.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>NLP常见Python包简介</title>
+    <link href="https://shuaiguo95.github.io/2021/10/11/NLP%E5%B8%B8%E8%A7%81Python%E5%8C%85%E7%AE%80%E4%BB%8B/"/>
+    <id>https://shuaiguo95.github.io/2021/10/11/NLP%E5%B8%B8%E8%A7%81Python%E5%8C%85%E7%AE%80%E4%BB%8B/</id>
+    <published>2021-10-11T10:34:25.000Z</published>
+    <updated>2021-10-11T15:53:00.107Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;NLP常见Python包简介&quot;&gt;&lt;a href=&quot;#NLP常见Python包简介&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习" scheme="https://shuaiguo95.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学NLP" scheme="https://shuaiguo95.github.io/tags/%E5%AD%A6NLP/"/>
+    
+  </entry>
+  
+  <entry>
     <title>NLP基本研究方向简介</title>
     <link href="https://shuaiguo95.github.io/2021/10/10/NLP%E5%9F%BA%E6%9C%AC%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E7%AE%80%E4%BB%8B/"/>
     <id>https://shuaiguo95.github.io/2021/10/10/NLP%E5%9F%BA%E6%9C%AC%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E7%AE%80%E4%BB%8B/</id>
     <published>2021-10-10T03:47:19.000Z</published>
-    <updated>2021-10-10T05:21:36.500Z</updated>
+    <updated>2021-10-11T10:41:16.458Z</updated>
     
     
       
