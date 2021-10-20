@@ -6,7 +6,7 @@
   <link href="https://shuaiguo95.github.io/atom.xml" rel="self"/>
   
   <link href="https://shuaiguo95.github.io/"/>
-  <updated>2021-10-18T17:39:48.781Z</updated>
+  <updated>2021-10-20T05:52:54.674Z</updated>
   <id>https://shuaiguo95.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>All This I Did Without You (Gerald Durrell)</title>
+    <link href="https://shuaiguo95.github.io/2021/10/20/All-This-I-Did-Without-You-Gerald-Durrell/"/>
+    <id>https://shuaiguo95.github.io/2021/10/20/All-This-I-Did-Without-You-Gerald-Durrell/</id>
+    <published>2021-10-20T05:11:56.000Z</published>
+    <updated>2021-10-20T05:52:54.674Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;All-This-I-Did-Without-You&quot;&gt;&lt;a href=&quot;#All-This-I-Did-Without-You&quot; class=&quot;headerlink&quot; title=&quot;All This I Did Without You&quot;&gt;&lt;/a&gt;All</summary>
+        
+      
+    
+    
+    
+    <category term="悦读" scheme="https://shuaiguo95.github.io/categories/%E6%82%A6%E8%AF%BB/"/>
+    
+    
+    <category term="文" scheme="https://shuaiguo95.github.io/tags/%E6%96%87/"/>
+    
+  </entry>
   
   <entry>
     <title>朴素贝叶斯分类器实现垃圾邮件分类</title>
@@ -490,31 +515,6 @@
     
     
     <category term="诗" scheme="https://shuaiguo95.github.io/tags/%E8%AF%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python基本语法</title>
-    <link href="https://shuaiguo95.github.io/2021/08/27/Python%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
-    <id>https://shuaiguo95.github.io/2021/08/27/Python%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</id>
-    <published>2021-08-27T12:02:56.000Z</published>
-    <updated>2021-09-20T11:31:18.396Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Python基本语法&quot;&gt;&lt;a href=&quot;#Python基本语法&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="学习" scheme="https://shuaiguo95.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="学Python" scheme="https://shuaiguo95.github.io/tags/%E5%AD%A6Python/"/>
     
   </entry>
   
