@@ -448,14 +448,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-19
+                    2021-10-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    2.9k
                 </div>
                 
 
@@ -679,6 +679,180 @@ index_list<span class="token punctuation">[</span><span class="token string">'wo
 
     result <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span>corr_count <span class="token operator">/</span> <span class="token punctuation">(</span>corr_count <span class="token operator">+</span> false_count<span class="token punctuation">)</span><span class="token punctuation">)</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'预测准确率：'</span><span class="token punctuation">,</span> result<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="完整代码与注释"><a href="#完整代码与注释" class="headerlink" title="完整代码与注释"></a>完整代码与注释</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> math
+<span class="token keyword">import</span> re
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> codecs
+<span class="token keyword">import</span> jieba
+
+
+<span class="token keyword">def</span> <span class="token function">load_formatted_data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    加载格式化后的标签-路径列表
+    spam列为1代表是垃圾邮件，0代表普通邮件
+    path列代表该邮件路径
+    :return:(DataFrame)index
+    """</span>
+    <span class="token comment"># 加载数据集</span>
+    index <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'index'</span><span class="token punctuation">,</span> sep<span class="token operator">=</span><span class="token string">' '</span><span class="token punctuation">,</span> names<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'spam'</span><span class="token punctuation">,</span> <span class="token string">'path'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 读入是两列，一列spam 一列path</span>
+    index<span class="token punctuation">.</span>spam <span class="token operator">=</span> index<span class="token punctuation">.</span>spam<span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token keyword">if</span> x <span class="token operator">==</span> <span class="token string">'spam'</span> <span class="token keyword">else</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment"># 数据标签，标签为spam的设置为1 否则设置为0</span>
+    index<span class="token punctuation">.</span>path <span class="token operator">=</span> index<span class="token punctuation">.</span>path<span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 更改文件路径</span>
+    <span class="token keyword">return</span> index
+
+
+<span class="token keyword">def</span> <span class="token function">load_stop_word</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    读出停用词列表 后续我们要设计自己的停用词列表
+    :return: (List)_stop_words
+    """</span>
+    <span class="token keyword">with</span> codecs<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"stop"</span><span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span> <span class="token comment"># 载入停用词列表</span>
+        lines <span class="token operator">=</span> f<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 读入所有行，得到一个包含多个字符串的list，一行是一个字符串</span>
+    _stop_words <span class="token operator">=</span> <span class="token punctuation">[</span>i<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> lines<span class="token punctuation">]</span> <span class="token comment"># 舍弃掉所有换行符</span>
+    <span class="token keyword">return</span> _stop_words
+
+
+<span class="token keyword">def</span> <span class="token function">get_mail_content</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    遍历得到每封邮件的词汇字符串
+    :param path: 邮件路径
+    :return:(Str)content
+    """</span>
+    <span class="token keyword">with</span> codecs<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">"gbk"</span><span class="token punctuation">,</span> errors<span class="token operator">=</span><span class="token string">"ignore"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span> <span class="token comment"># 以gbk编码打开文件，忽略错误</span>
+        lines <span class="token operator">=</span> f<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 读入所有行，得到一个包含多个字符串的list，一行是一个字符串</span>
+
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>lines<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> lines<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'\n'</span><span class="token punctuation">:</span>
+            <span class="token comment"># 去除第一个空行，即在第一个空行之前的邮件协议内容全部舍弃</span>
+            lines <span class="token operator">=</span> lines<span class="token punctuation">[</span>i<span class="token punctuation">:</span><span class="token punctuation">]</span>
+            <span class="token keyword">break</span>
+    content <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>lines<span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+    <span class="token comment"># strip()是丢弃换行符，split()是按照空格分隔开（起到剔除多个空格只留下一个空格的作用），然后再join在一起</span>
+    <span class="token comment"># print(content)</span>
+    <span class="token keyword">return</span> content
+
+
+<span class="token keyword">def</span> <span class="token function">create_word_dict</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span> stop_words_list<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    依据邮件的词汇字符串统计词汇出现记录，依据停止词列表除去某些词语
+    :param content: 邮件的词汇字符串
+    :param stop_words_list:停止词列表
+    :return:(Dict)word_dict
+    """</span>
+    word_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    word_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token comment"># word_dict key:word, value:1</span>
+    content <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">u"[\u4e00-\u9fa5]"</span><span class="token punctuation">,</span> content<span class="token punctuation">)</span> 
+    <span class="token comment"># 正则表达式，只保留汉字，其他字符全部剔除，这句得到的是含有多个字符串的list，其中一个汉字一个字符串</span>
+    content <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>content<span class="token punctuation">)</span> <span class="token comment"># 拼起来</span>
+    word_list_temp <span class="token operator">=</span> jieba<span class="token punctuation">.</span>cut<span class="token punctuation">(</span>content<span class="token punctuation">)</span> <span class="token comment"># 使用jieba进行分词 后续我们要加入自己的分词词典</span>
+    <span class="token keyword">for</span> word <span class="token keyword">in</span> word_list_temp<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> word <span class="token operator">!=</span> <span class="token string">''</span> <span class="token keyword">and</span> word <span class="token keyword">not</span> <span class="token keyword">in</span> stop_words_list<span class="token punctuation">:</span> <span class="token comment"># 去掉空词和停止词</span>
+            word_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>word<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> word <span class="token keyword">in</span> word_list<span class="token punctuation">:</span>
+        word_dict<span class="token punctuation">[</span>word<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span> <span class="token comment"># 建立字典，合法词的对应值都为1</span>
+    <span class="token keyword">return</span> word_dict
+
+
+<span class="token keyword">def</span> <span class="token function">train_dataset</span><span class="token punctuation">(</span>dataset_to_train<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    对数据集进行训练, 统计训练集中某个词在普通邮件和垃圾邮件中的出现次数
+    :param dataset_to_train: 将要用来训练的数据集
+    :return:Tuple(词汇出现次数字典_train_word_dict, 垃圾邮件总数spam_count, 正常邮件总数ham_count)
+    """</span>
+    _train_word_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token comment"># train_word_dict内容，训练集中某个词在普通邮件和垃圾邮件中的出现次数</span>
+    <span class="token keyword">for</span> word_dict<span class="token punctuation">,</span> spam <span class="token keyword">in</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>dataset_to_train<span class="token punctuation">.</span>word_dict<span class="token punctuation">,</span> dataset_to_train<span class="token punctuation">.</span>spam<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># word_dict某封信的词汇表 spam某封信的状态</span>
+        <span class="token keyword">for</span> word <span class="token keyword">in</span> word_dict<span class="token punctuation">:</span>
+            <span class="token comment"># 对每封信的每个词在该邮件分类进行出现记录 出现过为则记录数加1 未出现为0</span>
+            _train_word_dict<span class="token punctuation">.</span>setdefault<span class="token punctuation">(</span>word<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment"># 二维字典，每个词对应一个{0: 0, 1: 0}，冒号前表示标签，冒号后表示出现次数</span>
+            _train_word_dict<span class="token punctuation">[</span>word<span class="token punctuation">]</span><span class="token punctuation">[</span>spam<span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token number">1</span>
+    ham_count <span class="token operator">=</span> dataset_to_train<span class="token punctuation">.</span>spam<span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    spam_count <span class="token operator">=</span> dataset_to_train<span class="token punctuation">.</span>spam<span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> _train_word_dict<span class="token punctuation">,</span> spam_count<span class="token punctuation">,</span> ham_count
+
+
+<span class="token keyword">def</span> <span class="token function">predict_dataset</span><span class="token punctuation">(</span>_train_word_dict<span class="token punctuation">,</span> _spam_count<span class="token punctuation">,</span> _ham_count<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    测试算法
+    :param _train_word_dict:词汇出现次数字典
+    :param _spam_count:垃圾邮件总数
+    :param _ham_count:正常邮件总数
+    :param data:测试集
+    :return:
+    """</span>
+    total_count <span class="token operator">=</span> _ham_count <span class="token operator">+</span> _spam_count
+    word_dict <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token string">'word_dict'</span><span class="token punctuation">]</span>
+
+    <span class="token comment"># 先验概率 已经取了对数</span>
+    ham_probability <span class="token operator">=</span> math<span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token builtin">float</span><span class="token punctuation">(</span>_ham_count<span class="token punctuation">)</span> <span class="token operator">/</span> total_count<span class="token punctuation">)</span>
+    spam_probability <span class="token operator">=</span> math<span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token builtin">float</span><span class="token punctuation">(</span>_spam_count<span class="token punctuation">)</span> <span class="token operator">/</span> total_count<span class="token punctuation">)</span>
+
+    <span class="token keyword">for</span> word <span class="token keyword">in</span> word_dict<span class="token punctuation">:</span>
+        word <span class="token operator">=</span> word<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        _train_word_dict<span class="token punctuation">.</span>setdefault<span class="token punctuation">(</span>word<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+        <span class="token comment"># 求联合概率密度 += log</span>
+        <span class="token comment"># 拉普拉斯平滑</span>
+        word_occurs_counts_ham <span class="token operator">=</span> _train_word_dict<span class="token punctuation">[</span>word<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token comment"># 出现过这个词的信件数 / 垃圾邮件数</span>
+        ham_probability <span class="token operator">+=</span> math<span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">float</span><span class="token punctuation">(</span>word_occurs_counts_ham<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> _ham_count <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+        word_occurs_counts_spam <span class="token operator">=</span> _train_word_dict<span class="token punctuation">[</span>word<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+        <span class="token comment"># 出现过这个词的信件数 / 普通邮件数</span>
+        spam_probability <span class="token operator">+=</span> math<span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">float</span><span class="token punctuation">(</span>word_occurs_counts_spam<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> _spam_count <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> spam_probability <span class="token operator">&gt;</span> ham_probability<span class="token punctuation">:</span>
+        is_spam <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        is_spam <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token comment"># 返回预测正确状态</span>
+    <span class="token keyword">if</span> is_spam <span class="token operator">==</span> data<span class="token punctuation">[</span><span class="token string">'spam'</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">1</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">0</span>
+
+
+<span class="token keyword">def</span> <span class="token function">save_train_word_dict</span><span class="token punctuation">(</span>train_word_dict<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">with</span> codecs<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"train_word_dict"</span><span class="token punctuation">,</span> <span class="token string">"w"</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">"gbk"</span><span class="token punctuation">,</span> errors<span class="token operator">=</span><span class="token string">"ignore"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>train_word_dict<span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+
+    index_list <span class="token operator">=</span> load_formatted_data<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    stop_words <span class="token operator">=</span> load_stop_word<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment"># get_mail_content(index_list.path[0])</span>
+    index_list<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span> <span class="token operator">=</span> index_list<span class="token punctuation">.</span>path<span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> get_mail_content<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 对content列使用函数，得到邮件内容</span>
+    index_list<span class="token punctuation">[</span><span class="token string">'word_dict'</span><span class="token punctuation">]</span> <span class="token operator">=</span> index_list<span class="token punctuation">.</span>content<span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> create_word_dict<span class="token punctuation">(</span>x<span class="token punctuation">,</span> stop_words<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 得到新的列word_dict，内容为对应content行的合法词字典</span>
+
+    train_set <span class="token operator">=</span> index_list<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token builtin">len</span><span class="token punctuation">(</span>index_list<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">0.8</span><span class="token punctuation">]</span> <span class="token comment"># 取80%为训练集，20%为测试集</span>
+    test_set <span class="token operator">=</span> index_list<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token builtin">len</span><span class="token punctuation">(</span>index_list<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">0.8</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+
+    train_word_dict<span class="token punctuation">,</span> spam_count<span class="token punctuation">,</span> ham_count <span class="token operator">=</span> train_dataset<span class="token punctuation">(</span>train_set<span class="token punctuation">)</span>
+
+    save_train_word_dict<span class="token punctuation">(</span>train_word_dict<span class="token punctuation">)</span> <span class="token comment"># 保存每个词每个标签出现的次数</span>
+
+    test_mails_predict <span class="token operator">=</span> test_set<span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span>
+        <span class="token keyword">lambda</span> x<span class="token punctuation">:</span> predict_dataset<span class="token punctuation">(</span>train_word_dict<span class="token punctuation">,</span> spam_count<span class="token punctuation">,</span> ham_count<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+    corr_count <span class="token operator">=</span> <span class="token number">0</span>
+    false_count <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> test_mails_predict<span class="token punctuation">.</span>values<span class="token punctuation">.</span>tolist<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            corr_count <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            false_count <span class="token operator">+=</span> <span class="token number">1</span>
+
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"测试集样本总数"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>corr_count <span class="token operator">+</span> false_count<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"正确预计个数"</span><span class="token punctuation">,</span> corr_count<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"错误预测个数"</span><span class="token punctuation">,</span> false_count<span class="token punctuation">)</span>
+
+    result <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span>corr_count <span class="token operator">/</span> <span class="token punctuation">(</span>corr_count <span class="token operator">+</span> false_count<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'预测准确率：'</span><span class="token punctuation">,</span> result<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这个项目主要是用作NLP分类学习的入门，简单跑一下熟悉一下，一起好好学习吧<del>小仙女</del><span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
 
