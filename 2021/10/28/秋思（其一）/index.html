@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="基于BOW实现垃圾邮件分类, You and Me">
+    <meta name="keywords" content="秋思（其一）, You and Me">
     <meta name="description" content="一起学习，一起玩耍，去经历，去感动">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>基于BOW实现垃圾邮件分类 | You and Me</title>
+    <title>秋思（其一） | You and Me</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -295,12 +295,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">基于BOW实现垃圾邮件分类</h1>
+                    <h1 class="description center-align post-title">秋思（其一）</h1>
                 </div>
             </div>
         </div>
@@ -416,8 +416,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AD%A6NLP/">
-                                <span class="chip bg-color">学NLP</span>
+                            <a href="/tags/%E8%AF%97/">
+                                <span class="chip bg-color">诗</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%8C%AA%E6%B2%B9%E6%B2%B9%E9%80%89%E9%9B%86/">
+                                <span class="chip bg-color">猪油油选集</span>
                             </a>
                         
                     </div>
@@ -428,8 +432,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                学习
+                            <a href="/categories/%E4%B8%BA%E4%BD%A0%E8%80%8C%E4%BD%9C/" class="post-category">
+                                为你而作
                             </a>
                         
                     </div>
@@ -441,21 +445,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-10-21
+                    2021-10-28
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-22
+                    2021-10-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    32
                 </div>
                 
 
@@ -480,192 +484,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="基于BOW实现垃圾邮件分类"><a href="#基于BOW实现垃圾邮件分类" class="headerlink" title="基于BOW实现垃圾邮件分类"></a>基于BOW实现垃圾邮件分类</h1><p>上一节我们基于朴素贝叶斯的词频统计，做了垃圾邮件分类，这一节我们采用BOW模型，在相同数据集上使用BOW模型再次进行分类任务，并且使用各种经典的机器学习模型。</p>
-<h2 id="jieba加入自定义词典"><a href="#jieba加入自定义词典" class="headerlink" title="jieba加入自定义词典"></a>jieba加入自定义词典</h2><p>首先我们来做一个自定义分词功能，以备后面需要之用。看下面这段代码，这段代码展示了如何在<code>jieba</code>中加入自定义分词：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> jieba
-
-text <span class="token operator">=</span> '平安银行是一家总部设在深圳的全国性股份制商业银行（SZ000001）。\
-其前身深圳发展银行是中国内地首家公开上市的全国性股份制银行。中国平安及其控股子公司为本行控股股东。\
-截至<span class="token number">2021</span>年<span class="token number">6</span>月，本集团在职员工共<span class="token number">37</span><span class="token punctuation">,</span><span class="token number">384</span> 人，通过<span class="token number">101</span>家分行及<span class="token number">1110</span>家营业机构为客户提供多种金融服务。'
-result <span class="token operator">=</span> jieba<span class="token punctuation">.</span>lcut<span class="token punctuation">(</span>text<span class="token punctuation">)</span> <span class="token comment"># cut返回一个generater，lcut返回一个list</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
-
-jieba<span class="token punctuation">.</span>load_userdict<span class="token punctuation">(</span><span class="token string">r'my_dict.txt'</span><span class="token punctuation">)</span>
-result <span class="token operator">=</span> jieba<span class="token punctuation">.</span>lcut<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>其中<code>my_dict.txt</code>为我们的自定义词典，一行一个自定义词，这里的内容为：</p>
-<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">平安银行<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>运行代码可知，<code>jieba</code>原本会将<code>平安银行</code>分成两个词<code>平安</code>和<code>银行</code>，加入自定义词典之后就不会了。</p>
-<h2 id="BOW模型与scikit-learn调用"><a href="#BOW模型与scikit-learn调用" class="headerlink" title="BOW模型与scikit-learn调用"></a>BOW模型与scikit-learn调用</h2><p><img src="bow1.jpg" alt="BOW-NLP"></p>
-<p><img src="bow2.jpg" alt="BOW-CV"></p>
-<p>本着奥卡姆剃刀的原则，我们就不自己实现算法了，直接调用sklearn中的BOW模型实现CountVectorizer。</p>
-<p>在分类器方面，我们在这里采用比较经典的四种机器学习分类器：</p>
-<ul>
-<li>朴素高斯贝叶斯：一种基于词频统计、概率先验、高斯函数的分类器；</li>
-<li>逻辑回归：与传统线性回归稍有区别的一种回归模型，常用于二分类；</li>
-<li>SVC：支持向量机SVM的分类应用模型；</li>
-<li>XGBoost：一种基于决策树的分类算法。</li>
-</ul>
-<p>我们在上一篇代码的基础上来进行修改。整体代码如下。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> math
-<span class="token keyword">import</span> re
-<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
-<span class="token keyword">import</span> codecs
-<span class="token keyword">import</span> jieba
-
-<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword">import</span> StandardScaler
-
-<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_extraction<span class="token punctuation">.</span>text <span class="token keyword">import</span> CountVectorizer
-<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> train_test_split
-
-<span class="token keyword">from</span> sklearn <span class="token keyword">import</span> linear_model
-<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>naive_bayes <span class="token keyword">import</span> GaussianNB
-<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>svm <span class="token keyword">import</span> SVC
-<span class="token keyword">from</span> xgboost <span class="token keyword">import</span> XGBClassifier
-<span class="token keyword">from</span> xgboost <span class="token keyword">import</span> plot_importance
-<span class="token keyword">from</span> sklearn <span class="token keyword">import</span> metrics
-
-<span class="token keyword">def</span> <span class="token function">load_formatted_data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">"""
-    加载格式化后的标签-路径列表
-    spam列为1代表是垃圾邮件，0代表普通邮件
-    path列代表该邮件路径
-    :return:(DataFrame)index
-    """</span>
-    <span class="token comment"># 加载数据集</span>
-    index <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'index'</span><span class="token punctuation">,</span> sep<span class="token operator">=</span><span class="token string">' '</span><span class="token punctuation">,</span> names<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'spam'</span><span class="token punctuation">,</span> <span class="token string">'path'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 读入是两列，一列spam 一列path</span>
-    index<span class="token punctuation">.</span>spam <span class="token operator">=</span> index<span class="token punctuation">.</span>spam<span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token keyword">if</span> x <span class="token operator">==</span> <span class="token string">'spam'</span> <span class="token keyword">else</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment"># 数据标签，标签为spam的设置为1 否则设置为0</span>
-    index<span class="token punctuation">.</span>path <span class="token operator">=</span> index<span class="token punctuation">.</span>path<span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 更改文件路径</span>
-    <span class="token keyword">return</span> index
-
-
-<span class="token keyword">def</span> <span class="token function">load_stop_word</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">"""
-    读出停用词列表
-    :return: (List)_stop_words
-    """</span>
-    <span class="token keyword">with</span> codecs<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"stop"</span><span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span> <span class="token comment"># 载入停用词列表</span>
-        lines <span class="token operator">=</span> f<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 读入所有行，得到一个包含多个字符串的list，一行是一个字符串</span>
-    _stop_words <span class="token operator">=</span> <span class="token punctuation">[</span>i<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> lines<span class="token punctuation">]</span> <span class="token comment"># 舍弃掉所有换行符</span>
-    <span class="token keyword">return</span> _stop_words
-
-
-<span class="token keyword">def</span> <span class="token function">get_mail_content</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> stop_words_list<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">"""
-    遍历得到每封邮件的词汇字符串
-    :param path: 邮件路径
-    :return:(Str)content
-    """</span>
-    <span class="token keyword">with</span> codecs<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">"gbk"</span><span class="token punctuation">,</span> errors<span class="token operator">=</span><span class="token string">"ignore"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span> <span class="token comment"># 以gbk编码打开文件，忽略错误</span>
-        lines <span class="token operator">=</span> f<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 读入所有行，得到一个包含多个字符串的list，一行是一个字符串</span>
-
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>lines<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> lines<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'\n'</span><span class="token punctuation">:</span>
-            <span class="token comment"># 去除第一个空行，即在第一个空行之前的邮件协议内容全部舍弃</span>
-            lines <span class="token operator">=</span> lines<span class="token punctuation">[</span>i<span class="token punctuation">:</span><span class="token punctuation">]</span>
-            <span class="token keyword">break</span>
-    content <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>lines<span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
-    <span class="token comment"># strip()是丢弃换行符，split()是按照空格分隔开（起到剔除多个空格只留下一个空格的作用），然后再join在一起</span>
-    <span class="token comment"># print(content)</span>
-    content <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">u"[\u4e00-\u9fa5]"</span><span class="token punctuation">,</span> content<span class="token punctuation">)</span> <span class="token comment"># 只保留汉字</span>
-    content <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>content<span class="token punctuation">)</span> <span class="token comment"># 拼起来</span>
-    word_list_temp <span class="token operator">=</span> jieba<span class="token punctuation">.</span>cut<span class="token punctuation">(</span>content<span class="token punctuation">)</span> <span class="token comment"># 使用jieba进行分词</span>
-
-    word_list <span class="token operator">=</span> <span class="token string">''</span>
-    <span class="token keyword">for</span> word <span class="token keyword">in</span> word_list_temp<span class="token punctuation">:</span>
-        <span class="token keyword">if</span> word <span class="token operator">!=</span> <span class="token string">''</span> <span class="token keyword">and</span> word <span class="token keyword">not</span> <span class="token keyword">in</span> stop_words_list<span class="token punctuation">:</span> <span class="token comment"># 去掉空词和停止词</span>
-            word_list <span class="token operator">+=</span> word <span class="token operator">+</span> <span class="token string">' '</span>
-
-    <span class="token keyword">return</span> word_list<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
-
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-
-    index_list <span class="token operator">=</span> load_formatted_data<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    stop_words <span class="token operator">=</span> load_stop_word<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token comment"># get_mail_content(index_list.path[0])</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'邮件内容读取与分词'</span><span class="token punctuation">)</span>
-    index_list<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span> <span class="token operator">=</span> index_list<span class="token punctuation">.</span>path<span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> get_mail_content<span class="token punctuation">(</span>x<span class="token punctuation">,</span> stop_words<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 对content列使用函数，得到邮件内容</span>
-
-    words <span class="token operator">=</span> index_list<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>tolist<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    vectorizer <span class="token operator">=</span> CountVectorizer<span class="token punctuation">(</span>max_features<span class="token operator">=</span><span class="token number">4000</span><span class="token punctuation">,</span> min_df<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">)</span> <span class="token comment"># 词典最大长度4k，频率高于100的词才统计</span>
-    vectorizer<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>words<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"bag_of_words模型的总词汇数量："</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>vectorizer<span class="token punctuation">.</span>get_feature_names<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-    <span class="token comment"># 分割数据集</span>
-    data <span class="token operator">=</span> vectorizer<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>index_list<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>values<span class="token punctuation">)</span><span class="token punctuation">.</span>toarray<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    label <span class="token operator">=</span> index_list<span class="token punctuation">.</span>spam<span class="token punctuation">.</span>values
-    X_train<span class="token punctuation">,</span> X_test<span class="token punctuation">,</span> y_train<span class="token punctuation">,</span> y_test <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span> data<span class="token punctuation">,</span> label<span class="token punctuation">,</span> test_size<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">)</span>
-
-    <span class="token comment"># 标准化</span>
-    scaler <span class="token operator">=</span> StandardScaler<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    X_train <span class="token operator">=</span> scaler<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>X_train<span class="token punctuation">)</span>
-    X_test <span class="token operator">=</span> scaler<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>X_test<span class="token punctuation">)</span>
-
-    classifier <span class="token operator">=</span> SVC<span class="token punctuation">(</span>max_iter<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">)</span>
-    classifier<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span>
-    y_pred <span class="token operator">=</span> classifier<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X_test<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'SVM算法的分类准确率为{}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>metrics<span class="token punctuation">.</span>accuracy_score<span class="token punctuation">(</span>y_test<span class="token punctuation">,</span> y_pred<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-    classifier <span class="token operator">=</span> XGBClassifier<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    classifier<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span>
-    y_pred <span class="token operator">=</span> classifier<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X_test<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'XGBoost算法的分类准确率为{}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>metrics<span class="token punctuation">.</span>accuracy_score<span class="token punctuation">(</span>y_test<span class="token punctuation">,</span> y_pred<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-    classifier <span class="token operator">=</span> GaussianNB<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    classifier<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span>
-    y_pred <span class="token operator">=</span> classifier<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X_test<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'朴素贝叶斯算法的分类准确率为{}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>metrics<span class="token punctuation">.</span>accuracy_score<span class="token punctuation">(</span>y_test<span class="token punctuation">,</span> y_pred<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-    classifier <span class="token operator">=</span> linear_model<span class="token punctuation">.</span>LogisticRegression<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    classifier<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span>
-    y_pred <span class="token operator">=</span> classifier<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X_test<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'逻辑回归算法的分类准确率为{}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>metrics<span class="token punctuation">.</span>accuracy_score<span class="token punctuation">(</span>y_test<span class="token punctuation">,</span> y_pred<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>一些具体的参数我们后面要用的话可以继续深入调节，这里都尽量只使用默认参数。实验结果可知，在20%数据用作训练姐，80%数据用作测试集的分类准确率大致如下：</p>
-<table>
-<thead>
-<tr>
-<th>SVC模型</th>
-<th>朴素高斯贝叶斯模型</th>
-<th>逻辑回归模型</th>
-<th>XGBoost模型</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>63.94%</td>
-<td>88.56%</td>
-<td>98.93%</td>
-<td>98.85%</td>
-</tr>
-</tbody></table>
-<h2 id="TfidfVectorizer与HashingVectorizer"><a href="#TfidfVectorizer与HashingVectorizer" class="headerlink" title="TfidfVectorizer与HashingVectorizer"></a>TfidfVectorizer与HashingVectorizer</h2><p>sklearn中还有另外两种类似于BOW模型的<code>TfidfVectorizer</code>和<code>HashingVectorizer</code>：</p>
-<ul>
-<li><code>TfidfVectorizer</code>即<code>TF-IDF</code>算法，认为一个词语在一篇文章中出现次数越多，同时在所有文档中出现次数越少，越能够代表该文章；</li>
-<li><code>HashingVectorizer</code>主要是采用哈希算法，在词库很大的时候，能将词向量进行哈希操作，便于存储。</li>
-</ul>
-<p>二者基本用法如下：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_extraction<span class="token punctuation">.</span>text <span class="token keyword">import</span> TfidfVectorizer
-<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_extraction<span class="token punctuation">.</span>text <span class="token keyword">import</span> HashingVectorizer
-
-corpus <span class="token operator">=</span> <span class="token punctuation">[</span>
-     <span class="token string">'This is the first document.'</span><span class="token punctuation">,</span>
-     <span class="token string">'This document is the second document.'</span><span class="token punctuation">,</span>
-     <span class="token string">'And this is the third one.'</span><span class="token punctuation">,</span>
-     <span class="token string">'Is this the first document?'</span><span class="token punctuation">,</span>
- <span class="token punctuation">]</span>
-
-vectorizer <span class="token operator">=</span> TfidfVectorizer<span class="token punctuation">(</span><span class="token punctuation">)</span>
-vectorizer<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>corpus<span class="token punctuation">)</span>
-vectorizer<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>corpus<span class="token punctuation">)</span><span class="token punctuation">.</span>toarray<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-vectorizer <span class="token operator">=</span> HashingVectorizer<span class="token punctuation">(</span><span class="token punctuation">)</span>
-vectorizer<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>corpus<span class="token punctuation">)</span>
-vectorizer<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>corpus<span class="token punctuation">)</span><span class="token punctuation">.</span>toarray<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>直接替换上一节代码中的<code>CountVectorizer</code>部分即可。</p>
-<p>怎么样，是不是很简单呀<span class="github-emoji"><span>😃</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f603.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😃</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f603.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😃</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f603.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>加油吧，小仙女~</p>
+                <h1 id="秋思（其一）"><a href="#秋思（其一）" class="headerlink" title="秋思（其一）"></a>秋思（其一）</h1><p>云边鸿雁送秋风，欲寄相思意万重。</p>
+<p>为谁倾倒为谁醉，为谁梦醒忆三生。</p>
+<p><img src="qiuyan.jpg"></p>
 
                 
             </div>
@@ -680,8 +501,12 @@ vectorizer<span class="token punctuation">.</span>transform<span class="token pu
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AD%A6NLP/">
-                                    <span class="chip bg-color">学NLP</span>
+                                <a href="/tags/%E8%AF%97/">
+                                    <span class="chip bg-color">诗</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%8C%AA%E6%B2%B9%E6%B2%B9%E9%80%89%E9%9B%86/">
+                                    <span class="chip bg-color">猪油油选集</span>
                                 </a>
                             
                         </div>
@@ -993,9 +818,10 @@ vectorizer<span class="token punctuation">.</span>transform<span class="token pu
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/10/28/%E7%A7%8B%E6%80%9D%EF%BC%88%E5%85%B6%E4%B8%80%EF%BC%89/">
                     <div class="card-image">
@@ -1012,9 +838,9 @@ vectorizer<span class="token punctuation">.</span>transform<span class="token pu
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1027,6 +853,7 @@ vectorizer<span class="token punctuation">.</span>transform<span class="token pu
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1049,12 +876,12 @@ vectorizer<span class="token punctuation">.</span>transform<span class="token pu
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/20/%E4%B9%9D%E5%8F%B6%E9%87%8D%E6%A5%BC-%E7%9B%B8%E6%80%9D%E6%80%8E%E8%A7%A3/">
+                <a href="/2021/10/21/%E5%9F%BA%E4%BA%8EBOW%E5%AE%9E%E7%8E%B0%E5%9E%83%E5%9C%BE%E9%82%AE%E4%BB%B6%E5%88%86%E7%B1%BB/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="九叶重楼 相思怎解">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="基于BOW实现垃圾邮件分类">
                         
-                        <span class="card-title">九叶重楼 相思怎解</span>
+                        <span class="card-title">基于BOW实现垃圾邮件分类</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1065,14 +892,14 @@ vectorizer<span class="token punctuation">.</span>transform<span class="token pu
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%82%A6%E8%AF%BB/" class="post-category">
-                                    悦读
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
                                 </a>
                             
                             
@@ -1082,8 +909,8 @@ vectorizer<span class="token punctuation">.</span>transform<span class="token pu
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%96%87/">
-                        <span class="chip bg-color">文</span>
+                    <a href="/tags/%E5%AD%A6NLP/">
+                        <span class="chip bg-color">学NLP</span>
                     </a>
                     
                 </div>
