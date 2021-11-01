@@ -6,7 +6,7 @@
   <link href="https://shuaiguo95.github.io/atom.xml" rel="self"/>
   
   <link href="https://shuaiguo95.github.io/"/>
-  <updated>2021-10-29T02:55:07.784Z</updated>
+  <updated>2021-11-01T09:48:23.541Z</updated>
   <id>https://shuaiguo95.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hugging Face与NLP预训练模型</title>
+    <link href="https://shuaiguo95.github.io/2021/11/01/Hugging%20Face%E4%B8%8ENLP%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B/"/>
+    <id>https://shuaiguo95.github.io/2021/11/01/Hugging%20Face%E4%B8%8ENLP%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B/</id>
+    <published>2021-11-01T03:02:44.000Z</published>
+    <updated>2021-11-01T09:48:23.541Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Hugging-Face与NLP预训练模型&quot;&gt;&lt;a href=&quot;#Hugging-Face与NLP预训练模型&quot; class=&quot;headerlink&quot; title=&quot;Hugging Face与NLP预训练模型&quot;&gt;&lt;/a&gt;Hugging</summary>
+        
+      
+    
+    
+    
+    <category term="学习" scheme="https://shuaiguo95.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学NLP" scheme="https://shuaiguo95.github.io/tags/%E5%AD%A6NLP/"/>
+    
+  </entry>
   
   <entry>
     <title>秋思（其一）</title>
@@ -489,31 +514,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;Python面向对象&quot;&gt;&lt;a href=&quot;#Python面向对象&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="学习" scheme="https://shuaiguo95.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="学Python" scheme="https://shuaiguo95.github.io/tags/%E5%AD%A6Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python中的函数</title>
-    <link href="https://shuaiguo95.github.io/2021/09/02/Python%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0/"/>
-    <id>https://shuaiguo95.github.io/2021/09/02/Python%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0/</id>
-    <published>2021-09-02T10:46:10.000Z</published>
-    <updated>2021-09-19T13:06:20.967Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Python中的函数&quot;&gt;&lt;a href=&quot;#Python中的函数&quot; class=&quot;headerlink&quot;</summary>
         
       
     
