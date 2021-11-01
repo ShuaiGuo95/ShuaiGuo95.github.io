@@ -489,17 +489,19 @@
 <p><img src="RNN.png" alt="RNN"></p>
 <h3 id="预训练与微调"><a href="#预训练与微调" class="headerlink" title="预训练与微调"></a>预训练与微调</h3><p>预训练是让某一神经网络从大规模数据中获得与具体任务无关的参数的训练，并将得到的参数和模型保存出来。它采用的数据规模是如此之大，以至于不论我们在具体任务中用的什么类型的数据，都已经被它学习过了，都可以胜任我们的任务。</p>
 <p>如果我们觉得还不放心，或者存在标签不一致的问题，还可以做一下<strong>微调</strong>，即再在我们的数据上做一个简单训练，让预训练参数适应于我们的数据，然后再进行测试。</p>
+<h3 id="BERT"><a href="#BERT" class="headerlink" title="BERT"></a>BERT</h3><p>BERT全称为Bidirectional Encoder Representation from Transformers，即双向Transformer的Encoder。模型的主要创新点都在pre-train方法上，通过预训练和精调横扫了11项NLP任务，提出当年就成为NLP领域大火、整个人工智能学界都有所耳闻的模型。目前已经是NLP领域里程碑式的方法。</p>
+<blockquote>
+<p>Devlin J, Chang M W, Lee K, et al. Bert: Pre-training of deep bidirectional transformers for language understanding[J]. arXiv preprint arXiv:1810.04805, 2018.</p>
+</blockquote>
 <h3 id="Hugging-Face"><a href="#Hugging-Face" class="headerlink" title="Hugging Face"></a>Hugging Face</h3><p><img src="huggingface.png" alt="Hugging Face"></p>
 <p><a target="_blank" rel="noopener" href="https://huggingface.co/">Hugging Face</a>是一家总部位于纽约的聊天机器人初创服务商，但更令它广为人知的是Hugging Face专注于NLP技术，拥有大型的开源社区。尤其是在github上开源的自然语言处理预训练模型库 Transformers，已被下载超过一百万次，github上超过24000个star。Transformers 提供了NLP领域大量state-of-art的预训练语言模型结构的模型和调用框架。</p>
 <p>简单来说就是Hugging Face提供了一个库，名为 Transformers，包含大量预训练模型，以供人们使用。</p>
 <p>为什么使用<code>transformers</code>？</p>
 <ul>
 <li>表现优越，高级抽象，只有三个类，对所有模型有同一的API；</li>
-<li>社区中有研究人员分享的数十种亿万级的模型架构、两千多个预训练模型、100多种语言支持；</li>
+<li>社区中有研究人员分享的数十种亿万级的模型架构、两千多个预训练模型、100多种语言支持，不止BERT；</li>
 <li>使用简单。</li>
 </ul>
-<h3 id="BERT"><a href="#BERT" class="headerlink" title="BERT"></a>BERT</h3><p>BERT[^1]全程为Bidirectional Encoder Representation from Transformers，即双向Transformer的Encoder。模型的主要创新点都在pre-train方法上，通过预训练和精调横扫了11项NLP任务，提出当年就成为NLP领域大火、整个人工智能学界都有所耳闻的模型。目前已经是NLP领域里程碑式的方法。</p>
-<p>[^1]: Devlin J, Chang M W, Lee K, et al. Bert: Pre-training of deep bidirectional transformers for language understanding[J]. arXiv preprint arXiv:1810.04805, 2018.</p>
 <h2 id="使用Hugging-Face的预训练模型"><a href="#使用Hugging-Face的预训练模型" class="headerlink" title="使用Hugging Face的预训练模型"></a>使用Hugging Face的预训练模型</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>首先是安装Hugging Face的<code>transformers</code>包。这个包依赖于Python 3.6+、Flax 0.3.2+、PyTorch 1.3.1+ 和 TensorFlow 2.3+等环境，最好在有深度学习级GPU的电脑上进行安装。配置好依赖后，使用<code>pip</code>进行安装：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pip install transformers<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -527,7 +529,7 @@
 {'score': 0.30970096588134766, 'start': 34, 'end': 58, 'answer': 'huggingface/transformers'}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>除了给出答案，预训练模型还给出了对应的置信度分数、答案在词符化 (tokenized) 后的文本中开始和结束的位置。</p>
-<h3 id="使用非默认的其他预训练模型"><a href="#使用非默认的其他预训练模型" class="headerlink" title="使用非默认的其他预训练模型"></a>使用非默认的其他预训练模型</h3><p><a target="_blank" rel="noopener" href="https://huggingface.co/models">Hugging Face Models</a> 提供了很多其他模型供我们使用，我们来导入一个非默认的模型<a href="nlptown/bert-base-multilingual-uncased-sentiment">nlptown/bert-base-multilingual-uncased-sentiment</a>，这同样是一个判断正负面情绪的例子，：</p>
+<h3 id="使用非默认的其他预训练模型"><a href="#使用非默认的其他预训练模型" class="headerlink" title="使用非默认的其他预训练模型"></a>使用非默认的其他预训练模型</h3><p><a target="_blank" rel="noopener" href="https://huggingface.co/models">Hugging Face Models</a> 提供了很多其他模型供我们使用，我们来导入一个非默认的模型<a target="_blank" rel="noopener" href="https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment">nlptown/bert-base-multilingual-uncased-sentiment</a>，这是一个基于BERT的模型，可以做判断正负面情绪的工作：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">from</span> transformers <span class="token keyword">import</span> pipeline
 <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> classifier <span class="token operator">=</span> pipeline<span class="token punctuation">(</span><span class="token string">'sentiment-analysis'</span><span class="token punctuation">,</span> model<span class="token operator">=</span><span class="token string">"nlptown/bert-base-multilingual-uncased-sentiment"</span><span class="token punctuation">)</span>
 <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">print</span><span class="token punctuation">(</span>classifier<span class="token punctuation">(</span><span class="token string">'I love you more and more each day as time goes by'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -538,7 +540,7 @@
 <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">'label'</span><span class="token punctuation">:</span> <span class="token string">'1 star'</span><span class="token punctuation">,</span> <span class="token string">'score'</span><span class="token punctuation">:</span> <span class="token number">0.41145384311676025</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>可见这个模型会把文本分为<code>1 star</code>到<code>5 star</code>的不同等级。星级越高，该文本表达的情绪越积极。</p>
-<p>再来看一个<code>fill-mask</code>填词任务，我们导入的是预训练模型<a target="_blank" rel="noopener" href="https://huggingface.co/hfl/chinese-roberta-wwm-ext">hfl/chinese-roberta-wwm-ext</a>：</p>
+<p>再来看一个<code>fill-mask</code>填词任务，我们导入的是预训练模型<a target="_blank" rel="noopener" href="https://huggingface.co/hfl/chinese-roberta-wwm-ext">hfl/chinese-roberta-wwm-ext</a>，这也是一基于BERT的模型：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">from</span> transformers <span class="token keyword">import</span> pipeline
 <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> maskfiller <span class="token operator">=</span> pipeline<span class="token punctuation">(</span><span class="token string">'fill-mask'</span><span class="token punctuation">,</span> model <span class="token operator">=</span> <span class="token string">"hfl/chinese-roberta-wwm-ext"</span><span class="token punctuation">)</span>
 <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">print</span><span class="token punctuation">(</span>maskfiller<span class="token punctuation">(</span><span class="token string">'我爱[MASK]'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
