@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="You and Me" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="You and Me" type="application/atom+xml">
 </head>
 
 
@@ -937,7 +937,7 @@ total_t0 <span class="token operator">=</span> time<span class="token punctuatio
 </blockquote>
 <p><code>max_length</code>的大小我咨询了专业人士，表示一般64足够了，一般不超过200。其他的我暂时感觉没什么问题了。</p>
 <h2 id="更换中文预训练模型"><a href="#更换中文预训练模型" class="headerlink" title="更换中文预训练模型"></a>更换中文预训练模型</h2><p>更换其他预训练模型的方法很简单，在<a target="_blank" rel="noopener" href="https://huggingface.co/models">Hugging Face/Models</a>里搜索Chinese，或者筛选语言<code>zh</code>，找个模型，把名字复制过来，替换掉上面代码中的所有<code>bert-base-uncased</code>即可。</p>
-<p>我这里更换的是中文模型里面下载量最大的<a target="_blank" rel="noopener" href="https://huggingface.co/hfl/chinese-roberta-wwm-ext">hfl/chinese-roberta-wwm-ext</a>，进行1轮微调，准确率就已经达到了**99%<strong>；经过10轮微调，准确率已经达到</strong>100%**了。很优秀。</p>
+<p>我这里更换的是中文模型里面下载量最大的<a target="_blank" rel="noopener" href="https://huggingface.co/hfl/chinese-roberta-wwm-ext">hfl/chinese-roberta-wwm-ext</a>，进行1轮微调，准确率就已经达到了99%；经过10轮微调，准确率已经达到100%了。很优秀。</p>
 <p>而且BERT有个好处，就是不需要自定义词典，因为token是按照字做的而不是按照词做的。</p>
 <p>这节课就是这样啦，怎么样，是不是很好玩<span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
 
