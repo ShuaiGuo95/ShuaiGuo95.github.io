@@ -448,14 +448,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-03
+                    2021-11-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.2k
+                    3.3k
                 </div>
                 
 
@@ -937,7 +937,7 @@ total_t0 <span class="token operator">=</span> time<span class="token punctuatio
 </blockquote>
 <p><code>max_length</code>的大小我咨询了专业人士，表示一般64足够了，一般不超过200。其他的我暂时感觉没什么问题了。</p>
 <h2 id="更换中文预训练模型"><a href="#更换中文预训练模型" class="headerlink" title="更换中文预训练模型"></a>更换中文预训练模型</h2><p>更换其他预训练模型的方法很简单，在<a target="_blank" rel="noopener" href="https://huggingface.co/models">Hugging Face/Models</a>里搜索Chinese，或者筛选语言<code>zh</code>，找个模型，把名字复制过来，替换掉上面代码中的所有<code>bert-base-uncased</code>即可。</p>
-<p>我这里更换的是中文模型里面下载量最大的<a target="_blank" rel="noopener" href="https://huggingface.co/hfl/chinese-roberta-wwm-ext">hfl/chinese-roberta-wwm-ext</a>，这个模型是在维基百科的简体中文和繁体中文内容上进行学习和训练的，文本数量为13.6M行。</p>
+<p>我这里更换的是中文模型里面下载量最大的<a target="_blank" rel="noopener" href="https://huggingface.co/hfl/chinese-roberta-wwm-ext">hfl/chinese-roberta-wwm-ext</a>，这个模型是哈工大在维基百科的简体中文和繁体中文内容上进行学习和训练的，文本数量为13.6M行。哈工大NLP做的是很好的。经过咨询专业人士，每行字符数量不超过512，所以预训练数据集的规模是很大的。</p>
 <p>进行1轮微调，准确率就已经达到了99%；经过10轮微调，准确率已经达到100%了。很优秀。</p>
 <p>而且BERT有个好处，就是不需要自定义词典，因为token是按照字做的而不是按照词做的。</p>
 <blockquote>
@@ -1272,17 +1272,16 @@ total_t0 <span class="token operator">=</span> time<span class="token punctuatio
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/11/03/%E5%BE%AE%E8%B0%83transformers%E8%BF%9B%E8%A1%8C%E5%9E%83%E5%9C%BE%E9%82%AE%E4%BB%B6%E5%88%86%E7%B1%BB/">
+                <a href="/2021/11/04/transformers-BERT%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E5%BA%A6%E9%87%8F%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E6%80%A7/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="微调transformers进行BERT垃圾邮件分类">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="transformers BERT预训练模型度量文本相似性">
                         
-                        <span class="card-title">微调transformers进行BERT垃圾邮件分类</span>
+                        <span class="card-title">transformers BERT预训练模型度量文本相似性</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1292,9 +1291,9 @@ total_t0 <span class="token operator">=</span> time<span class="token punctuatio
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-03
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-04
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1307,7 +1306,6 @@ total_t0 <span class="token operator">=</span> time<span class="token punctuatio
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
