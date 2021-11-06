@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="transformers BERT预训练模型度量文本相似性, You and Me">
+    <meta name="keywords" content="秋思（其二）, You and Me">
     <meta name="description" content="一起学习，一起玩耍，去经历，去感动">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>transformers BERT预训练模型度量文本相似性 | You and Me</title>
+    <title>秋思（其二） | You and Me</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -295,12 +295,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">transformers BERT预训练模型度量文本相似性</h1>
+                    <h1 class="description center-align post-title">秋思（其二）</h1>
                 </div>
             </div>
         </div>
@@ -416,8 +416,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AD%A6NLP/">
-                                <span class="chip bg-color">学NLP</span>
+                            <a href="/tags/%E8%AF%97/">
+                                <span class="chip bg-color">诗</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%B2%B9%E5%85%88%E7%94%9F%E9%80%89%E9%9B%86/">
+                                <span class="chip bg-color">油先生选集</span>
                             </a>
                         
                     </div>
@@ -441,21 +445,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-04
+                    2021-11-06
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-04
+                    2021-11-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    741
+                    32
                 </div>
                 
 
@@ -480,99 +484,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="transformers-BERT预训练模型度量文本相似性"><a href="#transformers-BERT预训练模型度量文本相似性" class="headerlink" title="transformers BERT预训练模型度量文本相似性"></a>transformers BERT预训练模型度量文本相似性</h1><p>经过与专业人士交流，了解到目前业内常用的度量文本相似性的做法有两种，效果差不多：</p>
-<ol>
-<li>把文本A和文本B拼接起来，进行二分类任务，分类标签为相似或不相似。这种做法需要微调BERT模型，和我们之前微调BERT用于垃圾邮件的二分类任务是一样的思路和结果，可以用网络输出大于0.5是相似，小于0.5是不相似；</li>
-<li>直接用文本A和文本B在预训练模型上度量相似性，得到的是两个<code>tensor</code>，计算余弦相似度即可。这样可以得到一个数值，来衡量相似性。</li>
-</ol>
-<p>第一种做法与前面一样，就不写了，本文展示的是第二种做法</p>
-<h2 id="Sentence-Similarity"><a href="#Sentence-Similarity" class="headerlink" title="Sentence Similarity"></a>Sentence Similarity</h2><p>在<a target="_blank" rel="noopener" href="https://huggingface.co/models">Hugging Face/Models</a>搜索任务为<code>Sentence Similarity</code>和语言为<code>zh</code>的模型，找到了<a target="_blank" rel="noopener" href="https://huggingface.co/symanto/sn-xlm-roberta-base-snli-mnli-anli-xnli">这一个</a>，给的样例代码简单明了，我们来跑一下试试：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> transformers <span class="token keyword">import</span> AutoTokenizer<span class="token punctuation">,</span> AutoModel
-<span class="token keyword">import</span> torch
-
-
-<span class="token comment">#Mean Pooling - Take attention mask into account for correct averaging</span>
-<span class="token keyword">def</span> <span class="token function">mean_pooling</span><span class="token punctuation">(</span>model_output<span class="token punctuation">,</span> attention_mask<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    token_embeddings <span class="token operator">=</span> model_output<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment">#First element of model_output contains all token embeddings</span>
-    input_mask_expanded <span class="token operator">=</span> attention_mask<span class="token punctuation">.</span>unsqueeze<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>expand<span class="token punctuation">(</span>token_embeddings<span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">float</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> torch<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span>token_embeddings <span class="token operator">*</span> input_mask_expanded<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> torch<span class="token punctuation">.</span>clamp<span class="token punctuation">(</span>input_mask_expanded<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">min</span><span class="token operator">=</span><span class="token number">1e</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">)</span>
-
-
-sentences <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'我爱你'</span><span class="token punctuation">,</span> <span class="token string">'我喜欢你'</span><span class="token punctuation">]</span>
-
-<span class="token comment"># Load model from HuggingFace Hub</span>
-tokenizer <span class="token operator">=</span> AutoTokenizer<span class="token punctuation">.</span>from_pretrained<span class="token punctuation">(</span><span class="token string">'symanto/sn-xlm-roberta-base-snli-mnli-anli-xnli'</span><span class="token punctuation">)</span>
-model <span class="token operator">=</span> AutoModel<span class="token punctuation">.</span>from_pretrained<span class="token punctuation">(</span><span class="token string">'symanto/sn-xlm-roberta-base-snli-mnli-anli-xnli'</span><span class="token punctuation">)</span>
-
-<span class="token comment"># 文本tokenize</span>
-encoded_input <span class="token operator">=</span> tokenizer<span class="token punctuation">(</span>sentences<span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> truncation<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> return_tensors<span class="token operator">=</span><span class="token string">'pt'</span><span class="token punctuation">)</span>
-
-<span class="token comment"># Compute token embeddings</span>
-<span class="token keyword">with</span> torch<span class="token punctuation">.</span>no_grad<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    model_output <span class="token operator">=</span> model<span class="token punctuation">(</span><span class="token operator">**</span>encoded_input<span class="token punctuation">)</span>
-
-<span class="token comment"># Perform pooling. In this case, max pooling.</span>
-sentence_embeddings <span class="token operator">=</span> mean_pooling<span class="token punctuation">(</span>model_output<span class="token punctuation">,</span> encoded_input<span class="token punctuation">[</span><span class="token string">'attention_mask'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Sentence embeddings:"</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>sentence_embeddings<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>得到输出为：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">tensor([[ 0.2630,  1.8734, -0.6537,  ..., -0.4792, -0.0700, -0.0297],
-        [ 0.0908,  1.9412, -0.8271,  ..., -0.5505, -0.2465, -0.1056]])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>这是一个二维<code>tensor</code>，我们计算余弦距离：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">similarity <span class="token operator">=</span> torch<span class="token punctuation">.</span>cosine_similarity<span class="token punctuation">(</span>sentence_embeddings<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> sentence_embeddings<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>item<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>similarity<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>得到的结果为;</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">0.8886765241622925<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>表面这两句话是非常相似的。</p>
-<h2 id="更换模型"><a href="#更换模型" class="headerlink" title="更换模型"></a>更换模型</h2><p>现在我们把模型换成熟悉的哈工大的<code>hfl/chinese-roberta-wwm-ext</code>模型，再跑一下代码：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> transformers <span class="token keyword">import</span> AutoTokenizer<span class="token punctuation">,</span> AutoModel
-<span class="token keyword">import</span> torch
-
-
-<span class="token comment">#Mean Pooling - Take attention mask into account for correct averaging</span>
-<span class="token keyword">def</span> <span class="token function">mean_pooling</span><span class="token punctuation">(</span>model_output<span class="token punctuation">,</span> attention_mask<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    token_embeddings <span class="token operator">=</span> model_output<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment">#First element of model_output contains all token embeddings</span>
-    input_mask_expanded <span class="token operator">=</span> attention_mask<span class="token punctuation">.</span>unsqueeze<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>expand<span class="token punctuation">(</span>token_embeddings<span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">float</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> torch<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span>token_embeddings <span class="token operator">*</span> input_mask_expanded<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> torch<span class="token punctuation">.</span>clamp<span class="token punctuation">(</span>input_mask_expanded<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">min</span><span class="token operator">=</span><span class="token number">1e</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">)</span>
-
-
-sentences <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'我爱你'</span><span class="token punctuation">,</span> <span class="token string">'我喜欢你'</span><span class="token punctuation">]</span>
-
-<span class="token comment"># Load model from HuggingFace Hub</span>
-tokenizer <span class="token operator">=</span> AutoTokenizer<span class="token punctuation">.</span>from_pretrained<span class="token punctuation">(</span><span class="token string">'hfl/chinese-roberta-wwm-ext'</span><span class="token punctuation">)</span>
-model <span class="token operator">=</span> AutoModel<span class="token punctuation">.</span>from_pretrained<span class="token punctuation">(</span><span class="token string">'hfl/chinese-roberta-wwm-ext'</span><span class="token punctuation">)</span>
-
-<span class="token comment"># 文本tokenize</span>
-encoded_input <span class="token operator">=</span> tokenizer<span class="token punctuation">(</span>sentences<span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> truncation<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> return_tensors<span class="token operator">=</span><span class="token string">'pt'</span><span class="token punctuation">)</span>
-
-<span class="token comment"># Compute token embeddings</span>
-<span class="token keyword">with</span> torch<span class="token punctuation">.</span>no_grad<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    model_output <span class="token operator">=</span> model<span class="token punctuation">(</span><span class="token operator">**</span>encoded_input<span class="token punctuation">)</span>
-
-<span class="token comment"># Perform pooling. In this case, max pooling.</span>
-sentence_embeddings <span class="token operator">=</span> mean_pooling<span class="token punctuation">(</span>model_output<span class="token punctuation">,</span> encoded_input<span class="token punctuation">[</span><span class="token string">'attention_mask'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Sentence embeddings:"</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>sentence_embeddings<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>得到输出为：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">tensor([[ 0.4178, -0.1403,  0.1729,  ..., -0.5353,  0.1616, -0.5226],
-        [ 0.3651,  0.0084, -0.1581,  ..., -0.5166,  0.2051, -0.5374]])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>计算余弦距离：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">similarity <span class="token operator">=</span> torch<span class="token punctuation">.</span>cosine_similarity<span class="token punctuation">(</span>sentence_embeddings<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> sentence_embeddings<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>item<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>similarity<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>得到的结果为;</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">0.9244731664657593<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>表面哈工大模型认为这两句话更相似。</p>
-<p>至此我们把文本相似性度量也按照业界目前最常用最标杆的方法做完啦，经专业人士鉴定，我距离NLP顶会ACL已经很近了<span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+                <h1 id="秋思（其二）"><a href="#秋思（其二）" class="headerlink" title="秋思（其二）"></a>秋思（其二）</h1><p>秋风吹老梧桐树，彩笔新题相思句。</p>
+<p>情深若问深几许，秋风秋月深秋雨。</p>
 
                 
             </div>
@@ -587,8 +500,12 @@ sentence_embeddings <span class="token operator">=</span> mean_pooling<span clas
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AD%A6NLP/">
-                                    <span class="chip bg-color">学NLP</span>
+                                <a href="/tags/%E8%AF%97/">
+                                    <span class="chip bg-color">诗</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%B2%B9%E5%85%88%E7%94%9F%E9%80%89%E9%9B%86/">
+                                    <span class="chip bg-color">油先生选集</span>
                                 </a>
                             
                         </div>
@@ -900,9 +817,10 @@ sentence_embeddings <span class="token operator">=</span> mean_pooling<span clas
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/11/06/%E7%A7%8B%E6%80%9D%EF%BC%88%E5%85%B6%E4%BA%8C%EF%BC%89/">
                     <div class="card-image">
@@ -919,9 +837,9 @@ sentence_embeddings <span class="token operator">=</span> mean_pooling<span clas
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -934,6 +852,7 @@ sentence_embeddings <span class="token operator">=</span> mean_pooling<span clas
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -956,12 +875,12 @@ sentence_embeddings <span class="token operator">=</span> mean_pooling<span clas
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/11/03/%E5%BE%AE%E8%B0%83transformers%E8%BF%9B%E8%A1%8C%E5%9E%83%E5%9C%BE%E9%82%AE%E4%BB%B6%E5%88%86%E7%B1%BB/">
+                <a href="/2021/11/04/transformers-BERT%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E5%BA%A6%E9%87%8F%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E6%80%A7/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="微调transformers进行BERT垃圾邮件分类">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="transformers BERT预训练模型度量文本相似性">
                         
-                        <span class="card-title">微调transformers进行BERT垃圾邮件分类</span>
+                        <span class="card-title">transformers BERT预训练模型度量文本相似性</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -972,7 +891,7 @@ sentence_embeddings <span class="token operator">=</span> mean_pooling<span clas
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-04
                             </span>
                         <span class="publish-author">
                             
