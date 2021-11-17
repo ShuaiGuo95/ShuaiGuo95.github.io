@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="从中商产业研究院爬取2021年A股上市企业基本信息表, You and Me">
+    <meta name="keywords" content="CV中与“人”和“视频”有关的研究, You and Me">
     <meta name="description" content="一起学习，一起玩耍，去经历，去感动">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>从中商产业研究院爬取2021年A股上市企业基本信息表 | You and Me</title>
+    <title>CV中与“人”和“视频”有关的研究 | You and Me</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -295,12 +295,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/33.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">从中商产业研究院爬取2021年A股上市企业基本信息表</h1>
+                    <h1 class="description center-align post-title">CV中与“人”和“视频”有关的研究</h1>
                 </div>
             </div>
         </div>
@@ -416,8 +416,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AD%A6%E7%88%AC%E8%99%AB/">
-                                <span class="chip bg-color">学爬虫</span>
+                            <a href="/tags/%E5%AD%A6CV/">
+                                <span class="chip bg-color">学CV</span>
                             </a>
                         
                     </div>
@@ -441,21 +441,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-15
+                    2021-11-17
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-19
+                    2021-11-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    190
                 </div>
                 
 
@@ -480,75 +480,15 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="从中商产业研究院爬取2021年A股上市企业基本信息表"><a href="#从中商产业研究院爬取2021年A股上市企业基本信息表" class="headerlink" title="从中商产业研究院爬取2021年A股上市企业基本信息表"></a>从中商产业研究院爬取2021年A股上市企业基本信息表</h1><p>选这个网站来爬不是因为它有多好，而是因为爬它很简单，跟我们也有关系，就先爬着玩一下，当作一个入门吧。</p>
-<h2 id="原代码"><a href="#原代码" class="headerlink" title="原代码"></a>原代码</h2><p>本着先易后难的精神，我在谷歌搜索了“python 获取上市公司信息”：</p>
-<p><img src="google.png" alt="谷歌搜索“python 获取上市公司信息”"></p>
-<p>找到了<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/137965211">这篇博文</a>，这是一篇从中商产业研究院网站爬取2019年A股上市公司基本信息的博文，它告诉我们<a target="_blank" rel="noopener" href="https://s.askci.com/stock/a/0-0?reportTime=2019-12-31&amp;pageNum=1#QueryCondition">在这里</a>可以看到2019年A股上市公司的基本信息，大致如下图：</p>
-<p><img src="fig.jpg" alt="2019年A股上市公司基本信息页面"></p>
-<p>并且提供了以下一段很短的代码来爬取：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
-<span class="token keyword">import</span> time
-
-start_time <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>         <span class="token comment"># 获取程序开始运行时间</span>
-df<span class="token operator">=</span>pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span> <span class="token punctuation">)</span>               <span class="token comment"># 定义一个空的DataFrame用于存储数据</span>
-<span class="token keyword">try</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">201</span><span class="token punctuation">)</span><span class="token punctuation">:</span>       <span class="token comment"># 爬取全部187页数据，设置为200页，确保都覆盖</span>
-        url <span class="token operator">=</span> <span class="token string">'http://s.askci.com/stock/a/?reportTime=2019-12-31&amp;pageNum={i}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>i<span class="token operator">=</span>i<span class="token punctuation">)</span> <span class="token comment"># 日期可以改，可获取季度数据</span>
-        df <span class="token operator">=</span> pd<span class="token punctuation">.</span>concat<span class="token punctuation">(</span><span class="token punctuation">[</span>df<span class="token punctuation">,</span>pd<span class="token punctuation">.</span>read_html<span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>   <span class="token comment"># 第1个表格故填[0],经观察发现所需表格是网页中第4个表格，故为[3]。获得后纵向追加到df中</span>
-        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span>              <span class="token comment"># 每隔0.5秒访问一次，应对反爬措施</span>
-        endtime <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> start_time
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'正在获取上市公司基本信息表第'</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'页'</span><span class="token punctuation">,</span><span class="token string">'已运行%.2f秒'</span> <span class="token operator">%</span> endtime<span class="token punctuation">)</span>
-<span class="token keyword">except</span><span class="token punctuation">:</span>
-    <span class="token keyword">pass</span>
-df<span class="token punctuation">[</span><span class="token string">'股票代码'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'股票代码'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>astype<span class="token punctuation">(</span><span class="token string">'str'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">.</span>zfill<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>     <span class="token comment"># 将原本的int数据类型转换为文本，补齐股票代码为6位，用的时候必须加上.str前缀</span>
-df<span class="token punctuation">.</span>drop<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'序号'</span><span class="token punctuation">,</span><span class="token string">'招股书'</span><span class="token punctuation">,</span><span class="token string">'公司财报'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>      <span class="token comment"># 删除多余的列，axis=1（按列方向操作）、inplace=True（修改完数据，在原数据上保存）</span>
-df<span class="token punctuation">.</span>to_excel<span class="token punctuation">(</span><span class="token string">r'2019年上市公司基本信息表.xlsx'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'gbk'</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">,</span><span class="token string">'*******目标爬取完成*******'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>大致采用了pandas模块来读取网页信息，按照每页网页的url规律来模拟跳转页面，然后删掉无效信息，保存为表格文件。</p>
-<p>在这段代码中，我们还可以看到“try+except”的异常监测机制，方法链的使用，时间模块的使用，字符串前面加“r”表示无转义字符的字符串，等等。</p>
-<h2 id="修改代码"><a href="#修改代码" class="headerlink" title="修改代码"></a>修改代码</h2><p>然而这份代码已经陈旧了，我们想要最新的信息怎么办呢。打开中商产业研究院首页，点击产业数据→数据库→A股数据，我们果然找到了最新的信息。替换一下原代码中的url就好啦。同样的，把最大页数也要改一下。</p>
-<p>在试着跑了一下之后我发现，sleep时间0.5秒还是太短了，跑不完200多页就被反爬了，于是我改到5秒。顺利爬取完毕，得到表格。</p>
-<p>我们采用的代码如下：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
-<span class="token keyword">import</span> time
-
-start_time <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>         <span class="token comment"># 获取程序开始运行时间</span>
-df<span class="token operator">=</span>pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span> <span class="token punctuation">)</span>               <span class="token comment"># 定义一个空的DataFrame用于存储数据</span>
-<span class="token keyword">try</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">226</span><span class="token punctuation">)</span><span class="token punctuation">:</span>       <span class="token comment"># 爬取全部187页数据，设置为200页，确保都覆盖</span>
-        url <span class="token operator">=</span> <span class="token string">'https://s.askci.com/stock/a/0-0?reportTime=2021-06-30&amp;pageNum={i}#QueryCondition'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>i<span class="token operator">=</span>i<span class="token punctuation">)</span> <span class="token comment"># 日期可以改，可获取季度数据</span>
-        df <span class="token operator">=</span> pd<span class="token punctuation">.</span>concat<span class="token punctuation">(</span><span class="token punctuation">[</span>df<span class="token punctuation">,</span>pd<span class="token punctuation">.</span>read_html<span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>   <span class="token comment"># 第1个表格故填[0],经观察发现所需表格是网页中第4个表格，故为[3]。获得后纵向追加到df中</span>
-        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>              <span class="token comment"># 每隔1秒访问一次，应对反爬措施</span>
-        endtime <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> start_time
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'正在获取上市公司基本信息表第'</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'页'</span><span class="token punctuation">,</span><span class="token string">'已运行%.2f秒'</span> <span class="token operator">%</span> endtime<span class="token punctuation">)</span>
-<span class="token keyword">except</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'出错啦'</span><span class="token punctuation">)</span>
-df<span class="token punctuation">[</span><span class="token string">'股票代码'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'股票代码'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>astype<span class="token punctuation">(</span><span class="token string">'str'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">.</span>zfill<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>     <span class="token comment"># 将原本的int数据类型转换为文本，补齐股票代码为6位，用的时候必须加上.str前缀</span>
-df<span class="token punctuation">.</span>drop<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'序号'</span><span class="token punctuation">,</span><span class="token string">'招股书'</span><span class="token punctuation">,</span><span class="token string">'公司财报'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>      <span class="token comment"># 删除多余的列，axis=1（按列方向操作）、inplace=True（修改完数据，在原数据上保存）</span>
-df<span class="token punctuation">.</span>to_excel<span class="token punctuation">(</span><span class="token string">r'2021年上市公司基本信息表.xlsx'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'gbk'</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">,</span><span class="token string">'*******目标爬取完成*******'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>怎么样，是不是很简单呀<span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
-<h2 id="后续计划"><a href="#后续计划" class="headerlink" title="后续计划"></a>后续计划</h2><p>经过一些初步研究，我发现比较稳定的、成体系的信息来源包括：</p>
-<ul>
-<li>百度百科对上市公司的介绍；</li>
-<li>沪交所、深交所等官方数据库，或东方财富、网易财经等财经网站；</li>
-<li>其他研究人员公布的数据集；</li>
-<li>Tushare、Akshare等Python开源金融库。</li>
-</ul>
-<p>目前我感觉如果要从每个公司的官网去爬简介太困难了，因为极其不成体系，每个公司的简介页面都不尽相同，没有规律可言。</p>
-<p>公司财报确实是一个很好的渠道，解析财报需要至少以下工作：</p>
-<ul>
-<li>足够大的硬盘，因为我们要下载很多很多的文件，处理很多很多的文件；</li>
-<li>Python对PDF文件的处理办法，PDF转其他格式的办法，因为财报大部分都是PDF格式的。</li>
-</ul>
-<p>后面我们看情况把这些都爬一下或者爬一部分。做完这些，我们再：</p>
-<ol>
-<li>标定数据集；</li>
-<li>与NLP相关研究进行对接。</li>
-</ol>
-<p>我们一点点的做起来就好啦，都不难的，最终只取决于我们需要什么样的信息。</p>
+                <h1 id="CV中与“人”和“视频”有关的研究"><a href="#CV中与“人”和“视频”有关的研究" class="headerlink" title="CV中与“人”和“视频”有关的研究"></a>CV中与“人”和“视频”有关的研究</h1><p>这篇文章我们来介绍一些CV中与“人”和“视频”有关的研究。</p>
+<h2 id="视频情绪识别"><a href="#视频情绪识别" class="headerlink" title="视频情绪识别"></a>视频情绪识别</h2><blockquote>
+<p>F. Noroozi, M. Marjanovic, A. Njegus, S. Escalera and G. Anbarjafari, “Audio-Visual Emotion Recognition in Video Clips,” in IEEE Transactions on Affective Computing, vol. 10, no. 1, pp. 60-75, 1 Jan.-March 2019, doi: 10.1109/TAFFC.2017.2713783.</p>
+<p>Z. Du, S. Wu, D. Huang, W. Li and Y. Wang, “Spatio-Temporal Encoder-Decoder Fully Convolutional Network for Video-Based Dimensional Emotion Recognition,” in <em>IEEE Transactions on Affective Computing</em>, vol. 12, no. 3, pp. 565-578, 1 July-Sept. 2021, doi: 10.1109/TAFFC.2019.2940224.</p>
+</blockquote>
+<h2 id="视频动作识别"><a href="#视频动作识别" class="headerlink" title="视频动作识别"></a>视频动作识别</h2><blockquote>
+<p>Deepti Ghadiyaram, Du Tran, Dhruv Mahajan; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2019, pp. 12046-12055</p>
+<p>Li C, Zhong Q, Xie D, et al. Collaborative spatiotemporal feature learning for video action recognition[C]//Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2019: 7872-7881.</p>
+</blockquote>
 
                 
             </div>
@@ -563,8 +503,8 @@ df<span class="token punctuation">.</span>to_excel<span class="token punctuation
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AD%A6%E7%88%AC%E8%99%AB/">
-                                    <span class="chip bg-color">学爬虫</span>
+                                <a href="/tags/%E5%AD%A6CV/">
+                                    <span class="chip bg-color">学CV</span>
                                 </a>
                             
                         </div>
@@ -876,16 +816,17 @@ df<span class="token punctuation">.</span>to_excel<span class="token punctuation
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/09/16/%E4%BB%8E%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91%E7%88%AC%E5%8F%96%E4%B8%8A%E5%B8%82%E5%85%AC%E5%8F%B8%E4%BB%8B%E7%BB%8D/">
+                <a href="/2021/11/17/CV%E4%B8%AD%E4%B8%8E%E2%80%9C%E4%BA%BA%E2%80%9D%E5%92%8C%E2%80%9C%E8%A7%86%E9%A2%91%E2%80%9D%E6%9C%89%E5%85%B3%E7%9A%84%E7%A0%94%E7%A9%B6/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="从百度百科爬取上市公司介绍">
+                        <img src="/medias/featureimages/33.jpg" class="responsive-img" alt="CV中与“人”和“视频”有关的研究">
                         
-                        <span class="card-title">从百度百科爬取上市公司介绍</span>
+                        <span class="card-title">CV中与“人”和“视频”有关的研究</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -895,9 +836,58 @@ df<span class="token punctuation">.</span>to_excel<span class="token punctuation
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-16
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%AD%A6CV/">
+                        <span class="chip bg-color">学CV</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/11/17/CV%E5%9F%BA%E6%9C%AC%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E7%AE%80%E4%BB%8B/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/32.jpg" class="responsive-img" alt="CV基本研究方向简介">
+                        
+                        <span class="card-title">CV基本研究方向简介</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -913,56 +903,8 @@ df<span class="token punctuation">.</span>to_excel<span class="token punctuation
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AD%A6%E7%88%AC%E8%99%AB/">
-                        <span class="chip bg-color">学爬虫</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/09/09/%E8%BE%9B%E4%B8%91%E6%95%99%E5%B8%88%E8%8A%82%E6%8B%9F%E8%B5%A0%E5%AF%BC%E5%B8%88/">
-                    <div class="card-image">
-                        
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="辛丑教师节拟赠导师">
-                        
-                        <span class="card-title">辛丑教师节拟赠导师</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-09
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%B2%B9%E5%85%88%E7%94%9F%E9%80%89%E9%9B%86/" class="post-category">
-                                    油先生选集
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%AF%97/">
-                        <span class="chip bg-color">诗</span>
+                    <a href="/tags/%E5%AD%A6CV/">
+                        <span class="chip bg-color">学CV</span>
                     </a>
                     
                 </div>
