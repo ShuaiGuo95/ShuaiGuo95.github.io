@@ -1,0 +1,1482 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="从巨潮资讯网爬取深市企业历年调研公告, You and Me">
+    <meta name="description" content="一起学习，一起玩耍，去经历，去感动">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>从巨潮资讯网爬取深市企业历年调研公告 | You and Me</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="You and Me" type="application/atom+xml">
+</head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/two-hearts.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">You and Me</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/galleries" class="waves-effect waves-light">
+      
+      <i class="fas fa-photo-video" style="zoom: 0.6;"></i>
+      
+      <span>相册</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/two-hearts.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">You and Me</div>
+        <div class="logo-desc">
+            
+            一起学习，一起玩耍，去经历，去感动
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/galleries" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-photo-video"></i>
+			
+			相册
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/34.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">从巨潮资讯网爬取深市企业历年调研公告</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%AD%A6%E7%88%AC%E8%99%AB/">
+                                <span class="chip bg-color">学爬虫</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                学习
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-11-26
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-11-26
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.1k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="从巨潮资讯网爬取深市企业历年调研公告"><a href="#从巨潮资讯网爬取深市企业历年调研公告" class="headerlink" title="从巨潮资讯网爬取深市企业历年调研公告"></a>从巨潮资讯网爬取深市企业历年调研公告</h1><p>相比于之前从巨潮爬取上市企业的财报，本次爬取工作主要是爬取深市特有的“调研”报告。在基于<a target="_blank" rel="noopener" href="https://mimiyouyou.com/2021/09/15/%E4%BB%8E%E4%B8%AD%E5%95%86%E4%BA%A7%E4%B8%9A%E7%A0%94%E7%A9%B6%E9%99%A2%E7%88%AC%E5%8F%962021%E5%B9%B4A%E8%82%A1%E4%B8%8A%E5%B8%82%E4%BC%81%E4%B8%9A%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF%E8%A1%A8/">这篇文章</a>获取了上市公司基本信息表<code>2021年上市公司基本信息表.xlsx</code>之后，相比于<a target="_blank" rel="noopener" href="https://mimiyouyou.com/2021/09/17/%E4%BB%8E%E5%B7%A8%E6%BD%AE%E8%B5%84%E8%AE%AF%E7%BD%91%E7%88%AC%E5%8F%962020%E5%B9%B4%E4%B8%8A%E5%B8%82%E5%85%AC%E5%8F%B8%E8%B4%A2%E6%8A%A5/">这篇爬取财报</a>，本文主要改动在于：</p>
+<ol>
+<li>把对<code>http://www.cninfo.com.cn/new/hisAnnouncement/query</code>询问的<code>data</code>中的<code>tabName</code>改为<code>relation</code>；</li>
+<li>由于要爬取所有调研报告，所以加入页码切换功能；</li>
+<li>根据对<code>http://www.cninfo.com.cn/new/information/topSearch/detailOfQuery</code>询问得到的企业所在平台，判断企业是否是在深市上市的，若不是就不做后续操作；</li>
+<li>下载<code>doc</code>文件和<code>docx</code>文件的功能。</li>
+</ol>
+<p>以上改动主要基于对网站的分析完成，主要代码如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> json
+<span class="token keyword">import</span> os
+<span class="token keyword">from</span> time <span class="token keyword">import</span> sleep
+<span class="token keyword">from</span> urllib <span class="token keyword">import</span> parse
+<span class="token keyword">import</span> requests
+<span class="token keyword">import</span> xlrd
+<span class="token keyword">import</span> time
+ 
+<span class="token builtin">dir</span> <span class="token operator">=</span> <span class="token string">'D:\\爬取巨潮资讯网\\'</span> <span class="token comment"># 这个目录需要自行创建并指定</span>
+
+<span class="token keyword">def</span> <span class="token function">get_adress</span><span class="token punctuation">(</span>bank_name<span class="token punctuation">)</span><span class="token punctuation">:</span>    
+    url <span class="token operator">=</span> <span class="token string">"http://www.cninfo.com.cn/new/information/topSearch/detailOfQuery"</span>
+    data <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'keyWord'</span><span class="token punctuation">:</span> bank_name<span class="token punctuation">,</span>
+        <span class="token string">'maxSecNum'</span><span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+        <span class="token string">'maxListNum'</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+    hd <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'Host'</span><span class="token punctuation">:</span> <span class="token string">'www.cninfo.com.cn'</span><span class="token punctuation">,</span>
+        <span class="token string">'Origin'</span><span class="token punctuation">:</span> <span class="token string">'http://www.cninfo.com.cn'</span><span class="token punctuation">,</span>
+        <span class="token string">'Pragma'</span><span class="token punctuation">:</span> <span class="token string">'no-cache'</span><span class="token punctuation">,</span>
+        <span class="token string">'Accept-Encoding'</span><span class="token punctuation">:</span> <span class="token string">'gzip,deflate'</span><span class="token punctuation">,</span>
+        <span class="token string">'Connection'</span><span class="token punctuation">:</span> <span class="token string">'keep-alive'</span><span class="token punctuation">,</span>
+        <span class="token string">'Content-Length'</span><span class="token punctuation">:</span> <span class="token string">'70'</span><span class="token punctuation">,</span>
+        <span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/5.0(Windows NT 10.0;Win64;x64) AppleWebKit / 537.36(KHTML, likeGecko) Chrome / 75.0.3770.100Safari / 537.36'</span><span class="token punctuation">,</span>
+        <span class="token string">'Content-Type'</span><span class="token punctuation">:</span> <span class="token string">'application/x-www-form-urlencoded; charset=UTF-8'</span><span class="token punctuation">,</span>
+        <span class="token string">'Accept'</span><span class="token punctuation">:</span> <span class="token string">'application/json,text/plain,*/*'</span><span class="token punctuation">,</span>
+        <span class="token string">'Accept-Language'</span><span class="token punctuation">:</span> <span class="token string">'zh-CN,zh;q=0.9,en;q=0.8'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+    r <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>hd<span class="token punctuation">,</span> data<span class="token operator">=</span>data<span class="token punctuation">)</span>
+    r <span class="token operator">=</span> r<span class="token punctuation">.</span>content
+    m <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>r<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+    pk <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
+    orgId <span class="token operator">=</span> pk<span class="token punctuation">[</span><span class="token string">"keyBoardList"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"orgId"</span><span class="token punctuation">]</span>   <span class="token comment">#获取参数</span>
+    plate <span class="token operator">=</span> pk<span class="token punctuation">[</span><span class="token string">"keyBoardList"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"plate"</span><span class="token punctuation">]</span>
+    code <span class="token operator">=</span> pk<span class="token punctuation">[</span><span class="token string">"keyBoardList"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"code"</span><span class="token punctuation">]</span>
+    is_szse <span class="token operator">=</span> pk<span class="token punctuation">[</span><span class="token string">"keyBoardList"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"plate"</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'szse'</span>
+    <span class="token keyword">return</span> orgId<span class="token punctuation">,</span> plate<span class="token punctuation">,</span> code<span class="token punctuation">,</span> is_szse
+
+<span class="token keyword">def</span> <span class="token function">download_PDF</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> file_name<span class="token punctuation">,</span> company<span class="token punctuation">,</span> orgId<span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment">#下载pdf</span>
+    url <span class="token operator">=</span> url
+    r <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    f <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token builtin">dir</span> <span class="token operator">+</span> company <span class="token operator">+</span> <span class="token string">'\\'</span> <span class="token operator">+</span> file_name<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"_"</span> <span class="token operator">+</span> orgId <span class="token operator">+</span> <span class="token string">".pdf"</span><span class="token punctuation">,</span> <span class="token string">"wb"</span><span class="token punctuation">)</span>
+    f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>r<span class="token punctuation">.</span>content<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">download_DOC</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> file_name<span class="token punctuation">,</span> company<span class="token punctuation">,</span> orgId<span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment">#下载pdf</span>
+    url <span class="token operator">=</span> url
+    r <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    f <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token builtin">dir</span> <span class="token operator">+</span> company <span class="token operator">+</span> <span class="token string">'\\'</span> <span class="token operator">+</span> file_name<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"_"</span> <span class="token operator">+</span> orgId <span class="token operator">+</span> <span class="token string">".doc"</span><span class="token punctuation">,</span> <span class="token string">"wb"</span><span class="token punctuation">)</span>
+    f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>r<span class="token punctuation">.</span>content<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">download_DOCX</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> file_name<span class="token punctuation">,</span> company<span class="token punctuation">,</span> orgId<span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment">#下载pdf</span>
+    url <span class="token operator">=</span> url
+    r <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    f <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token builtin">dir</span> <span class="token operator">+</span> company <span class="token operator">+</span> <span class="token string">'\\'</span> <span class="token operator">+</span> file_name<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"_"</span> <span class="token operator">+</span> orgId <span class="token operator">+</span> <span class="token string">".docx"</span><span class="token punctuation">,</span> <span class="token string">"wb"</span><span class="token punctuation">)</span>
+    f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>r<span class="token punctuation">.</span>content<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">get_FILE_num</span><span class="token punctuation">(</span>orgId<span class="token punctuation">,</span> plate<span class="token punctuation">,</span> code<span class="token punctuation">,</span> company<span class="token punctuation">,</span> sz_or_sh<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    url <span class="token operator">=</span> <span class="token string">"http://www.cninfo.com.cn/new/hisAnnouncement/query"</span>
+    data <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'stock'</span><span class="token punctuation">:</span> <span class="token string">'{},{}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>code<span class="token punctuation">,</span> orgId<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">'tabName'</span><span class="token punctuation">:</span> <span class="token string">'relation'</span><span class="token punctuation">,</span>
+        <span class="token string">'pageSize'</span><span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">,</span>
+        <span class="token string">'pageNum'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token string">'column'</span><span class="token punctuation">:</span> plate<span class="token punctuation">,</span>
+        <span class="token string">'category'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        <span class="token string">'plate'</span><span class="token punctuation">:</span> sz_or_sh<span class="token punctuation">,</span>
+        <span class="token string">'seDate'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        <span class="token string">'searchkey'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        <span class="token string">'secid'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        <span class="token string">'sortName'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        <span class="token string">'sortType'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        <span class="token string">'isHLtitle'</span><span class="token punctuation">:</span> <span class="token string">'true'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+ 
+    hd <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'Host'</span><span class="token punctuation">:</span> <span class="token string">'www.cninfo.com.cn'</span><span class="token punctuation">,</span>
+        <span class="token string">'Origin'</span><span class="token punctuation">:</span> <span class="token string">'http://www.cninfo.com.cn'</span><span class="token punctuation">,</span>
+        <span class="token string">'Pragma'</span><span class="token punctuation">:</span> <span class="token string">'no-cache'</span><span class="token punctuation">,</span>
+        <span class="token string">'Accept-Encoding'</span><span class="token punctuation">:</span> <span class="token string">'gzip,deflate'</span><span class="token punctuation">,</span>
+        <span class="token string">'Connection'</span><span class="token punctuation">:</span> <span class="token string">'keep-alive'</span><span class="token punctuation">,</span>
+        <span class="token comment"># 'Content-Length': '216',</span>
+        <span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'User-Agent:Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/533.20.25 (KHTML, like Gecko) Version/5.0.4 Safari/533.20.27'</span><span class="token punctuation">,</span>
+        <span class="token string">'Content-Type'</span><span class="token punctuation">:</span> <span class="token string">'application/x-www-form-urlencoded; charset=UTF-8'</span><span class="token punctuation">,</span>
+        <span class="token string">'Accept'</span><span class="token punctuation">:</span> <span class="token string">'application/json,text/plain,*/*'</span><span class="token punctuation">,</span>
+        <span class="token string">'Accept-Language'</span><span class="token punctuation">:</span> <span class="token string">'zh-CN,zh;q=0.9,en;q=0.8'</span><span class="token punctuation">,</span>
+        <span class="token string">'X-Requested-With'</span><span class="token punctuation">:</span> <span class="token string">'XMLHttpRequest'</span><span class="token punctuation">,</span>
+        <span class="token comment"># 'Cookie': cookies</span>
+    <span class="token punctuation">}</span>
+    data <span class="token operator">=</span> parse<span class="token punctuation">.</span>urlencode<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    r <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>hd<span class="token punctuation">,</span> data<span class="token operator">=</span>data<span class="token punctuation">)</span>
+    r <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>r<span class="token punctuation">.</span>content<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+    r <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>r<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> r<span class="token punctuation">[</span><span class="token string">'totalAnnouncement'</span><span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">get_FILE</span><span class="token punctuation">(</span>orgId<span class="token punctuation">,</span> plate<span class="token punctuation">,</span> code<span class="token punctuation">,</span> company<span class="token punctuation">,</span> sz_or_sh<span class="token punctuation">,</span> pageNum<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    url <span class="token operator">=</span> <span class="token string">"http://www.cninfo.com.cn/new/hisAnnouncement/query"</span>
+    data <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'stock'</span><span class="token punctuation">:</span> <span class="token string">'{},{}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>code<span class="token punctuation">,</span> orgId<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">'tabName'</span><span class="token punctuation">:</span> <span class="token string">'relation'</span><span class="token punctuation">,</span>
+        <span class="token string">'pageSize'</span><span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">,</span>
+        <span class="token string">'pageNum'</span><span class="token punctuation">:</span> pageNum<span class="token punctuation">,</span>
+        <span class="token string">'column'</span><span class="token punctuation">:</span> plate<span class="token punctuation">,</span>
+        <span class="token string">'category'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        <span class="token string">'plate'</span><span class="token punctuation">:</span> sz_or_sh<span class="token punctuation">,</span>
+        <span class="token string">'seDate'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        <span class="token string">'searchkey'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        <span class="token string">'secid'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        <span class="token string">'sortName'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        <span class="token string">'sortType'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        <span class="token string">'isHLtitle'</span><span class="token punctuation">:</span> <span class="token string">'true'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+ 
+    hd <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'Host'</span><span class="token punctuation">:</span> <span class="token string">'www.cninfo.com.cn'</span><span class="token punctuation">,</span>
+        <span class="token string">'Origin'</span><span class="token punctuation">:</span> <span class="token string">'http://www.cninfo.com.cn'</span><span class="token punctuation">,</span>
+        <span class="token string">'Pragma'</span><span class="token punctuation">:</span> <span class="token string">'no-cache'</span><span class="token punctuation">,</span>
+        <span class="token string">'Accept-Encoding'</span><span class="token punctuation">:</span> <span class="token string">'gzip,deflate'</span><span class="token punctuation">,</span>
+        <span class="token string">'Connection'</span><span class="token punctuation">:</span> <span class="token string">'keep-alive'</span><span class="token punctuation">,</span>
+        <span class="token comment"># 'Content-Length': '216',</span>
+        <span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'User-Agent:Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/533.20.25 (KHTML, like Gecko) Version/5.0.4 Safari/533.20.27'</span><span class="token punctuation">,</span>
+        <span class="token string">'Content-Type'</span><span class="token punctuation">:</span> <span class="token string">'application/x-www-form-urlencoded; charset=UTF-8'</span><span class="token punctuation">,</span>
+        <span class="token string">'Accept'</span><span class="token punctuation">:</span> <span class="token string">'application/json,text/plain,*/*'</span><span class="token punctuation">,</span>
+        <span class="token string">'Accept-Language'</span><span class="token punctuation">:</span> <span class="token string">'zh-CN,zh;q=0.9,en;q=0.8'</span><span class="token punctuation">,</span>
+        <span class="token string">'X-Requested-With'</span><span class="token punctuation">:</span> <span class="token string">'XMLHttpRequest'</span><span class="token punctuation">,</span>
+        <span class="token comment"># 'Cookie': cookies</span>
+    <span class="token punctuation">}</span>
+    data <span class="token operator">=</span> parse<span class="token punctuation">.</span>urlencode<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    r <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>hd<span class="token punctuation">,</span> data<span class="token operator">=</span>data<span class="token punctuation">)</span>
+    r <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>r<span class="token punctuation">.</span>content<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+    r <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>r<span class="token punctuation">)</span>
+    reports_list <span class="token operator">=</span> r<span class="token punctuation">[</span><span class="token string">'announcements'</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> report <span class="token keyword">in</span> reports_list<span class="token punctuation">:</span>
+        <span class="token comment"># if '投资者关系' in report['announcementTitle']:  # http://static.cninfo.com.cn/finalpage/2019-03-29/1205958883.PDF</span>
+        <span class="token keyword">if</span> report<span class="token punctuation">[</span><span class="token string">'adjunctType'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'PDF'</span><span class="token punctuation">:</span>
+            pdf_url <span class="token operator">=</span> <span class="token string">"http://static.cninfo.com.cn/"</span> <span class="token operator">+</span> report<span class="token punctuation">[</span><span class="token string">'adjunctUrl'</span><span class="token punctuation">]</span>
+            file_name <span class="token operator">=</span> report<span class="token punctuation">[</span><span class="token string">'announcementTitle'</span><span class="token punctuation">]</span>
+            download_PDF<span class="token punctuation">(</span>pdf_url<span class="token punctuation">,</span> file_name<span class="token punctuation">,</span> company<span class="token punctuation">,</span> orgId<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> report<span class="token punctuation">[</span><span class="token string">'adjunctType'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'DOC'</span><span class="token punctuation">:</span>
+            doc_url <span class="token operator">=</span> <span class="token string">"http://static.cninfo.com.cn/"</span> <span class="token operator">+</span> report<span class="token punctuation">[</span><span class="token string">'adjunctUrl'</span><span class="token punctuation">]</span>
+            file_name <span class="token operator">=</span> report<span class="token punctuation">[</span><span class="token string">'announcementTitle'</span><span class="token punctuation">]</span>
+            download_DOC<span class="token punctuation">(</span>doc_url<span class="token punctuation">,</span> file_name<span class="token punctuation">,</span> company<span class="token punctuation">,</span> orgId<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> report<span class="token punctuation">[</span><span class="token string">'adjunctType'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'DOCX'</span><span class="token punctuation">:</span>
+            doc_url <span class="token operator">=</span> <span class="token string">"http://static.cninfo.com.cn/"</span> <span class="token operator">+</span> report<span class="token punctuation">[</span><span class="token string">'adjunctUrl'</span><span class="token punctuation">]</span>
+            file_name <span class="token operator">=</span> report<span class="token punctuation">[</span><span class="token string">'announcementTitle'</span><span class="token punctuation">]</span>
+            download_DOCX<span class="token punctuation">(</span>doc_url<span class="token punctuation">,</span> file_name<span class="token punctuation">,</span> company<span class="token punctuation">,</span> orgId<span class="token punctuation">)</span>
+        sleep<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+
+<span class="token builtin">file</span> <span class="token operator">=</span> <span class="token string">'2021年上市公司基本信息表.xlsx'</span>
+wb <span class="token operator">=</span> xlrd<span class="token punctuation">.</span>open_workbook<span class="token punctuation">(</span>filename<span class="token operator">=</span><span class="token builtin">file</span><span class="token punctuation">)</span><span class="token comment"># 打开表格文件</span>
+
+errors <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'C:\\Users\\15617\\Desktop\\'</span><span class="token operator">+</span><span class="token string">'异常信息_巨潮资讯网.txt'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+empties <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'C:\\Users\\15617\\Desktop\\'</span><span class="token operator">+</span><span class="token string">'空白信息_巨潮资讯网.txt'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+
+sheet1 <span class="token operator">=</span> wb<span class="token punctuation">.</span>sheet_by_index<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token comment"># 通过索引获取表格</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1577</span><span class="token punctuation">,</span> sheet1<span class="token punctuation">.</span>nrows<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment"># sheet1.nrows</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">'\t'</span><span class="token punctuation">)</span>
+    company <span class="token operator">=</span> sheet1<span class="token punctuation">.</span>row<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token string">'*'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment"># company= 'st星源'</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        orgId<span class="token punctuation">,</span> plate<span class="token punctuation">,</span> code<span class="token punctuation">,</span> is_szse <span class="token operator">=</span> get_adress<span class="token punctuation">(</span>company<span class="token punctuation">)</span>
+        sz_or_sh <span class="token operator">=</span> <span class="token string">'sh'</span>
+        <span class="token keyword">if</span> is_szse<span class="token punctuation">:</span>
+            sz_or_sh <span class="token operator">=</span> <span class="token string">'sz'</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>orgId<span class="token punctuation">,</span> plate<span class="token punctuation">,</span> code<span class="token punctuation">,</span> is_szse<span class="token punctuation">)</span>
+            filenum <span class="token operator">=</span> get_FILE_num<span class="token punctuation">(</span>orgId<span class="token punctuation">,</span> plate<span class="token punctuation">,</span> code<span class="token punctuation">,</span> company<span class="token punctuation">,</span> sz_or_sh<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> filenum<span class="token punctuation">:</span>
+                os<span class="token punctuation">.</span>mkdir<span class="token punctuation">(</span><span class="token builtin">dir</span> <span class="token operator">+</span> company<span class="token punctuation">)</span>
+                <span class="token keyword">for</span> page <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>filenum<span class="token operator">//</span><span class="token number">30</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    <span class="token keyword">print</span><span class="token punctuation">(</span>page<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+                    get_FILE<span class="token punctuation">(</span>orgId<span class="token punctuation">,</span> plate<span class="token punctuation">,</span> code<span class="token punctuation">,</span> company<span class="token punctuation">,</span> sz_or_sh<span class="token punctuation">,</span> page<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                empties<span class="token punctuation">.</span>write<span class="token punctuation">(</span>company<span class="token operator">+</span><span class="token string">'\n'</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"出现异常！"</span><span class="token operator">+</span>company<span class="token punctuation">)</span>
+        errors<span class="token punctuation">.</span>write<span class="token punctuation">(</span>company<span class="token operator">+</span><span class="token string">'\n'</span><span class="token punctuation">)</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>作为一小节吧，爬虫技术又进步啦~<span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%AD%A6%E7%88%AC%E8%99%AB/">
+                                    <span class="chip bg-color">学爬虫</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'AxWueqYMQ3FsvFW9I4gYKEcM-gzGzoHsz',
+        appKey: 'Rq6r1E5344cv8nD2Jftrfg08',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '感谢您的见证'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/11/26/%E5%A4%84%E7%90%86PDF-doc-docx%E6%88%AA%E5%8F%96%E6%96%87%E6%9C%AC%E5%BE%97%E5%88%B0excel/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/35.jpg" class="responsive-img" alt="处理PDF doc docx截取文本得到excel">
+                        
+                        <span class="card-title">处理PDF doc docx截取文本得到excel</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-26
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%AD%A6Python/">
+                        <span class="chip bg-color">学Python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/11/17/CV%E4%B8%AD%E4%B8%8E%E2%80%9C%E4%BA%BA%E2%80%9D%E5%92%8C%E2%80%9C%E8%A7%86%E9%A2%91%E2%80%9D%E6%9C%89%E5%85%B3%E7%9A%84%E7%A0%94%E7%A9%B6/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/33.jpg" class="responsive-img" alt="CV中与“人”和“视频”有关的研究">
+                        
+                        <span class="card-title">CV中与“人”和“视频”有关的研究</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%AD%A6CV/">
+                        <span class="chip bg-color">学CV</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="8140204950"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">小油油</a>
+            |&nbsp;Powered by&nbsp;<a href="https://github.com/ShuaiGuo95/ShuaiGuo95.github.io" target="_blank">ShuaiGuo95</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;&nbsp;<i class="far fa-eye"></i>&nbsp;总见证次数:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总见证人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
