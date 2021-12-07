@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="处理PDF doc docx截取文本得到excel, You and Me">
+    <meta name="keywords" content="如何在ResearchGate上Request full-text, You and Me">
     <meta name="description" content="一起学习，一起玩耍，去经历，去感动">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>处理PDF doc docx截取文本得到excel | You and Me</title>
+    <title>如何在ResearchGate上Request full-text | You and Me</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -295,12 +295,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/35.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/36.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">处理PDF doc docx截取文本得到excel</h1>
+                    <h1 class="description center-align post-title">如何在ResearchGate上Request full-text</h1>
                 </div>
             </div>
         </div>
@@ -416,8 +416,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AD%A6Python/">
-                                <span class="chip bg-color">学Python</span>
+                            <a href="/tags/%E5%AD%A6%E5%B0%8F%E6%8A%80%E8%83%BD/">
+                                <span class="chip bg-color">学小技能</span>
                             </a>
                         
                     </div>
@@ -441,21 +441,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-26
+                    2021-12-07
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-26
+                    2021-12-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    644
+                    256
                 </div>
                 
 
@@ -480,127 +480,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="处理PDF-doc-docx截取文本得到excel"><a href="#处理PDF-doc-docx截取文本得到excel" class="headerlink" title="处理PDF doc docx截取文本得到excel"></a>处理PDF doc docx截取文本得到excel</h1><p>根据上一节爬取的深市企业调研公告结果，本节进行处理，要求把存在表格的文件进行截取，按照句号分别截取，然后得到excel。本节的工作主要在于要把doc文件转化为docx然后进行处理，而且要对不同格式的文件采用不同的处理方法。主要是一些比较繁琐的操作。</p>
-<p>主要代码如下：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pdfplumber
-<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
-<span class="token keyword">import</span> os
-<span class="token keyword">import</span> xlwt
-<span class="token keyword">from</span> docx <span class="token keyword">import</span> Document
-<span class="token keyword">from</span> win32com<span class="token punctuation">.</span>client <span class="token keyword">import</span> Dispatch
-
-inputdir <span class="token operator">=</span> <span class="token string">'D:\\爬取巨潮资讯网\\'</span> <span class="token comment"># 这个目录需要自行创建并指定</span>
-outputdir <span class="token operator">=</span> <span class="token string">'D:\\爬取结果整理\\'</span>
-errors <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'C:\\Users\\15617\\Desktop\\'</span><span class="token operator">+</span><span class="token string">'异常信息_excel处理.txt'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
-
-<span class="token keyword">def</span> <span class="token function">content_process</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">if</span> <span class="token string">'：'</span> <span class="token keyword">in</span> content<span class="token punctuation">:</span> <span class="token keyword">return</span> content<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'：'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-    <span class="token keyword">if</span> <span class="token string">':'</span> <span class="token keyword">in</span> content<span class="token punctuation">:</span> <span class="token keyword">return</span> content<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">':'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-    <span class="token keyword">if</span> <span class="token string">'?'</span> <span class="token keyword">in</span> content<span class="token punctuation">:</span> <span class="token keyword">return</span> content<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'?'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-    <span class="token keyword">if</span> <span class="token string">'？'</span> <span class="token keyword">in</span> content<span class="token punctuation">:</span> <span class="token keyword">return</span> content<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'？'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-    <span class="token keyword">return</span> content
-
-<span class="token keyword">def</span> <span class="token function">pdf_read</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> excelname<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">try</span><span class="token punctuation">:</span>
-        pdf <span class="token operator">=</span> pdfplumber<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span>
-        <span class="token comment"># page = pdf.pages[0].extract_table()</span>
-        table <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> page <span class="token keyword">in</span> pdf<span class="token punctuation">.</span>pages<span class="token punctuation">:</span>
-            <span class="token keyword">for</span> temp <span class="token keyword">in</span> page<span class="token punctuation">.</span>extract_tables<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-                <span class="token keyword">for</span> line <span class="token keyword">in</span> temp<span class="token punctuation">:</span>
-                    table<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+=</span> line<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-                    table<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+=</span> line<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-    <span class="token keyword">except</span><span class="token punctuation">:</span>
-        <span class="token keyword">global</span> errors
-        errors<span class="token punctuation">.</span>write<span class="token punctuation">(</span>filename<span class="token operator">+</span><span class="token string">'\n'</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span>
-
-    <span class="token keyword">if</span> <span class="token string">'投资者关系活动类别'</span> <span class="token keyword">not</span> <span class="token keyword">in</span> table<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span> 
-        <span class="token keyword">return</span>
-
-    wb <span class="token operator">=</span> xlwt<span class="token punctuation">.</span>Workbook<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    sheet <span class="token operator">=</span> wb<span class="token punctuation">.</span>add_sheet<span class="token punctuation">(</span><span class="token string">'Sheet1'</span><span class="token punctuation">)</span>
-    index <span class="token operator">=</span> <span class="token number">0</span>
-    contents <span class="token operator">=</span> table<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'。'</span><span class="token punctuation">)</span>
-    <span class="token comment"># if '简介' not in contents and '介绍' not in contents and '情况' not in contents and '总结' not in contents and </span>
-    <span class="token keyword">for</span> content <span class="token keyword">in</span> contents<span class="token punctuation">:</span>
-        <span class="token keyword">if</span> content <span class="token operator">==</span> <span class="token string">''</span><span class="token punctuation">:</span> <span class="token keyword">continue</span>
-        content <span class="token operator">=</span> content_process<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
-        loc <span class="token operator">=</span> <span class="token string">'A'</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span>
-        sheet<span class="token punctuation">.</span>write<span class="token punctuation">(</span>index<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> content<span class="token punctuation">)</span> 
-        <span class="token comment"># sheet.write(index, 1, '') </span>
-        index <span class="token operator">+=</span> <span class="token number">1</span>
-
-    pdf<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span>excelname<span class="token punctuation">)</span>
-
-<span class="token keyword">def</span> <span class="token function">word_read</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> excelname<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">try</span><span class="token punctuation">:</span>
-        <span class="token builtin">file</span> <span class="token operator">=</span> Document<span class="token punctuation">(</span>filename<span class="token punctuation">)</span>
-        table <span class="token operator">=</span> <span class="token builtin">file</span><span class="token punctuation">.</span>tables<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-        contents <span class="token operator">=</span> table<span class="token punctuation">.</span>cell<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'。'</span><span class="token punctuation">)</span>
-    <span class="token keyword">except</span><span class="token punctuation">:</span>
-        <span class="token keyword">global</span> errors
-        errors<span class="token punctuation">.</span>write<span class="token punctuation">(</span>filename<span class="token operator">+</span><span class="token string">'\n'</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span>
-
-    <span class="token keyword">if</span> <span class="token string">'投资'</span> <span class="token keyword">not</span> <span class="token keyword">in</span> table<span class="token punctuation">.</span>cell<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text<span class="token punctuation">:</span> 
-        <span class="token keyword">return</span>
-
-    wb <span class="token operator">=</span> xlwt<span class="token punctuation">.</span>Workbook<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    sheet <span class="token operator">=</span> wb<span class="token punctuation">.</span>add_sheet<span class="token punctuation">(</span><span class="token string">'Sheet1'</span><span class="token punctuation">)</span>
-    index <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token keyword">for</span> content <span class="token keyword">in</span> contents<span class="token punctuation">:</span>
-        <span class="token keyword">if</span> content <span class="token operator">==</span> <span class="token string">''</span><span class="token punctuation">:</span> <span class="token keyword">continue</span>
-        content <span class="token operator">=</span> content_process<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
-        loc <span class="token operator">=</span> <span class="token string">'A'</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span>
-        sheet<span class="token punctuation">.</span>write<span class="token punctuation">(</span>index<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> content<span class="token punctuation">)</span>
-        <span class="token comment"># sheet.write(index, 1, '')</span>
-        index <span class="token operator">+=</span> <span class="token number">1</span>
-
-    wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span>excelname<span class="token punctuation">)</span>
-
-<span class="token comment"># pdf_read('000001平安银行调研活动信息20210129(1)_gssz0000001.pdf', '000001平安银行调研活动信息20210129(1)_gssz0000001.xls')</span>
-<span class="token comment"># word_read('000032深桑达Ａ调研活动信息20210118_gssz0000032.docx', '000032深桑达Ａ调研活动信息20210118_gssz0000032.xls')</span>
-
-wd <span class="token operator">=</span> Dispatch<span class="token punctuation">(</span><span class="token string">"Word.application"</span><span class="token punctuation">)</span>
-wd<span class="token punctuation">.</span>Visible <span class="token operator">=</span> <span class="token number">0</span>
-wd<span class="token punctuation">.</span>DisplayAlerts <span class="token operator">=</span> <span class="token number">0</span>
-
-companies <span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>inputdir<span class="token punctuation">)</span>
-<span class="token comment"># companies = ['st北文']</span>
-<span class="token keyword">for</span> companyname <span class="token keyword">in</span> companies<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>companyname<span class="token punctuation">)</span>
-    companyinputdir <span class="token operator">=</span> inputdir <span class="token operator">+</span> companyname <span class="token operator">+</span> <span class="token string">'\\'</span>
-    companyoutputdir <span class="token operator">=</span> outputdir <span class="token operator">+</span> companyname <span class="token operator">+</span> <span class="token string">'\\'</span>
-    inputfiles <span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>companyinputdir<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token builtin">len</span><span class="token punctuation">(</span>inputfiles<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">continue</span>
-    os<span class="token punctuation">.</span>mkdir<span class="token punctuation">(</span>companyoutputdir<span class="token punctuation">)</span>
-    <span class="token keyword">for</span> inputfile <span class="token keyword">in</span> inputfiles<span class="token punctuation">:</span>
-        outputfile <span class="token operator">=</span> companyoutputdir <span class="token operator">+</span> inputfile<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'.xls'</span>
-        <span class="token keyword">if</span> <span class="token string">'.pdf'</span> <span class="token keyword">in</span> inputfile<span class="token punctuation">:</span>
-            pdf_read<span class="token punctuation">(</span>companyinputdir <span class="token operator">+</span> inputfile<span class="token punctuation">,</span> outputfile<span class="token punctuation">)</span>
-        <span class="token keyword">elif</span> <span class="token string">'.docx'</span> <span class="token keyword">in</span> inputfile<span class="token punctuation">:</span>
-            word_read<span class="token punctuation">(</span>companyinputdir <span class="token operator">+</span> inputfile<span class="token punctuation">,</span> outputfile<span class="token punctuation">)</span>
-        <span class="token keyword">elif</span> <span class="token string">'.doc'</span> <span class="token keyword">in</span> inputfile<span class="token punctuation">:</span>
-            <span class="token comment"># 打开doc文档, 必须给一个绝对路径</span>
-            <span class="token keyword">if</span> <span class="token keyword">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>companyinputdir <span class="token operator">+</span> inputfile<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">continue</span>
-            <span class="token keyword">try</span><span class="token punctuation">:</span>
-                doc <span class="token operator">=</span> wd<span class="token punctuation">.</span>Documents<span class="token punctuation">.</span>Open<span class="token punctuation">(</span>companyinputdir <span class="token operator">+</span> inputfile<span class="token punctuation">)</span>
-            <span class="token keyword">except</span><span class="token punctuation">:</span>
-                errors<span class="token punctuation">.</span>write<span class="token punctuation">(</span>companyinputdir <span class="token operator">+</span> inputfile <span class="token operator">+</span> <span class="token string">'\n'</span><span class="token punctuation">)</span>
-                <span class="token keyword">continue</span>
-            creatfile <span class="token operator">=</span> companyinputdir <span class="token operator">+</span> inputfile <span class="token operator">+</span> <span class="token string">'x'</span>
-            <span class="token keyword">if</span> <span class="token keyword">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>creatfile<span class="token punctuation">)</span><span class="token punctuation">:</span>
-                doc<span class="token punctuation">.</span>SaveAs<span class="token punctuation">(</span>creatfile<span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span> <span class="token comment">#12表示docx格式</span>
-            doc<span class="token punctuation">.</span>Close<span class="token punctuation">(</span><span class="token punctuation">)</span>
-            os<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>companyinputdir <span class="token operator">+</span> inputfile<span class="token punctuation">)</span>
-            <span class="token comment"># 退出word应用</span>
-            word_read<span class="token punctuation">(</span>companyinputdir <span class="token operator">+</span> inputfile <span class="token operator">+</span> <span class="token string">'x'</span><span class="token punctuation">,</span> outputfile<span class="token punctuation">)</span>
-
-wd<span class="token punctuation">.</span>Quit<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>做一个简单记录吧，就当练手啦<span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+                <h1 id="如何在ResearchGate上Request-full-text"><a href="#如何在ResearchGate上Request-full-text" class="headerlink" title="如何在ResearchGate上Request full-text"></a>如何在ResearchGate上Request full-text</h1><p><a target="_blank" rel="noopener" href="https://www.researchgate.net/">ResearchGate</a>是一个科研交流网站，上面有非常多的作者展示其论文和科研成果。不过这些论文ResarchGate并没有版权，作者们可以在版权允许的情况下上传论文、向其他作者请求论文原文、回应其他作者的请求并给予原文等等。本文介绍如何在ResearchGate上Request full-text。</p>
+<h2 id="登录并注册"><a href="#登录并注册" class="headerlink" title="登录并注册"></a>登录并注册</h2><p>首先需要登录<a target="_blank" rel="noopener" href="https://www.researchgate.net/">ResearchGate</a>并注册账号</p>
+<p><img src="%E9%A6%96%E9%A1%B5.png" alt="ResearchGate网站首页"></p>
+<p>然后选择Join for free，这里提供了多样的选择</p>
+<p><img src="%E6%B3%A8%E5%86%8C.png" alt="注册"></p>
+<p>进行注册即可。</p>
+<h2 id="搜索论文并Request-full-text"><a href="#搜索论文并Request-full-text" class="headerlink" title="搜索论文并Request full-text"></a>搜索论文并Request full-text</h2><p>注册并登录之后，在搜索栏进行论文搜索即可</p>
+<p><img src="%E6%90%9C%E7%B4%A2.png" alt="搜索"></p>
+<p>比如我们搜索这篇文章：<a target="_blank" rel="noopener" href="https://journals.aom.org/doi/full/10.5465/amp.2018.0018">《Multisided Platforms as New Organizational Forms》</a>，即可找到</p>
+<p><img src="%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C.png" alt="搜索结果"></p>
+<p>点击Request full-text即可向作者发送邮件，请求原文，如果作者人比较好并且看到了的话，是会回应的。</p>
+<p>有时候这里是可以直接下载的，就不用Request啦。</p>
+<p>怎么样，是不是很简单哇<span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
 
                 
             </div>
@@ -615,8 +507,8 @@ wd<span class="token punctuation">.</span>Quit<span class="token punctuation">(<
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AD%A6Python/">
-                                    <span class="chip bg-color">学Python</span>
+                                <a href="/tags/%E5%AD%A6%E5%B0%8F%E6%8A%80%E8%83%BD/">
+                                    <span class="chip bg-color">学小技能</span>
                                 </a>
                             
                         </div>
@@ -928,9 +820,10 @@ wd<span class="token punctuation">.</span>Quit<span class="token punctuation">(<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/12/07/%E5%A6%82%E4%BD%95%E5%9C%A8ResearchGate%E4%B8%8ARequest-full-text/">
                     <div class="card-image">
@@ -947,9 +840,9 @@ wd<span class="token punctuation">.</span>Quit<span class="token punctuation">(<
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -962,6 +855,7 @@ wd<span class="token punctuation">.</span>Quit<span class="token punctuation">(<
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -980,12 +874,12 @@ wd<span class="token punctuation">.</span>Quit<span class="token punctuation">(<
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/11/26/%E4%BB%8E%E5%B7%A8%E6%BD%AE%E8%B5%84%E8%AE%AF%E7%BD%91%E7%88%AC%E5%8F%96%E6%B7%B1%E5%B8%82%E4%BC%81%E4%B8%9A%E5%8E%86%E5%B9%B4%E8%B0%83%E7%A0%94%E5%85%AC%E5%91%8A/">
+                <a href="/2021/11/26/%E5%A4%84%E7%90%86PDF-doc-docx%E6%88%AA%E5%8F%96%E6%96%87%E6%9C%AC%E5%BE%97%E5%88%B0excel/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/34.jpg" class="responsive-img" alt="从巨潮资讯网爬取深市企业历年调研公告">
+                        <img src="/medias/featureimages/35.jpg" class="responsive-img" alt="处理PDF doc docx截取文本得到excel">
                         
-                        <span class="card-title">从巨潮资讯网爬取深市企业历年调研公告</span>
+                        <span class="card-title">处理PDF doc docx截取文本得到excel</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1013,8 +907,8 @@ wd<span class="token punctuation">.</span>Quit<span class="token punctuation">(<
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AD%A6%E7%88%AC%E8%99%AB/">
-                        <span class="chip bg-color">学爬虫</span>
+                    <a href="/tags/%E5%AD%A6Python/">
+                        <span class="chip bg-color">学Python</span>
                     </a>
                     
                 </div>
