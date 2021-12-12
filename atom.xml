@@ -6,7 +6,7 @@
   <link href="https://shuaiguo95.github.io/atom.xml" rel="self"/>
   
   <link href="https://shuaiguo95.github.io/"/>
-  <updated>2021-12-07T11:21:59.393Z</updated>
+  <updated>2021-12-12T16:17:50.091Z</updated>
   <id>https://shuaiguo95.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>技术文档链接汇总</title>
+    <link href="https://shuaiguo95.github.io/2021/12/12/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E9%93%BE%E6%8E%A5%E6%B1%87%E6%80%BB/"/>
+    <id>https://shuaiguo95.github.io/2021/12/12/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E9%93%BE%E6%8E%A5%E6%B1%87%E6%80%BB/</id>
+    <published>2021-12-12T13:30:01.000Z</published>
+    <updated>2021-12-12T16:17:50.091Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;技术文档链接汇总&quot;&gt;&lt;a href=&quot;#技术文档链接汇总&quot; class=&quot;headerlink&quot; title=&quot;技术文档链接汇总&quot;&gt;&lt;/a&gt;技术文档链接汇总&lt;/h1&gt;&lt;h2 id=&quot;NLP方面&quot;&gt;&lt;a href=&quot;#NLP方面&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习" scheme="https://shuaiguo95.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="笔记" scheme="https://shuaiguo95.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>冬夜</title>
@@ -491,31 +516,6 @@
     
     
     <category term="目标与计划" scheme="https://shuaiguo95.github.io/tags/%E7%9B%AE%E6%A0%87%E4%B8%8E%E8%AE%A1%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NLP常见Python包简介</title>
-    <link href="https://shuaiguo95.github.io/2021/10/11/NLP%E5%B8%B8%E8%A7%81Python%E5%8C%85%E7%AE%80%E4%BB%8B/"/>
-    <id>https://shuaiguo95.github.io/2021/10/11/NLP%E5%B8%B8%E8%A7%81Python%E5%8C%85%E7%AE%80%E4%BB%8B/</id>
-    <published>2021-10-11T10:34:25.000Z</published>
-    <updated>2021-10-18T17:32:53.784Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;NLP常见Python包简介&quot;&gt;&lt;a href=&quot;#NLP常见Python包简介&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="学习" scheme="https://shuaiguo95.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="学NLP" scheme="https://shuaiguo95.github.io/tags/%E5%AD%A6NLP/"/>
     
   </entry>
   

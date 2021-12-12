@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>技术文档链接汇总</title>
+      <link href="/2021/12/12/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E9%93%BE%E6%8E%A5%E6%B1%87%E6%80%BB/"/>
+      <url>/2021/12/12/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E9%93%BE%E6%8E%A5%E6%B1%87%E6%80%BB/</url>
+      
+        <content type="html"><![CDATA[<h1 id="技术文档链接汇总"><a href="#技术文档链接汇总" class="headerlink" title="技术文档链接汇总"></a>技术文档链接汇总</h1><h2 id="NLP方面"><a href="#NLP方面" class="headerlink" title="NLP方面"></a>NLP方面</h2><h3 id="全面解读文本情感分析任务"><a href="#全面解读文本情感分析任务" class="headerlink" title="全面解读文本情感分析任务"></a><a href="https://blog.csdn.net/devcloud/article/details/103145312">全面解读文本情感分析任务</a></h3><p><strong>小结：</strong></p><p>这篇博客将文本情感分析任务分为词级、句子/文档级、目标级；目标级又分为TG-ABSA、TN-ABSA、T-ABSA三种，分别表示文本中出现的实体的某些属性的情感正负倾向、文本中出现的实体的情感正负向、文本中出现的实体和属性组合的情感正负倾向，三者例子如下。并且介绍了华为云在这几种任务上的进展。</p><p><img src="TG-ABSA.png"></p><p><img src="TN-ABSA.png"></p><p><img src="T-ABSA.png"></p><p><strong>有借用本文档相关工作的文献：</strong></p><p><img src="nlp1.1.png"></p><p><img src="nlp1.2.png"></p><h2 id="NER-命名实体识别"><a href="#NER-命名实体识别" class="headerlink" title="NER 命名实体识别 "></a><a href="https://my.oschina.net/u/4396705/blog/4300403">NER 命名实体识别 </a></h2><p><strong>小结：</strong></p><p>命名实体识别（Named Entity Recognition, NER）是指从自由文本中识别出属于预定义类别的文本片段，现有一些公开语料库如NER标注语料库，举个例子，假如有这么一句话：</p><blockquote><p>ACM宣布，深度学习的三位创造者Yoshua Bengio， Yann LeCun， 以及Geoffrey Hinton获得了2019年的图灵奖。</p></blockquote><p>那么NER的任务就是从这句话中提取出</p><ul><li>机构名：ACM</li><li>人名：Yoshua Bengio， Yann LeCun，Geoffrey Hinton</li><li>时间：2019年</li><li>专有名词：图灵奖</li></ul><p>有一些公开的学术界和工业界的NER工具可以使用。有一些基于CNN、RNN、transformer的模型可以使用。</p><p><strong>有借用文档相关工作的文献：</strong></p><p><img src="NER.png"></p><p>这段话主要是再说，细粒度（Fine-Grained）命名实体识别可以为特定个体识别其最合适的身份属性。概念（概念一般是自定义的）级别的情绪挖掘技术可以用于理解身份标签所包含的情绪含义。引文[5]从电影评论中提取了特定人物角色的语义特征，类似于身份identities。</p><p>FGNER是给定候选实体 (Mention)及其上下文 (Context)，预测可能的类别集合。FGNER与NER的区别在于：</p><ul><li><p>识别边界</p><ul><li>NER从文本序列中识别实体的边界和类型，一般当作序列标注任务来处理</li><li>FGET任务实体边界通常已经给定，一般当作有层级的多标签分类任务来处理</li></ul></li><li><p>类别层级</p><ul><li>NER面向的类别数量较少，因为序列标注问题搜索空间比较大，限制了实体的类别数量</li><li>FGET面向几十个或者上百个类别，需要考虑类别之间的subClassOf关系</li></ul></li></ul><p>比如如下几句话：</p><ul><li>美国第44届总统是奥巴马；奥巴马实体在NER任务中识别为人物，在FGNER中识别为政治家；</li><li>奥巴马是一个xx书的作者；奥巴马实体在NER任务中识别为人物，在FGNER中识别为作家；</li></ul><h2 id="Wordnet-1-Wordnet-2"><a href="#Wordnet-1-Wordnet-2" class="headerlink" title="Wordnet 1,Wordnet 2"></a><a href="https://www.cnblogs.com/JCSU/articles/1142744.html">Wordnet 1,</a><a href="https://blog.csdn.net/xieyan0811/article/details/82314042">Wordnet 2</a></h2><p><strong>小结：</strong></p><p>wordnet是普林斯顿大学创建的语义词典，特点是其中包含了大量的单词间的联系，可以看作是一个巨大的词汇网络。词与词之间的关系可以为同义，反义，上下位（水果－苹果），整体部分（汽车－轮胎）。还可以计算词之间的关系，判断是同义词或反义词。</p><h2 id="中文语义词库CWB"><a href="#中文语义词库CWB" class="headerlink" title="中文语义词库CWB"></a><a href="https://www.52nlp.cn/cwb-trial-and-others">中文语义词库CWB</a></h2><p><strong>小结：</strong></p><p>CWB是一个中文的语义词库，类似于外文的wordnet，但是这个链接提供的CWB访问地址已经无法访问。目前可以从其他地方找到类似词库的链接和软件，后面用的时候可以进一步探究。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>冬夜</title>
       <link href="/2021/12/07/%E5%86%AC%E5%A4%9C/"/>
       <url>/2021/12/07/%E5%86%AC%E5%A4%9C/</url>

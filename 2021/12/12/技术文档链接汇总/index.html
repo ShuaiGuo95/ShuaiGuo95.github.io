@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="冬夜, You and Me">
+    <meta name="keywords" content="技术文档链接汇总, You and Me">
     <meta name="description" content="一起学习，一起玩耍，去经历，去感动">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>冬夜 | You and Me</title>
+    <title>技术文档链接汇总 | You and Me</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -295,12 +295,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/37.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/38.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">冬夜</h1>
+                    <h1 class="description center-align post-title">技术文档链接汇总</h1>
                 </div>
             </div>
         </div>
@@ -416,8 +416,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%AF%97/">
-                                <span class="chip bg-color">诗</span>
+                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">笔记</span>
                             </a>
                         
                     </div>
@@ -428,8 +428,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%B2%B9%E5%85%88%E7%94%9F%E9%80%89%E9%9B%86/" class="post-category">
-                                油先生选集
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                学习
                             </a>
                         
                     </div>
@@ -441,21 +441,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-07
+                    2021-12-12
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-07
+                    2021-12-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    58
+                    869
                 </div>
                 
 
@@ -480,7 +480,54 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="冬夜"><a href="#冬夜" class="headerlink" title="冬夜"></a>冬夜</h1><p>西风萧萧雁南翔，明月皎皎露为霜。<br>江南冬日草犹黄，援琴鸣弦发清商。<br>聚日何短散何长，思君不见在他乡。<br>牵牛织女遥相望，寄心星汉不敢忘。</p>
+                <h1 id="技术文档链接汇总"><a href="#技术文档链接汇总" class="headerlink" title="技术文档链接汇总"></a>技术文档链接汇总</h1><h2 id="NLP方面"><a href="#NLP方面" class="headerlink" title="NLP方面"></a>NLP方面</h2><h3 id="全面解读文本情感分析任务"><a href="#全面解读文本情感分析任务" class="headerlink" title="全面解读文本情感分析任务"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/devcloud/article/details/103145312">全面解读文本情感分析任务</a></h3><p><strong>小结：</strong></p>
+<p>这篇博客将文本情感分析任务分为词级、句子/文档级、目标级；目标级又分为TG-ABSA、TN-ABSA、T-ABSA三种，分别表示文本中出现的实体的某些属性的情感正负倾向、文本中出现的实体的情感正负向、文本中出现的实体和属性组合的情感正负倾向，三者例子如下。并且介绍了华为云在这几种任务上的进展。</p>
+<p><img src="TG-ABSA.png"></p>
+<p><img src="TN-ABSA.png"></p>
+<p><img src="T-ABSA.png"></p>
+<p><strong>有借用本文档相关工作的文献：</strong></p>
+<p><img src="nlp1.1.png"></p>
+<p><img src="nlp1.2.png"></p>
+<h2 id="NER-命名实体识别"><a href="#NER-命名实体识别" class="headerlink" title="NER 命名实体识别 "></a><a target="_blank" rel="noopener" href="https://my.oschina.net/u/4396705/blog/4300403">NER 命名实体识别 </a></h2><p><strong>小结：</strong></p>
+<p>命名实体识别（Named Entity Recognition, NER）是指从自由文本中识别出属于预定义类别的文本片段，现有一些公开语料库如NER标注语料库，举个例子，假如有这么一句话：</p>
+<blockquote>
+<p>ACM宣布，深度学习的三位创造者Yoshua Bengio， Yann LeCun， 以及Geoffrey Hinton获得了2019年的图灵奖。</p>
+</blockquote>
+<p>那么NER的任务就是从这句话中提取出</p>
+<ul>
+<li>机构名：ACM</li>
+<li>人名：Yoshua Bengio， Yann LeCun，Geoffrey Hinton</li>
+<li>时间：2019年</li>
+<li>专有名词：图灵奖</li>
+</ul>
+<p>有一些公开的学术界和工业界的NER工具可以使用。有一些基于CNN、RNN、transformer的模型可以使用。</p>
+<p><strong>有借用文档相关工作的文献：</strong></p>
+<p><img src="NER.png"></p>
+<p>这段话主要是再说，细粒度（Fine-Grained）命名实体识别可以为特定个体识别其最合适的身份属性。概念（概念一般是自定义的）级别的情绪挖掘技术可以用于理解身份标签所包含的情绪含义。引文[5]从电影评论中提取了特定人物角色的语义特征，类似于身份identities。</p>
+<p>FGNER是给定候选实体 (Mention)及其上下文 (Context)，预测可能的类别集合。FGNER与NER的区别在于：</p>
+<ul>
+<li><p>识别边界</p>
+<ul>
+<li>NER从文本序列中识别实体的边界和类型，一般当作序列标注任务来处理</li>
+<li>FGET任务实体边界通常已经给定，一般当作有层级的多标签分类任务来处理</li>
+</ul>
+</li>
+<li><p>类别层级</p>
+<ul>
+<li>NER面向的类别数量较少，因为序列标注问题搜索空间比较大，限制了实体的类别数量</li>
+<li>FGET面向几十个或者上百个类别，需要考虑类别之间的subClassOf关系</li>
+</ul>
+</li>
+</ul>
+<p>比如如下几句话：</p>
+<ul>
+<li>美国第44届总统是奥巴马；奥巴马实体在NER任务中识别为人物，在FGNER中识别为政治家；</li>
+<li>奥巴马是一个xx书的作者；奥巴马实体在NER任务中识别为人物，在FGNER中识别为作家；</li>
+</ul>
+<h2 id="Wordnet-1-Wordnet-2"><a href="#Wordnet-1-Wordnet-2" class="headerlink" title="Wordnet 1,Wordnet 2"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/JCSU/articles/1142744.html">Wordnet 1,</a><a target="_blank" rel="noopener" href="https://blog.csdn.net/xieyan0811/article/details/82314042">Wordnet 2</a></h2><p><strong>小结：</strong></p>
+<p>wordnet是普林斯顿大学创建的语义词典，特点是其中包含了大量的单词间的联系，可以看作是一个巨大的词汇网络。词与词之间的关系可以为同义，反义，上下位（水果－苹果），整体部分（汽车－轮胎）。还可以计算词之间的关系，判断是同义词或反义词。</p>
+<h2 id="中文语义词库CWB"><a href="#中文语义词库CWB" class="headerlink" title="中文语义词库CWB"></a><a target="_blank" rel="noopener" href="https://www.52nlp.cn/cwb-trial-and-others">中文语义词库CWB</a></h2><p><strong>小结：</strong></p>
+<p>CWB是一个中文的语义词库，类似于外文的wordnet，但是这个链接提供的CWB访问地址已经无法访问。目前可以从其他地方找到类似词库的链接和软件，后面用的时候可以进一步探究。</p>
 
                 
             </div>
@@ -495,8 +542,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%AF%97/">
-                                    <span class="chip bg-color">诗</span>
+                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">笔记</span>
                                 </a>
                             
                         </div>
@@ -808,9 +855,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/12/12/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E9%93%BE%E6%8E%A5%E6%B1%87%E6%80%BB/">
                     <div class="card-image">
@@ -827,9 +875,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -842,6 +890,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -860,12 +909,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/07/%E5%A6%82%E4%BD%95%E5%9C%A8ResearchGate%E4%B8%8ARequest-full-text/">
+                <a href="/2021/12/07/%E5%86%AC%E5%A4%9C/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/36.jpg" class="responsive-img" alt="如何在ResearchGate上Request full-text">
+                        <img src="/medias/featureimages/37.jpg" class="responsive-img" alt="冬夜">
                         
-                        <span class="card-title">如何在ResearchGate上Request full-text</span>
+                        <span class="card-title">冬夜</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -882,8 +931,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    学习
+                            <a href="/categories/%E6%B2%B9%E5%85%88%E7%94%9F%E9%80%89%E9%9B%86/" class="post-category">
+                                    油先生选集
                                 </a>
                             
                             
@@ -893,8 +942,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AD%A6%E5%B0%8F%E6%8A%80%E8%83%BD/">
-                        <span class="chip bg-color">学小技能</span>
+                    <a href="/tags/%E8%AF%97/">
+                        <span class="chip bg-color">诗</span>
                     </a>
                     
                 </div>
