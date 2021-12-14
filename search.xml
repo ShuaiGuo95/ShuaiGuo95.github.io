@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>EndNote安装与文献导入</title>
+      <link href="/2021/12/14/EndNote%E5%AE%89%E8%A3%85%E4%B8%8E%E6%96%87%E7%8C%AE%E5%AF%BC%E5%85%A5/"/>
+      <url>/2021/12/14/EndNote%E5%AE%89%E8%A3%85%E4%B8%8E%E6%96%87%E7%8C%AE%E5%AF%BC%E5%85%A5/</url>
+      
+        <content type="html"><![CDATA[<h1 id="EndNote安装与文献导入"><a href="#EndNote安装与文献导入" class="headerlink" title="EndNote安装与文献导入"></a>EndNote安装与文献导入</h1><p>EndNote是一款被广泛使用的文献管理软件，是SCI（Thomson Scientific 公司）的官方软件，支持国际期刊的参考文献格式有7000多种，也可以自定义期刊引用格式，便于文献整理、写笔记、做备注、分类、导出期刊格式、进行数据迁移。对于科研需要大量看文献并对文献分类时，EndNote无疑是科研人的好帮手。从本文开始我们的小网站介绍一些EndNote的使用方法，本文先介绍EndNote的安装与文献导入。</p><h2 id="EndNote安装"><a href="#EndNote安装" class="headerlink" title="EndNote安装"></a>EndNote安装</h2><p>目前比较常见的EndNote版本是EndNote 20。校内正版软件中心提供了EndNote下载和安装方式，这里就不列出了。另外油油也找到了破解版，已经上传到我们的百度网盘“软件”文件夹下。安装时可以点击<code>EN20Inst.exe</code>进行安装：</p><p><img src="%E7%A0%B4%E8%A7%A3%E7%89%881.jpg" alt="破解版文件目录"></p><p>默认会安装到<code>C:\Program Files (x86)\EndNote 20</code>目录下，在文件管理器打开这个目录，然后使用破解版文件<code>Crack</code>文件夹中的<code>EndNote.exe</code>替换该目录下的同名文件即可完成破解。</p><p><img src="%E7%A0%B4%E8%A7%A3%E7%89%882.jpg" alt="Crack文件目录"></p><p>然后就可以打开EndNote了。</p><h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><p>首次打开EndNote会提示创建数据库，设置数据库名称和保存即可。</p><p><img src="%E5%88%9B%E5%BB%BA.png" alt="创建数据库"></p><p>当然也可以在主界面左上角选择<code>File-&gt;New</code>功能进行创建数据库。</p><p>然后就可以开始进行文献导入啦。</p><h2 id="从在线网站导入文献"><a href="#从在线网站导入文献" class="headerlink" title="从在线网站导入文献"></a>从在线网站导入文献</h2><p>在<a href="https://www.webofscience.com/wos/alldb/basic-search">Web of Science</a>、<a href="https://cnki.net/">知网</a>等网站可以直接批量导出文献到EndNote。Web of Science如下，选择EndNote Desktop进行导出，表示导出到EndNote桌面版：</p><p><img src="WOS1.jpg" alt="Web of Science 文献检索导出"></p><p>导出时可以进行一些设置，如导出文献的数量、记录内容等等：</p><p><img src="WOS2.jpg" alt="Web of Science 导出设置"></p><p>然后可以得到一个<code>.ciw</code>格式的导出文件，用EndNote打开该文件就可以把对应论文导入到EndNote当前的数据库中。不过这样导入的论文是没有PDF文章的，需要点击文献对应的PDF选项，然后<code>Attach PDF</code>才能添加文章：</p><p><img src="attachPDF.png" alt="Attach PDF"></p><p>知网用法如下，需要先选择导出哪些文献，然后导出为EndNote格式：</p><p><img src="cnki1.jpg" alt="知网文献检索导出"></p><p>点击<code>导出文献-&gt;EndNote</code>之后，需要<code>筛选已选文献</code>，找一下自己想导出的文献：</p><p><img src="cnki2.jpg" alt="筛选已选文献"></p><p>然后点击<code>导出题录</code>：</p><p><img src="cnki3.jpg" alt="导出题录"></p><p>然后选择<code>EndNote</code>、<code>导出</code>：</p><p><img src="cnki4.jpg" alt="导出"></p><p>可以得到一个<code>txt</code>文件。可以在EndNote中选择<code>File-&gt;Import-&gt;File</code>导入该文件：</p><p><img src="cnki6.png" alt="导入txt文件"></p><p>或者将这个文件在记事本或Sublime中打开，另存为<code>.ciw</code>格式：</p><p><img src="cnki5.png" alt="另存为.ciw格式"></p><p>接下来就可以用EndNote打开该文件，把对应论文导入到EndNote当前的数据库中啦。同样地，这样导入的论文是没有PDF文章的，需要点击文献对应的PDF选项，然后<code>Attach PDF</code>才能添加文章。</p><h2 id="从本地PDF导入文献"><a href="#从本地PDF导入文献" class="headerlink" title="从本地PDF导入文献"></a>从本地PDF导入文献</h2><p>也可以把本地的PDF论文导入到EndNote中。选择<code>File-&gt;Import-&gt;File</code>，<code>Import Option</code>选择<code>PDF</code>即可：</p><p><img src="pdfimport.png" alt="导入PDF"></p><p>这样有时候会导致论文信息不准确，可以点击对应论文的<code>Edit</code>编辑一下:</p><p><img src="edit.jpg" alt="Edit论文信息"></p><p>同样也可以选择PDF文件夹上传，选择<code>File-&gt;Import-&gt;Folder</code>：</p><p><img src="importfolder.png" alt="导入文件夹"></p><p>这里还可以选择同时创建<code>Group Set</code>、包含所有子文件夹的文件。</p><p>EndNote可以创建不同的Group Set，每个Group Set下又可以创建多个Group，分别用于保存论文。在左边栏的<code>MY GROUPS</code>上右键，即可进行创建Group Set、创建Group等操作。而EndNote中的每篇论文点击右键<code>Add References To</code>，就可以添加到指定Group，实现分组操作。</p><p>还可以自动跟踪本地文件夹中的PDF文件。</p><p>点击<code>Edit-&gt;Preferences-&gt;PDF Handling</code>，勾选<code>Enable automatic importing</code>，选择文件夹即可：</p><p><img src="pdfhandling.png" alt="跟踪本地文件夹"></p><h2 id="使用EndNote搜索论文并导入"><a href="#使用EndNote搜索论文并导入" class="headerlink" title="使用EndNote搜索论文并导入"></a>使用EndNote搜索论文并导入</h2><p>EndNote也可以直接进行论文搜索和导入。点击左边栏的<code>ONLINE SEARCH</code>，选择数据库，就可以进行搜索了。搜索完毕后选择想添加的文件，然后点加号，添加到数据库：</p><p><img src="search.jpg" alt="搜索论文并导入"></p><p>本文的EndNote安装与导入就介绍到这里啦，小仙女加油哟，看好你哟~<span class="github-emoji"><span>😄</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😄</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学EndNote </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>技术文档链接汇总</title>
       <link href="/2021/12/12/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E9%93%BE%E6%8E%A5%E6%B1%87%E6%80%BB/"/>
       <url>/2021/12/12/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E9%93%BE%E6%8E%A5%E6%B1%87%E6%80%BB/</url>

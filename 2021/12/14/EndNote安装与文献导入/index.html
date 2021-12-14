@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="技术文档链接汇总, You and Me">
+    <meta name="keywords" content="EndNote安装与文献导入, You and Me">
     <meta name="description" content="一起学习，一起玩耍，去经历，去感动">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>技术文档链接汇总 | You and Me</title>
+    <title>EndNote安装与文献导入 | You and Me</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -295,12 +295,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/38.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/39.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">技术文档链接汇总</h1>
+                    <h1 class="description center-align post-title">EndNote安装与文献导入</h1>
                 </div>
             </div>
         </div>
@@ -416,8 +416,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">笔记</span>
+                            <a href="/tags/%E5%AD%A6EndNote/">
+                                <span class="chip bg-color">学EndNote</span>
                             </a>
                         
                     </div>
@@ -441,21 +441,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-12
+                    2021-12-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-13
+                    2021-12-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    872
+                    1k
                 </div>
                 
 
@@ -480,54 +480,49 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="技术文档链接汇总"><a href="#技术文档链接汇总" class="headerlink" title="技术文档链接汇总"></a>技术文档链接汇总</h1><h2 id="NLP方面"><a href="#NLP方面" class="headerlink" title="NLP方面"></a>NLP方面</h2><h3 id="全面解读文本情感分析任务"><a href="#全面解读文本情感分析任务" class="headerlink" title="全面解读文本情感分析任务"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/devcloud/article/details/103145312">全面解读文本情感分析任务</a></h3><p><strong>小结：</strong></p>
-<p>这篇博客将文本情感分析任务分为词级、句子/文档级、目标级；目标级又分为TG-ABSA、TN-ABSA、T-ABSA三种，分别表示文本中出现的实体的某些属性的情感正负倾向、文本中出现的实体的情感正负向、文本中出现的实体和属性组合的情感正负倾向，三者例子如下。并且介绍了华为云在这几种任务上的进展。</p>
-<p><img src="TG-ABSA.png"></p>
-<p><img src="TN-ABSA.png"></p>
-<p><img src="T-ABSA.png"></p>
-<p><strong>有借用本文档相关工作的文献：</strong></p>
-<p><img src="nlp1.1.png"></p>
-<p><img src="nlp1.2.png"></p>
-<h3 id="NER-命名实体识别"><a href="#NER-命名实体识别" class="headerlink" title="NER 命名实体识别 "></a><a target="_blank" rel="noopener" href="https://my.oschina.net/u/4396705/blog/4300403">NER 命名实体识别 </a></h3><p><strong>小结：</strong></p>
-<p>命名实体识别（Named Entity Recognition, NER）是指从自由文本中识别出属于预定义类别的文本片段，现有一些公开语料库如NER标注语料库，举个例子，假如有这么一句话：</p>
-<blockquote>
-<p>ACM宣布，深度学习的三位创造者Yoshua Bengio， Yann LeCun， 以及Geoffrey Hinton获得了2019年的图灵奖。</p>
-</blockquote>
-<p>那么NER的任务就是从这句话中提取出</p>
-<ul>
-<li>机构名：ACM</li>
-<li>人名：Yoshua Bengio， Yann LeCun，Geoffrey Hinton</li>
-<li>时间：2019年</li>
-<li>专有名词：图灵奖</li>
-</ul>
-<p>有一些公开的学术界和工业界的NER工具可以使用。有一些基于CNN、RNN、transformer的模型可以使用。</p>
-<p><strong>有借用文档相关工作的文献：</strong></p>
-<p><img src="NER.png"></p>
-<p>这段话主要是再说，细粒度（Fine-Grained）命名实体识别可以为特定个体识别其最合适的身份属性。概念（概念一般是自定义的）级别的情绪挖掘技术可以用于理解身份标签所包含的情绪含义。引文[5]从电影评论中提取了特定人物角色的语义特征，类似于身份identities。</p>
-<p>FGNER是给定候选实体 (Mention)及其上下文 (Context)，预测可能的类别集合。FGNER与NER的区别在于：</p>
-<ul>
-<li><p>识别边界</p>
-<ul>
-<li>NER从文本序列中识别实体的边界和类型，一般当作序列标注任务来处理</li>
-<li>FGET任务实体边界通常已经给定，一般当作有层级的多标签分类任务来处理</li>
-</ul>
-</li>
-<li><p>类别层级</p>
-<ul>
-<li>NER面向的类别数量较少，因为序列标注问题搜索空间比较大，限制了实体的类别数量</li>
-<li>FGET面向几十个或者上百个类别，需要考虑类别之间的subClassOf关系</li>
-</ul>
-</li>
-</ul>
-<p>比如如下几句话：</p>
-<ul>
-<li>美国第44届总统是奥巴马；奥巴马实体在NER任务中识别为人物，在FGNER中识别为政治家；</li>
-<li>奥巴马是一个xx书的作者；奥巴马实体在NER任务中识别为人物，在FGNER中识别为作家；</li>
-</ul>
-<h3 id="Wordnet-1-Wordnet-2"><a href="#Wordnet-1-Wordnet-2" class="headerlink" title="Wordnet 1,Wordnet 2"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/JCSU/articles/1142744.html">Wordnet 1,</a><a target="_blank" rel="noopener" href="https://blog.csdn.net/xieyan0811/article/details/82314042">Wordnet 2</a></h3><p><strong>小结：</strong></p>
-<p>wordnet是普林斯顿大学创建的语义词典，特点是其中包含了大量的单词间的联系，可以看作是一个巨大的词汇网络。词与词之间的关系可以为同义，反义，上下位（水果－苹果），整体部分（汽车－轮胎）。还可以计算词之间的关系、距离等，判断是同义词或反义词。</p>
-<h3 id="中文语义词库CWB"><a href="#中文语义词库CWB" class="headerlink" title="中文语义词库CWB"></a><a target="_blank" rel="noopener" href="https://www.52nlp.cn/cwb-trial-and-others">中文语义词库CWB</a></h3><p><strong>小结：</strong></p>
-<p>CWB是一个中文的语义词库，类似于外文的wordnet，但是这个链接提供的CWB访问地址已经无法访问。目前可以从其他地方找到类似词库的链接和软件，后面用的时候可以进一步探究。</p>
+                <h1 id="EndNote安装与文献导入"><a href="#EndNote安装与文献导入" class="headerlink" title="EndNote安装与文献导入"></a>EndNote安装与文献导入</h1><p>EndNote是一款被广泛使用的文献管理软件，是SCI（Thomson Scientific 公司）的官方软件，支持国际期刊的参考文献格式有7000多种，也可以自定义期刊引用格式，便于文献整理、写笔记、做备注、分类、导出期刊格式、进行数据迁移。对于科研需要大量看文献并对文献分类时，EndNote无疑是科研人的好帮手。从本文开始我们的小网站介绍一些EndNote的使用方法，本文先介绍EndNote的安装与文献导入。</p>
+<h2 id="EndNote安装"><a href="#EndNote安装" class="headerlink" title="EndNote安装"></a>EndNote安装</h2><p>目前比较常见的EndNote版本是EndNote 20。校内正版软件中心提供了EndNote下载和安装方式，这里就不列出了。另外油油也找到了破解版，已经上传到我们的百度网盘“软件”文件夹下。安装时可以点击<code>EN20Inst.exe</code>进行安装：</p>
+<p><img src="%E7%A0%B4%E8%A7%A3%E7%89%881.jpg" alt="破解版文件目录"></p>
+<p>默认会安装到<code>C:\Program Files (x86)\EndNote 20</code>目录下，在文件管理器打开这个目录，然后使用破解版文件<code>Crack</code>文件夹中的<code>EndNote.exe</code>替换该目录下的同名文件即可完成破解。</p>
+<p><img src="%E7%A0%B4%E8%A7%A3%E7%89%882.jpg" alt="Crack文件目录"></p>
+<p>然后就可以打开EndNote了。</p>
+<h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><p>首次打开EndNote会提示创建数据库，设置数据库名称和保存即可。</p>
+<p><img src="%E5%88%9B%E5%BB%BA.png" alt="创建数据库"></p>
+<p>当然也可以在主界面左上角选择<code>File-&gt;New</code>功能进行创建数据库。</p>
+<p>然后就可以开始进行文献导入啦。</p>
+<h2 id="从在线网站导入文献"><a href="#从在线网站导入文献" class="headerlink" title="从在线网站导入文献"></a>从在线网站导入文献</h2><p>在<a target="_blank" rel="noopener" href="https://www.webofscience.com/wos/alldb/basic-search">Web of Science</a>、<a target="_blank" rel="noopener" href="https://cnki.net/">知网</a>等网站可以直接批量导出文献到EndNote。Web of Science如下，选择EndNote Desktop进行导出，表示导出到EndNote桌面版：</p>
+<p><img src="WOS1.jpg" alt="Web of Science 文献检索导出"></p>
+<p>导出时可以进行一些设置，如导出文献的数量、记录内容等等：</p>
+<p><img src="WOS2.jpg" alt="Web of Science 导出设置"></p>
+<p>然后可以得到一个<code>.ciw</code>格式的导出文件，用EndNote打开该文件就可以把对应论文导入到EndNote当前的数据库中。不过这样导入的论文是没有PDF文章的，需要点击文献对应的PDF选项，然后<code>Attach PDF</code>才能添加文章：</p>
+<p><img src="attachPDF.png" alt="Attach PDF"></p>
+<p>知网用法如下，需要先选择导出哪些文献，然后导出为EndNote格式：</p>
+<p><img src="cnki1.jpg" alt="知网文献检索导出"></p>
+<p>点击<code>导出文献-&gt;EndNote</code>之后，需要<code>筛选已选文献</code>，找一下自己想导出的文献：</p>
+<p><img src="cnki2.jpg" alt="筛选已选文献"></p>
+<p>然后点击<code>导出题录</code>：</p>
+<p><img src="cnki3.jpg" alt="导出题录"></p>
+<p>然后选择<code>EndNote</code>、<code>导出</code>：</p>
+<p><img src="cnki4.jpg" alt="导出"></p>
+<p>可以得到一个<code>txt</code>文件。可以在EndNote中选择<code>File-&gt;Import-&gt;File</code>导入该文件：</p>
+<p><img src="cnki6.png" alt="导入txt文件"></p>
+<p>或者将这个文件在记事本或Sublime中打开，另存为<code>.ciw</code>格式：</p>
+<p><img src="cnki5.png" alt="另存为.ciw格式"></p>
+<p>接下来就可以用EndNote打开该文件，把对应论文导入到EndNote当前的数据库中啦。同样地，这样导入的论文是没有PDF文章的，需要点击文献对应的PDF选项，然后<code>Attach PDF</code>才能添加文章。</p>
+<h2 id="从本地PDF导入文献"><a href="#从本地PDF导入文献" class="headerlink" title="从本地PDF导入文献"></a>从本地PDF导入文献</h2><p>也可以把本地的PDF论文导入到EndNote中。选择<code>File-&gt;Import-&gt;File</code>，<code>Import Option</code>选择<code>PDF</code>即可：</p>
+<p><img src="pdfimport.png" alt="导入PDF"></p>
+<p>这样有时候会导致论文信息不准确，可以点击对应论文的<code>Edit</code>编辑一下:</p>
+<p><img src="edit.jpg" alt="Edit论文信息"></p>
+<p>同样也可以选择PDF文件夹上传，选择<code>File-&gt;Import-&gt;Folder</code>：</p>
+<p><img src="importfolder.png" alt="导入文件夹"></p>
+<p>这里还可以选择同时创建<code>Group Set</code>、包含所有子文件夹的文件。</p>
+<p>EndNote可以创建不同的Group Set，每个Group Set下又可以创建多个Group，分别用于保存论文。在左边栏的<code>MY GROUPS</code>上右键，即可进行创建Group Set、创建Group等操作。而EndNote中的每篇论文点击右键<code>Add References To</code>，就可以添加到指定Group，实现分组操作。</p>
+<p>还可以自动跟踪本地文件夹中的PDF文件。</p>
+<p>点击<code>Edit-&gt;Preferences-&gt;PDF Handling</code>，勾选<code>Enable automatic importing</code>，选择文件夹即可：</p>
+<p><img src="pdfhandling.png" alt="跟踪本地文件夹"></p>
+<h2 id="使用EndNote搜索论文并导入"><a href="#使用EndNote搜索论文并导入" class="headerlink" title="使用EndNote搜索论文并导入"></a>使用EndNote搜索论文并导入</h2><p>EndNote也可以直接进行论文搜索和导入。点击左边栏的<code>ONLINE SEARCH</code>，选择数据库，就可以进行搜索了。搜索完毕后选择想添加的文件，然后点加号，添加到数据库：</p>
+<p><img src="search.jpg" alt="搜索论文并导入"></p>
+<p>本文的EndNote安装与导入就介绍到这里啦，小仙女加油哟，看好你哟~<span class="github-emoji"><span>😄</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😄</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
 
                 
             </div>
@@ -542,8 +537,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">笔记</span>
+                                <a href="/tags/%E5%AD%A6EndNote/">
+                                    <span class="chip bg-color">学EndNote</span>
                                 </a>
                             
                         </div>
@@ -855,9 +850,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/12/14/EndNote%E5%AE%89%E8%A3%85%E4%B8%8E%E6%96%87%E7%8C%AE%E5%AF%BC%E5%85%A5/">
                     <div class="card-image">
@@ -874,9 +870,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -889,6 +885,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -907,12 +904,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/07/%E5%86%AC%E5%A4%9C/">
+                <a href="/2021/12/12/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E9%93%BE%E6%8E%A5%E6%B1%87%E6%80%BB/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/37.jpg" class="responsive-img" alt="冬夜">
+                        <img src="/medias/featureimages/38.jpg" class="responsive-img" alt="技术文档链接汇总">
                         
-                        <span class="card-title">冬夜</span>
+                        <span class="card-title">技术文档链接汇总</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -923,14 +920,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%B2%B9%E5%85%88%E7%94%9F%E9%80%89%E9%9B%86/" class="post-category">
-                                    油先生选集
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
                                 </a>
                             
                             
@@ -940,8 +937,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AF%97/">
-                        <span class="chip bg-color">诗</span>
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
                     </a>
                     
                 </div>

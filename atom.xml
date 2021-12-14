@@ -6,7 +6,7 @@
   <link href="https://shuaiguo95.github.io/atom.xml" rel="self"/>
   
   <link href="https://shuaiguo95.github.io/"/>
-  <updated>2021-12-12T16:21:04.970Z</updated>
+  <updated>2021-12-14T09:21:31.056Z</updated>
   <id>https://shuaiguo95.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>EndNote安装与文献导入</title>
+    <link href="https://shuaiguo95.github.io/2021/12/14/EndNote%E5%AE%89%E8%A3%85%E4%B8%8E%E6%96%87%E7%8C%AE%E5%AF%BC%E5%85%A5/"/>
+    <id>https://shuaiguo95.github.io/2021/12/14/EndNote%E5%AE%89%E8%A3%85%E4%B8%8E%E6%96%87%E7%8C%AE%E5%AF%BC%E5%85%A5/</id>
+    <published>2021-12-14T06:36:53.000Z</published>
+    <updated>2021-12-14T09:21:31.056Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;EndNote安装与文献导入&quot;&gt;&lt;a href=&quot;#EndNote安装与文献导入&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习" scheme="https://shuaiguo95.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学EndNote" scheme="https://shuaiguo95.github.io/tags/%E5%AD%A6EndNote/"/>
+    
+  </entry>
   
   <entry>
     <title>技术文档链接汇总</title>
@@ -490,32 +515,6 @@
     
     
     <category term="学NLP" scheme="https://shuaiguo95.github.io/tags/%E5%AD%A6NLP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2021年下半年目标</title>
-    <link href="https://shuaiguo95.github.io/2021/10/12/2021%E5%B9%B4%E4%B8%8B%E5%8D%8A%E5%B9%B4%E7%9B%AE%E6%A0%87/"/>
-    <id>https://shuaiguo95.github.io/2021/10/12/2021%E5%B9%B4%E4%B8%8B%E5%8D%8A%E5%B9%B4%E7%9B%AE%E6%A0%87/</id>
-    <published>2021-10-12T14:08:26.000Z</published>
-    <updated>2021-10-18T17:33:31.791Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;2021年下半年目标&quot;&gt;&lt;a href=&quot;#2021年下半年目标&quot; class=&quot;headerlink&quot; title=&quot;2021年下半年目标&quot;&gt;&lt;/a&gt;2021年下半年目标&lt;/h1&gt;&lt;p&gt;新学期新打算，小仙女和油油要制定好目标，一起努力呀：&lt;/p&gt;
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="学习" scheme="https://shuaiguo95.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="目标与计划" scheme="https://shuaiguo95.github.io/tags/%E7%9B%AE%E6%A0%87%E4%B8%8E%E8%AE%A1%E5%88%92/"/>
     
   </entry>
   
