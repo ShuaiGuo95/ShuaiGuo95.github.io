@@ -488,7 +488,7 @@
         },
         xAxis: {
             type: 'category',
-            data: ["2021-02","2021-03","2021-04","2021-05","2021-06","2021-07","2021-08","2021-09","2021-10","2021-11","2021-12","2022-01","2022-02"]
+            data: ["2021-03","2021-04","2021-05","2021-06","2021-07","2021-08","2021-09","2021-10","2021-11","2021-12","2022-01","2022-02","2022-03"]
         },
         yAxis: {
             type: 'value',
@@ -498,7 +498,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,4,13,8,11,4,0,2],
+                data: [0,0,0,0,0,4,13,8,11,4,0,2,0],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -984,7 +984,7 @@
 
             <!-- 运行天数提醒. -->
             
-                <span id="sitetime"> Loading ...</span>
+                <span id="sitetime">永远爱你</span>
                 <script>
                     var calcSiteTime = function () {
                         var seconds = 1000;
@@ -994,13 +994,13 @@
                         var years = days * 365;
                         var today = new Date();
                         var startYear = "2022";
-                        var startMonth = "2";
+                        var startMonth = "1";
                         var startDate = "11";
-                        var startHour = "21";
+                        var startHour = "0";
                         var startMinute = "0";
                         var startSecond = "0";
                         var todayYear = today.getFullYear();
-                        var todayMonth = today.getMonth() + 1;
+                        var todayMonth = today.getMonth();
                         var todayDate = today.getDate();
                         var todayHour = today.getHours();
                         var todayMinute = today.getMinutes();
