@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>EndNote使用技巧</title>
+      <link href="/2022/03/04/EndNote%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+      <url>/2022/03/04/EndNote%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
+      
+        <content type="html"><![CDATA[<h1 id="EndNote使用技巧"><a href="#EndNote使用技巧" class="headerlink" title="EndNote使用技巧"></a>EndNote使用技巧</h1><p>在上一篇EndNote安装与文献导入的基础上，本文主要介绍EndNote的一些使用技巧，包括文献笔记、文献标记、文献查找、文献查重、文献排序等。</p><h2 id="文献笔记"><a href="#文献笔记" class="headerlink" title="文献笔记"></a>文献笔记</h2><p>打开EndNote文献库中的一篇PDF，点击左上角的<code>Markup/annotation</code>，就可以显示出一些高亮、下划线、划去、标注功能，基本满足笔记的需要。</p><p>右上角有打印文献和作为邮件附件发送的功能。</p><p><img src="note.jpg" alt="EndNote文献笔记"></p><h2 id="文献标记"><a href="#文献标记" class="headerlink" title="文献标记"></a>文献标记</h2><p>EndNote文献库中可以对文献进行星级标号，和已读、未读标记，不过需要打开设置。</p><p><img src="note2.jpg" alt="EndNote打开星级显示"></p><p><img src="readed.jpg" alt="EndNote打开已读、未读显示"></p><p>然后选中文件，右键即可进行文件已读未读标记，和星级标记。</p><p>单击菜单栏，可以按照某一特征对文献进行排序。</p><h2 id="文献检索与查重"><a href="#文献检索与查重" class="headerlink" title="文献检索与查重"></a>文献检索与查重</h2><p>文献检索功能在文献库的上方有提供，文献查重功能，点击菜单栏<code>Library-&gt;Find Duplicates</code>即可。</p><p><img src="%E6%9F%A5%E9%87%8D.jpg" alt="查重"></p><p>如果发现有重复，点击左侧<code>Duplicate References</code>，选中需要删除的文献，然后删除即可。</p><p><img src="%E5%8E%BB%E9%87%8D.jpg" alt="去重"></p><h2 id="文献自动下载"><a href="#文献自动下载" class="headerlink" title="文献自动下载"></a>文献自动下载</h2><p>如果导入的文献未提供PDF，可以选中文献，右键点击<code>Find Full Text</code>尝试下载，不过依然可能下载不到。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学EndNote </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>你的微笑</title>
       <link href="/2022/02/28/%E4%BD%A0%E7%9A%84%E5%BE%AE%E7%AC%91/"/>
       <url>/2022/02/28/%E4%BD%A0%E7%9A%84%E5%BE%AE%E7%AC%91/</url>
